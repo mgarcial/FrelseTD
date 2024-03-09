@@ -56,7 +56,6 @@ public class GameManager : MonoBehaviour
                 if(dist < shortestDistance){
                     shortestDistance = dist;
                     nearestTile = tile;
-                    Debug.Log("hola, tile");
                 }
             }
 
@@ -74,8 +73,9 @@ public class GameManager : MonoBehaviour
 
     public void BuyBuilding(Building b){
         if (gold >= b.cost){
+            GameObject Edificio = b.gameObject;
             CC.gameObject.SetActive(true);
-            CC.GetComponent<SpriteRenderer>().sprite = b.GetComponent<SpriteRenderer>().sprite;
+            CC.setCursor(Edificio.GetComponent<SpriteRenderer>());
             Cursor.visible = false;
             gold -= b.cost;
             grid.SetActive(true);
