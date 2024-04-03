@@ -25,7 +25,7 @@ public class Scanner : MonoBehaviour
 
     public void Scan()
     {
-        Transform enemyTargetted = null;
+        Transform enemyTargeted = null;
 
         /*Aqui vienen referencias al script que maneje  los enemigos dentro de una lista, que recorra la lista de enemigos y calcule la distancia hacia cada uno, cuando la detecte más cercana lo elige como target
         foreach(Enemy in enemies)

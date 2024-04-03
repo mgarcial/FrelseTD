@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,5 +21,10 @@ public class Enemigo : MonoBehaviour
     void Update()
     {
         navMeshAgent.SetDestination(nextPoint.position);
+    }
+
+    internal void TakeDamage(object p)
+    {
+        throw new NotImplementedException();
     }
 }
