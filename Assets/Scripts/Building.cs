@@ -6,6 +6,7 @@ public class Building : MonoBehaviour
 {
     public int cost;
     private Weapon _weapon;
+    private Scanner _scanner;
     private bool _isHover = false;
     public int rate;
     
@@ -16,6 +17,7 @@ public class Building : MonoBehaviour
     {
         gm.SumGoldRate = rate;
         _weapon = GetComponent<Weapon>();
+        _isHover = GetComponentInChildren<Scanner>();
     }
 
     private void Start()
@@ -23,8 +25,16 @@ public class Building : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        if(!_isHover && _scanner.TargetFound())
+        {
+            _weapon.Shoot(_scanner.GetTarget());
+        }
+    }
+
     public void DestroyTower()
     {
-        
+        Destroy(gameObject);
     }
 }
