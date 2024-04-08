@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3465944912066724831}
   - component: {fileID: 5707513510325513480}
   - component: {fileID: 4161373287409338280}
+  - component: {fileID: 1536229439847285447}
   m_Layer: 0
   m_Name: "Torre caf\xE9"
   m_TagString: Untagged
@@ -99,3 +100,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 50
   rate: 1
+--- !u!114 &1536229439847285447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718650511674919905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7afae8f27204be54f80fa9cafa3a1eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeScan: 10

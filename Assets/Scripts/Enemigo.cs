@@ -7,12 +7,14 @@ using UnityEngine.AI;
 public class Enemigo : MonoBehaviour
 {
     [SerializeField] private Transform nextPoint;
+    [SerializeField] private int vida;
 
     private NavMeshAgent navMeshAgent;
     private bool empezar;
 
     void Start()
     {
+
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.updateUpAxis = false;
         navMeshAgent.updateRotation = false;
