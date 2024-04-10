@@ -16,7 +16,7 @@ public class EnemyManager : MonoBehaviour
     private static EnemyManager _instance;
     public static EnemyManager GetInstance()
     {
-        if (_instance == null){
+        if (_instance == null) {
             _instance = new EnemyManager();
         }
 
@@ -31,16 +31,15 @@ public class EnemyManager : MonoBehaviour
     {
         enemies.Remove(enemy);
         OnEnemyKilledEvent?.Invoke(enemy.GetGold());
-    }
-     // Start is called before the first frame update
-    void Start()
-    {
-        
+        if (enemies.Count == 0)
+        {
+            OnAllEnemiesDeadEvent?.Invoke();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public List<Enemigo> GetEnemiesList() => enemies;
+
+    public int GetEnemyCount() => enemies.Count;
+    public void ClearEnemiesList() => enemies.Clear();
+   
 }

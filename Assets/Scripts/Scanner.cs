@@ -4,39 +4,39 @@ using UnityEngine;
 
 public class Scanner : MonoBehaviour
 {
-    public float rangeScan = 10f;
+    [SerializeField] private float rangeScan = 10f;
     private Transform _target;
+    private EnemyManager enemyManager;
 
     private void Awake()
     {
-        
+        enemyManager = EnemyManager.GetInstance();
     }
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        float radiusScale = rangeScan * 2;
+        transform.localScale = new Vector2(radiusScale, radiusScale);
     }
 
     public void Scan()
     {
         Transform enemyTargeted = null;
 
-        /*Aqui vienen referencias al script que maneje  los enemigos dentro de una lista, que recorra la lista de enemigos y calcule la distancia hacia cada uno, cuando la detecte más cercana lo elige como target
-        foreach(Enemy in enemies)
+        List<Enemigo> enemies = enemyManager.GetEnemiesList();
+    
+        foreach(Enemigo enemy in enemies)
         {
-            float currentDistance = 
+            float currentDistance = Vector2.Distance(transform.position, enemy.transform.position);
 
-            if(enemy actualmente null y estan en rango)
-                enemyTargetted = enemy position;
+            if(enemyTargeted == null && currentDistance <= rangeScan)
+            {
+                enemyTargeted = enemy.transform;
+            }
         }
+
+        _target = enemyTargeted;
         
-        */
     }
     public bool TargetFound()
     {
