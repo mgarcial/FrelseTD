@@ -15,7 +15,7 @@ public class Building : MonoBehaviour
 
     private void Awake()
     {
-        gm.SumGoldRate = rate;
+        gm.Circuitos = rate;
         _weapon = GetComponent<Weapon>();
         _isHover = GetComponentInChildren<Scanner>();
     }

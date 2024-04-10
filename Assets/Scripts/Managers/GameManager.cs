@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public int gold;
-    public Text goldDisplay;
+    public int circuitos;
+    public TMP_Text circuitosDisplay;
     public GameObject grid;
     public CustomCursor CC;
     public Tile[] tiles;
@@ -16,10 +17,8 @@ public class GameManager : MonoBehaviour
     private Building bAColocar;
 
     private int goldRate = 0;
-    private float goldTimer = 1.0f;
-    private float timer = 0.0f;
 
-    public int SumGoldRate
+    public int Circuitos
     {
         get { return goldRate; }
         set { goldRate += value; }
@@ -37,15 +36,7 @@ public class GameManager : MonoBehaviour
         }
     }
     void Update(){
-        timer -= Time.deltaTime;
-
-        if(timer <= 0)
-        {
-            gold += goldRate;
-            timer = goldTimer;
-        }
-
-        goldDisplay.text = gold.ToString();
+        circuitosDisplay.text = "Recursos: " + circuitos.ToString();
 
         if(Input.GetMouseButtonDown(0) && bAColocar != null){
             Tile nearestTile = null;
@@ -72,15 +63,20 @@ public class GameManager : MonoBehaviour
     }
 
     public void BuyBuilding(Building b){
-        if (gold >= b.cost){
+        if (circuitos >= b.cost){
+            Debug.Log("boton oprimido");
             GameObject Edificio = b.gameObject;
             CC.gameObject.SetActive(true);
             CC.setCursor(Edificio.GetComponent<SpriteRenderer>());
             Cursor.visible = false;
-            gold -= b.cost;
+            circuitos -= b.cost;
             grid.SetActive(true);
             bAColocar = b;
         }
-            
+    }
+
+    public void PruebaBoton()
+    {
+        Debug.Log(70);
     }
 }

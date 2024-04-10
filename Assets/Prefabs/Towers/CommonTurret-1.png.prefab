@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 6034621486769342672}
   - component: {fileID: 6767074680892638445}
   - component: {fileID: 3622388506004956407}
+  - component: {fileID: -8584902003219999598}
   m_Layer: 0
   m_Name: CommonTurret-1.png
   m_TagString: Untagged
@@ -130,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e31cbee4391d043bab9fd8300285ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 250
+  cost: 2
   rate: 0
 --- !u!114 &3622388506004956407
 MonoBehaviour:
@@ -147,3 +148,16 @@ MonoBehaviour:
   fireRate: 2
   projectilePrefab: {fileID: 4273237467665604322, guid: fbacb6029ff28d742ba2a3fc0c95eb66, type: 3}
   firePoint: {fileID: 7128020484162701056}
+--- !u!114 &-8584902003219999598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914227527303064958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7afae8f27204be54f80fa9cafa3a1eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeScan: 10

@@ -8,9 +8,11 @@ public class Enemigo : MonoBehaviour
 {
     [SerializeField] private Transform nextPoint;
     [SerializeField] private int gold = 10;
+    [SerializeField] private int vida;
 
     private EnemyManager _enemyManager;
     private NavMeshAgent navMeshAgent;
+    private bool empezar;
 
     private void Awake()
     {
@@ -20,15 +22,26 @@ public class Enemigo : MonoBehaviour
     void Start()
     {
         _enemyManager.AddEnemy(this);
+
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.updateUpAxis = false;
         navMeshAgent.updateRotation = false;
+        empezar = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        navMeshAgent.SetDestination(nextPoint.position);
+        if (empezar)
+        {
+            navMeshAgent.SetDestination(nextPoint.position);
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            empezar = true;
+        }
     }
 
     public int GetGold() => gold;
