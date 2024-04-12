@@ -5,12 +5,12 @@ using UnityEngine;
 public class Scanner : MonoBehaviour
 {
     [SerializeField] private float rangeScan = 10f;
+    private EnemyManager _enemyManager;
     private Transform _target;
-    private EnemyManager enemyManager;
 
     private void Awake()
     {
-        enemyManager = EnemyManager.GetInstance();
+        _enemyManager = EnemyManager.GetInstance();
     }
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class Scanner : MonoBehaviour
     {
         Transform enemyTargeted = null;
 
-        List<Enemigo> enemies = enemyManager.GetEnemiesList();
+        List<Enemigo> enemies = _enemyManager.GetEnemiesList();
     
         foreach(Enemigo enemy in enemies)
         {
@@ -32,6 +32,7 @@ public class Scanner : MonoBehaviour
             if(enemyTargeted == null && currentDistance <= rangeScan)
             {
                 enemyTargeted = enemy.transform;
+                Debug.Log("Enemy found" + enemyTargeted);
             }
         }
 
@@ -48,5 +49,10 @@ public class Scanner : MonoBehaviour
         return _target;
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, rangeScan);
+    }
 
 }

@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [SerializeField] private int maxHealth;
+    private int health;
     public int circuitos;
     public TMP_Text circuitosDisplay;
     public GameObject grid;
@@ -18,12 +20,30 @@ public class GameManager : MonoBehaviour
 
     private int goldRate = 0;
 
+    private EnemyManager enemyManager;
+
+    /*private void OnEnable()
+    {
+        enemyManager.OnEnemyKilledEvent += AddToMoney;
+        enemyManager.OnAllEnemiesDeadEvent += WaveFinished;
+    }*/
+
+    /*private void OnDisable()
+    {
+        enemyManager.OnEnemyKilledEvent -= AddToMoney;
+        enemyManager.OnAllEnemiesDeadEvent -= WaveFinished;
+
+    }*/
     public int Circuitos
     {
         get { return goldRate; }
         set { goldRate += value; }
     }
 
+    private void Start()
+    {
+        health = maxHealth;
+    }
     private void Awake()
     {
         if(instance == null)
@@ -78,5 +98,17 @@ public class GameManager : MonoBehaviour
     public void PruebaBoton()
     {
         Debug.Log(70);
+    }
+
+    public void AddToMoney(int amount)
+    {
+        circuitos += amount;
+    }
+
+    public int GetCurrentMoney() => circuitos;
+
+    private void WaveFinished()
+    {
+        
     }
 }

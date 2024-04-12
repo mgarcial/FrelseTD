@@ -45,8 +45,18 @@ public class Enemigo : MonoBehaviour
     }
 
     public int GetGold() => gold;
-    internal void TakeDamage(object p)
+    internal void TakeDamage(int dmg)
     {
-        throw new NotImplementedException();
+        vida -= dmg;
+        if (vida <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        _enemyManager.RemoveEnemy(this);
+        Destroy(gameObject);
     }
 }

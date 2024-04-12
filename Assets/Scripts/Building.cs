@@ -5,8 +5,9 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     public int cost;
-    private Weapon _weapon;
+
     private Scanner _scanner;
+    private Weapon _weapon;
     private bool _isHover = false;
     public int rate;
     
@@ -17,24 +18,38 @@ public class Building : MonoBehaviour
     {
         gm.Circuitos = rate;
         _weapon = GetComponent<Weapon>();
-        _isHover = GetComponentInChildren<Scanner>();
+        _scanner = GetComponentInChildren<Scanner>();
+        Debug.Log("Scanner found: " + (_scanner != null));
     }
 
     private void Start()
     {
-        
+        InvokeRepeating("ScanEnemies", 0f, 0.1f);
     }
 
     private void Update()
     {
-        if(!_isHover && _scanner.TargetFound())
+        if(_scanner.TargetFound())
         {
             _weapon.Shoot(_scanner.GetTarget());
         }
     }
 
+    private void ScanEnemies()
+    {
+        _scanner.Scan();
+    }
+
+    public int GetCost()
+    {
+        return cost;
+    }
     public void DestroyTower()
     {
         Destroy(gameObject);
+    }
+    public void HoverMode(bool hover)
+    {
+        _isHover = hover;
     }
 }

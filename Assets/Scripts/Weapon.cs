@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -9,13 +7,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Transform firePoint;
 
     private float _fireRateCooldown;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (_fireRateCooldown <= 0)
@@ -29,7 +21,7 @@ public class Weapon : MonoBehaviour
     {
         if (_fireRateCooldown <= 0)
         {
-            GameObject projectileFired = Instantiate(projectilePrefab);
+            GameObject projectileFired = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
             Projectile projectile = projectileFired.GetComponent<Projectile>();
             if (projectile != null)
             {

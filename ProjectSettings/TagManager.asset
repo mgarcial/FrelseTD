@@ -42,3 +42,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 2583116309
+    locked: 0
+  - name: Scanners
+    uniqueID: 877697281
+    locked: 0
+  - name: Enemies
+    uniqueID: 3214358485
+    locked: 0
+  - name: Projectiles
+    uniqueID: 3369501859
+    locked: 0
+  - name: Towers
+    uniqueID: 362343577
+    locked: 0
+  - name: Decorations
+    uniqueID: 243512125
+    locked: 0

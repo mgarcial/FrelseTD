@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
     }
     internal void SetTarget(Transform target)
     {
-        throw new NotImplementedException();
+        _target = target;
     }
 
     private void FireProjectile()

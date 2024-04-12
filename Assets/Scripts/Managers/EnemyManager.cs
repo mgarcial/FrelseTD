@@ -25,8 +25,11 @@ public class EnemyManager : MonoBehaviour
 
     private EnemyManager() => enemies = new List<Enemigo>();
 
-    public void AddEnemy(Enemigo enemy) => enemies.Add(enemy);
-
+    public void AddEnemy(Enemigo enemy)
+    {
+        enemies.Add(enemy);
+        Debug.Log("enemy added"+ enemy);
+    }
     public void RemoveEnemy(Enemigo enemy)
     {
         enemies.Remove(enemy);

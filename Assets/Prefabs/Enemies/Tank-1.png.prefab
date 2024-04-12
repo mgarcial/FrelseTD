@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3005445212904214185}
   - component: {fileID: 7551964075352275484}
   - component: {fileID: -4880044366409537347}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tank-1.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1080608811
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 14713dbe6989efe45940344276c65902, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

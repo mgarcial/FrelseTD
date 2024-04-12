@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1208610211239708869}
   - component: {fileID: 8938343969118181517}
   - component: {fileID: -8775131065296400341}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Semiorco-1.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1080608811
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1574b492f0f1d4b4bb1d361a196cb0a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
