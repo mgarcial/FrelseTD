@@ -33,7 +33,7 @@ public class EnemyManager : MonoBehaviour
     public void RemoveEnemy(Enemigo enemy)
     {
         enemies.Remove(enemy);
-        OnEnemyKilledEvent?.Invoke(enemy.GetGold());
+        OnEnemyKilledEvent?.Invoke(enemy.GetCircuits());
         if (enemies.Count == 0)
         {
             OnAllEnemiesDeadEvent?.Invoke();

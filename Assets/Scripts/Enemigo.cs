@@ -7,12 +7,18 @@ using UnityEngine.AI;
 public class Enemigo : MonoBehaviour
 {
     [SerializeField] private Transform nextPoint;
-    [SerializeField] private int gold = 10;
+    [SerializeField] private string enemyName;
+    [SerializeField] private int circuits = 10;
     [SerializeField] private int vida;
 
     private EnemyManager _enemyManager;
     private NavMeshAgent navMeshAgent;
     private bool empezar;
+
+    public string Name
+    {
+        get { return enemyName; }
+    }
 
     private void Awake()
     {
@@ -44,7 +50,7 @@ public class Enemigo : MonoBehaviour
         }
     }
 
-    public int GetGold() => gold;
+    public int GetCircuits() => circuits;
     internal void TakeDamage(int dmg)
     {
         vida -= dmg;
