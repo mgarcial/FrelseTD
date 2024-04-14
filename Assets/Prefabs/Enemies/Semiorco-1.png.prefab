@@ -98,5 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextPoint: {fileID: 0}
-  gold: 10
+  enemyName: SemiOrc
+  circuits: 10
   vida: 0

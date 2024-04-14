@@ -101,7 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextPoint: {fileID: 0}
-  gold: 10
+  enemyName: FastShip
+  circuits: 10
   vida: 0
 --- !u!114 &-6626805185634331233
 MonoBehaviour:

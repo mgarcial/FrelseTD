@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
 
     private EnemyManager enemyManager;
 
+    private float _gameSpeed;
+
     /*private void OnEnable()
     {
         enemyManager.OnEnemyKilledEvent += AddToMoney;
@@ -46,6 +49,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        _gameSpeed = 1f;
         health = maxHealth;
         circuitos = initialMoney;
     }
