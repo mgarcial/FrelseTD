@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
     [SerializeField] private int maxHealth;
+    [SerializeField] private int initialMoney;
     private int health;
     public int circuitos;
     public TMP_Text circuitosDisplay;
@@ -19,6 +21,8 @@ public class GameManager : MonoBehaviour
     private Building bAColocar;
 
     private int goldRate = 0;
+
+    private float _gameSpeed;
 
     private EnemyManager enemyManager;
 
@@ -43,6 +47,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
+        circuitos = initialMoney;
     }
     private void Awake()
     {
@@ -100,9 +105,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(70);
     }
 
-<<<<<<< Updated upstream
-=======
-    /*public void RestartLevel()
+    public void RestartLevel()
     {
         FindObjectOfType<LevelManager>().LoadCurrentScene();
         CleanLevel();
@@ -112,7 +115,7 @@ public class GameManager : MonoBehaviour
     private void CleanLevel()
     {
         health = maxHealth;
-        circuitos = money;
+        circuitos = initialMoney;
         enemyManager.ClearEnemiesList();
     }
     public void NextLevel()
@@ -133,14 +136,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = speed;
     }
 
->>>>>>> Stashed changes
     public void AddToMoney(int amount)
     {
         circuitos += amount;
     }
 
-<<<<<<< Updated upstream
-=======
     public void TakeDamage(int dmg)
     {
         health -= dmg;
@@ -154,9 +154,8 @@ public class GameManager : MonoBehaviour
     private void LooseLevel()
     {
         RestartLevel();
-    }*/
+    }
 
->>>>>>> Stashed changes
     public int GetCurrentMoney() => circuitos;
 
     private void WaveFinished()
