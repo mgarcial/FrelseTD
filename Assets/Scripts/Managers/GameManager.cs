@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
 
     private EnemyManager enemyManager;
 
-    private float _gameSpeed;
 
     /*private void OnEnable()
     {
