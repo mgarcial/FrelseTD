@@ -1464,6 +1464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0
+  money: 0
   circuitos: 500
   circuitosDisplay: {fileID: 1062979839}
   grid: {fileID: 1617344038}
