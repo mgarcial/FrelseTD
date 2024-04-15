@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
     [SerializeField] private int maxHealth;
+    [SerializeField] private int initialMoney;
     private int health;
     public int circuitos;
     public TMP_Text circuitosDisplay;
@@ -20,7 +23,10 @@ public class GameManager : MonoBehaviour
 
     private int goldRate = 0;
 
+    private float _gameSpeed;
+
     private EnemyManager enemyManager;
+
 
     /*private void OnEnable()
     {
@@ -42,7 +48,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        _gameSpeed = 1f;
         health = maxHealth;
+        circuitos = initialMoney;
     }
     private void Awake()
     {
@@ -100,9 +108,55 @@ public class GameManager : MonoBehaviour
         Debug.Log(70);
     }
 
+    public void RestartLevel()
+    {
+        FindObjectOfType<LevelManager>().LoadCurrentScene();
+        CleanLevel();
+        Destroy(gameObject);
+    }
+
+    private void CleanLevel()
+    {
+        health = maxHealth;
+        circuitos = initialMoney;
+        enemyManager.ClearEnemiesList();
+    }
+    public void NextLevel()
+    {
+        CleanLevel();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Destroy(gameObject);
+    }
+    public void ExitToMainMenu()
+    {
+        CleanLevel();
+        FindObjectOfType<LevelManager>().LoadMainMenuScene();
+        Destroy(gameObject);
+    }
+    public void SetGameSpeed(float speed)
+    {
+        _gameSpeed = speed;
+        Time.timeScale = speed;
+    }
+
     public void AddToMoney(int amount)
     {
         circuitos += amount;
+    }
+
+    public void TakeDamage(int dmg)
+    {
+        health -= dmg;
+        if(health <= 0)
+        {
+            health = 0;
+            LooseLevel();
+        }
+    }
+
+    private void LooseLevel()
+    {
+        RestartLevel();
     }
 
     public int GetCurrentMoney() => circuitos;
