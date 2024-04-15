@@ -21,6 +21,7 @@ public class Scanner : MonoBehaviour
 
     public void Scan()
     {
+        Debug.Log("scan");
         Transform enemyTargeted = null;
 
         List<Enemigo> enemies = _enemyManager.GetEnemiesList();
@@ -28,8 +29,9 @@ public class Scanner : MonoBehaviour
         foreach(Enemigo enemy in enemies)
         {
             float currentDistance = Vector2.Distance(transform.position, enemy.transform.position);
+            Debug.Log("foreach");
 
-            if(enemyTargeted == null && currentDistance <= rangeScan)
+            if (enemyTargeted == null && currentDistance <= rangeScan)
             {
                 enemyTargeted = enemy.transform;
                 Debug.Log("Enemy found" + enemyTargeted);

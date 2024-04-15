@@ -12,7 +12,7 @@ public class EnemyManager : MonoBehaviour
     public delegate void AllEnemiesDeadDelegate();
     public event AllEnemiesDeadDelegate OnAllEnemiesDeadEvent;
 
-    private List<Enemigo> enemies;
+    [SerializeField]private List<Enemigo> enemies;
 
     private static EnemyManager _instance;
     public static EnemyManager GetInstance()
