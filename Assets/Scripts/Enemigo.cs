@@ -9,15 +9,28 @@ public class Enemigo : MonoBehaviour
     [SerializeField] private Transform nextPoint;
     [SerializeField] private string enemyName;
     [SerializeField] private int circuits = 10;
-    [SerializeField] private int vida;
+    [SerializeField] private int hitPoints;
+    [SerializeField] private float speed;
 
     private EnemyManager _enemyManager;
     private NavMeshAgent navMeshAgent;
-    private bool empezar;
+    private bool start;
 
     public string Name
     {
         get { return enemyName; }
+    }
+
+    public int HitPoints
+    {
+        get { return hitPoints; }
+        set { hitPoints = value; }
+    }
+
+    public float Speed
+    {
+        get { return speed; }
+        set { speed = value; }
     }
 
     private void Awake()
@@ -32,13 +45,13 @@ public class Enemigo : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.updateUpAxis = false;
         navMeshAgent.updateRotation = false;
-        empezar = false;
+        start = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (empezar)
+        if (start)
         {
             navMeshAgent.SetDestination(nextPoint.position);
         }
@@ -46,15 +59,15 @@ public class Enemigo : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            empezar = true;
+            start = true;
         }
     }
 
     public int GetCircuits() => circuits;
     internal void TakeDamage(int dmg)
     {
-        vida -= dmg;
-        if (vida <= 0)
+        hitPoints -= dmg;
+        if (hitPoints <= 0)
         {
             Die();
         }

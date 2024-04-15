@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    [SerializeField] Enemigo[][] waves;
 
     public delegate void EnemyKilledDelegate(int amount);
     public event EnemyKilledDelegate OnEnemyKilledEvent;

@@ -5,12 +5,10 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
 
-    [SerializeField] private Enemigo[] enemyPrefabs = new Enemigo[6];
+    [SerializeField] private Enemigo[] enemyPrefabs;
 
     private Dictionary<string, Enemigo> enemies = new Dictionary<string, Enemigo>();
     private Transform trsfrm;
-
-    private string[] enemyPrueba = { "ProTank", "ProTank", "Basic", "Helicarrier" };
 
     // Start is called before the first frame update
     void Awake()
@@ -28,11 +26,18 @@ public class Spawner : MonoBehaviour
         
     }
 
-    public void InstanteWave()
+    public void InstanteWave(List<Enemigo> wave) 
     {
-        foreach(string enemy in enemyPrueba)
+        StartCoroutine(CreateEnemyRoutine(2f, wave));
+    }
+
+    IEnumerator CreateEnemyRoutine(float seconds, List<Enemigo> wave)
+    {
+        foreach (Enemigo enemy in wave)
         {
-            Instantiate(enemies[enemy], trsfrm.position, Quaternion.identity);
+            string enemyName = enemy.Name;
+            Instantiate(enemies[enemyName], trsfrm.position, Quaternion.identity);
+            yield return new WaitForSeconds(seconds);
         }
     }
 }
