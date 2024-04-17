@@ -120,6 +120,7 @@ public class GameManager : MonoBehaviour
         health = maxHealth;
         circuitos = initialMoney;
         enemyManager.ClearEnemiesList();
+        Debug.Log("LevelCleaned");
     }
     public void NextLevel()
     {

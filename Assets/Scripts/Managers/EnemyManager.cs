@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] Enemigo[][] waves;
+    [SerializeField] private List<List<Enemigo>> waves;
 
     public delegate void EnemyKilledDelegate(int amount);
     public event EnemyKilledDelegate OnEnemyKilledEvent;
@@ -12,28 +12,35 @@ public class EnemyManager : MonoBehaviour
     public delegate void AllEnemiesDeadDelegate();
     public event AllEnemiesDeadDelegate OnAllEnemiesDeadEvent;
 
-    [SerializeField]private List<Enemigo> enemies;
+    [SerializeField] private List<Enemigo> enemies;
 
     private static EnemyManager _instance;
     public static EnemyManager GetInstance()
     {
-        if (_instance == null) {
-            _instance = new EnemyManager();
+        if (_instance == null)
+        {
+            GameObject obj = new GameObject("EnemyManager");
+            _instance = obj.AddComponent<EnemyManager>();
         }
 
         return _instance;
     }
 
-    private EnemyManager() => enemies = new List<Enemigo>();
+    private void Awake()
+    {
+        enemies = new List<Enemigo>();
+    }
 
     public void AddEnemy(Enemigo enemy)
     {
         enemies.Add(enemy);
-        Debug.Log("enemy added"+ enemy);
+        Debug.Log("Enemy added: " + enemy.name);
     }
+
     public void RemoveEnemy(Enemigo enemy)
     {
         enemies.Remove(enemy);
+        Debug.Log("Enemy killed: " + enemy.name);
         OnEnemyKilledEvent?.Invoke(enemy.GetCircuits());
         if (enemies.Count == 0)
         {
@@ -45,5 +52,5 @@ public class EnemyManager : MonoBehaviour
 
     public int GetEnemyCount() => enemies.Count;
     public void ClearEnemiesList() => enemies.Clear();
-   
+
 }
