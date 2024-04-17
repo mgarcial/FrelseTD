@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 7692441547774291531}
   - component: {fileID: 6109357691668283986}
   - component: {fileID: -8314071763153524926}
+  - component: {fileID: 8457973572983766379}
+  - component: {fileID: 5092612898921575649}
+  - component: {fileID: 6469738742745230634}
   m_Layer: 8
   m_Name: EnergyBullet
   m_TagString: Untagged
@@ -71,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1576262779
-  m_SortingLayer: 5
+  m_SortingLayerID: -925465437
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 326fbe71ac6de8240ac1a122235929bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,4 +100,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f116b4afdf2d1649b6f41871197e805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 8
+--- !u!50 &8457973572983766379
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2721564580865956137}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!70 &5092612898921575649
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2721564580865956137}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0015089512, y: 0.019616008}
+  m_Size: {x: 0.1257863, y: 0.16803622}
+  m_Direction: 0
+--- !u!114 &6469738742745230634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2721564580865956137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64fc4c257c7f764f99c1538faffefdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1

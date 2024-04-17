@@ -9,7 +9,7 @@ public class Enemigo : MonoBehaviour
     [SerializeField] private Transform nextPoint;
     [SerializeField] private string enemyName;
     [SerializeField] private int circuits = 10;
-    [SerializeField] private int hitPoints;
+    [SerializeField] private int hitPoints = 10;
     [SerializeField] private float speed;
 
     private EnemyManager _enemyManager;

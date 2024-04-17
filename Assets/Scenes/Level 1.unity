@@ -578,7 +578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -712.33105, y: -3.7801514}
+  m_AnchoredPosition: {x: -712.331, y: -3.7801514}
   m_SizeDelta: {x: -1592.4, y: -47.559998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396202040
@@ -752,7 +752,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -430.33105, y: -3.7801514}
+  m_AnchoredPosition: {x: -430.331, y: -3.7801514}
   m_SizeDelta: {x: -1592.4, y: -47.559998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &425635456
@@ -1624,6 +1624,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2473317884260946124, guid: e46cf93f814016f49aa2bed1e55c8807, type: 3}
+      propertyPath: hitPoints
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3187865341059075454, guid: e46cf93f814016f49aa2bed1e55c8807, type: 3}
       propertyPath: m_Name
       value: FastShip-1.png

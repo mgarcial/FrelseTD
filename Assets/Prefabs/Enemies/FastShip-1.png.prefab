@@ -104,7 +104,8 @@ MonoBehaviour:
   nextPoint: {fileID: 0}
   enemyName: FastShip
   circuits: 10
-  vida: 0
+  hitPoints: 0
+  speed: 0
 --- !u!114 &-6626805185634331233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,10 +150,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0037077665, y: 0.2372781}
+  m_Offset: {x: -0.037212014, y: 0.14048797}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -163,7 +164,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.078029, y: 1.28463}
+  m_Size: {x: 1.1771362, y: 0.62943506}
   m_EdgeRadius: 0
 --- !u!195 &-5841690247100182566
 NavMeshAgent:
