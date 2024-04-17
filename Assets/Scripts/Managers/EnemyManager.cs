@@ -35,6 +35,7 @@ public class EnemyManager : MonoBehaviour
     {
         enemies.Add(enemy);
         Debug.Log("Enemy added: " + enemy.name);
+        Debug.Log(enemies.Count);
     }
 
     public void RemoveEnemy(Enemigo enemy)
