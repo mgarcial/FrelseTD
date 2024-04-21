@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     void Update(){
         circuitosDisplay.text = "Recursos: " + circuitos.ToString();
 

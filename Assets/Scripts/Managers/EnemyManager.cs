@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] private List<List<Enemigo>> waves;
 
+    //Wave atributes
+    [SerializeField] private List<Waves> waves;
+    [SerializeField] private List<Spawner> spawnPoints;
+
+    private int waveCounter;
+
+    //others
     public delegate void EnemyKilledDelegate(int amount);
     public event EnemyKilledDelegate OnEnemyKilledEvent;
 
@@ -29,6 +35,7 @@ public class EnemyManager : MonoBehaviour
     private void Awake()
     {
         enemies = new List<Enemigo>();
+        waveCounter = 0;
     }
 
     public void AddEnemy(Enemigo enemy)
@@ -49,9 +56,25 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
+    public void AddSpawner(Spawner spawn)
+    {
+        spawnPoints.Add(spawn);
+    }
+
+    public void AddWave(Waves wave)
+    {
+        waves.Add(wave);
+    }
+
     public List<Enemigo> GetEnemiesList() => enemies;
 
     public int GetEnemyCount() => enemies.Count;
     public void ClearEnemiesList() => enemies.Clear();
 
+    //Para probar
+    public void StartWave()
+    {
+        Waves nextWave = waves[waveCounter];
+        spawnPoints[nextWave.SpawnPoint].InstanteWave(nextWave.EnemiesInWave, nextWave.PathOfWave);
+    }
 }

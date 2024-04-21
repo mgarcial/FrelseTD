@@ -6,15 +6,16 @@ using UnityEngine.AI;
 
 public class Enemigo : MonoBehaviour
 {
-    [SerializeField] private Transform nextPoint;
     [SerializeField] private string enemyName;
     [SerializeField] private int circuits = 10;
     [SerializeField] private int hitPoints = 10;
     [SerializeField] private float speed;
 
+    private Transform position;
     private EnemyManager _enemyManager;
     private NavMeshAgent navMeshAgent;
-    private bool start;
+    private List<Transform> path;
+    private int nextPos;
 
     public string Name
     {
@@ -33,9 +34,16 @@ public class Enemigo : MonoBehaviour
         set { speed = value; }
     }
 
+    public List<Transform> NextPos
+    {
+        set { path = value; }
+    }
+
     private void Awake()
     {
+        position = GetComponent<Transform>();
         _enemyManager = EnemyManager.GetInstance();
+        nextPos = 0;
     }
 
     void Start()
@@ -45,21 +53,24 @@ public class Enemigo : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.updateUpAxis = false;
         navMeshAgent.updateRotation = false;
-        start = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (start)
-        {
-            navMeshAgent.SetDestination(nextPoint.position);
-        }
+        navMeshAgent.SetDestination(path[nextPos].position);
 
+        Vector3 distance = position.position - path[nextPos].position;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (distance.magnitude <= 1.0f)
         {
-            start = true;
+            if(nextPos < path.Count)
+            {
+                nextPos++;
+            }
+            else{
+                Die();
+            }
         }
     }
 
