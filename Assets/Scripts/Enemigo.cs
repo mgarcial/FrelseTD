@@ -14,8 +14,8 @@ public class Enemigo : MonoBehaviour
     private Transform position;
     private EnemyManager _enemyManager;
     private NavMeshAgent navMeshAgent;
-    private List<Transform> path;
-    private int nextPos;
+    private List<Transform> pathing = new List<Transform>();
+    private int nextPos = 0;
 
     public string Name
     {
@@ -34,16 +34,15 @@ public class Enemigo : MonoBehaviour
         set { speed = value; }
     }
 
-    public List<Transform> NextPos
+    public void AddToPath(Transform point)
     {
-        set { path = value; }
+        pathing.Add(point);
     }
 
     private void Awake()
     {
         position = GetComponent<Transform>();
-        _enemyManager = EnemyManager.GetInstance();
-        nextPos = 0;
+        _enemyManager = EnemyManager.instance;
     }
 
     void Start()
@@ -58,7 +57,8 @@ public class Enemigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        navMeshAgent.SetDestination(path[nextPos].position);
+        Debug.Log(pathing.Count);
+        /*navMeshAgent.SetDestination(path[nextPos].position);
 
         Vector3 distance = position.position - path[nextPos].position;
 
@@ -71,7 +71,7 @@ public class Enemigo : MonoBehaviour
             else{
                 Die();
             }
-        }
+        }*/
     }
 
     public int GetCircuits() => circuits;

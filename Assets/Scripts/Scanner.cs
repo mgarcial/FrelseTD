@@ -10,7 +10,7 @@ public class Scanner : MonoBehaviour
 
     private void Awake()
     {
-        _enemyManager = EnemyManager.GetInstance();
+        _enemyManager = EnemyManager.instance;
     }
     // Start is called before the first frame update
     void Start()

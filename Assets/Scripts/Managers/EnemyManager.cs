@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    public static EnemyManager instance;
 
     //Wave atributes
     [SerializeField] private List<Waves> waves;
@@ -20,20 +21,17 @@ public class EnemyManager : MonoBehaviour
 
     [SerializeField] private List<Enemigo> enemies;
 
-    private static EnemyManager _instance;
-    public static EnemyManager GetInstance()
-    {
-        if (_instance == null)
-        {
-            GameObject obj = new GameObject("EnemyManager");
-            _instance = obj.AddComponent<EnemyManager>();
-        }
-
-        return _instance;
-    }
-
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         enemies = new List<Enemigo>();
         waveCounter = 0;
     }
@@ -41,8 +39,8 @@ public class EnemyManager : MonoBehaviour
     public void AddEnemy(Enemigo enemy)
     {
         enemies.Add(enemy);
-        Debug.Log("Enemy added: " + enemy.name);
-        Debug.Log(enemies.Count);
+        //Debug.Log("Enemy added: " + enemy.name);
+        //Debug.Log(enemies.Count);
     }
 
     public void RemoveEnemy(Enemigo enemy)

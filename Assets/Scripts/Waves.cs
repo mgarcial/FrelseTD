@@ -17,7 +17,10 @@ public class Waves : MonoBehaviour
 
     public List<Transform> PathOfWave
     {
-        get { return pathOfWave; }
+        get 
+        {
+            return pathOfWave;
+        }
     }
 
     public int SpawnPoint
@@ -27,7 +30,7 @@ public class Waves : MonoBehaviour
 
     private void Awake()
     {
-        enemyManager = EnemyManager.GetInstance();
+        enemyManager = EnemyManager.instance; ;
         enemyManager.AddWave(this);
     }
 }

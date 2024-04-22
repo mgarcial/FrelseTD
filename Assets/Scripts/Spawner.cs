@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     void Awake()
     {
         trsfrm = GetComponent<Transform>();
-        enemyManager = EnemyManager.GetInstance();
+        enemyManager = EnemyManager.instance;
         enemyManager.AddSpawner(this);
     }
 
@@ -24,7 +24,11 @@ public class Spawner : MonoBehaviour
     {
         foreach (Enemigo enemy in wave)
         {
-            enemy.NextPos = path;
+            for(int i = 0; i < path.Count; i++)
+            {
+                enemy.AddToPath(path[i]);
+            }
+
             Instantiate(enemy, trsfrm.position, Quaternion.identity);
             yield return new WaitForSeconds(seconds);
         }
