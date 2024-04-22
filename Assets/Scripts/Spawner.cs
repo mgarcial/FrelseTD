@@ -24,12 +24,8 @@ public class Spawner : MonoBehaviour
     {
         foreach (Enemigo enemy in wave)
         {
-            for(int i = 0; i < path.Count; i++)
-            {
-                enemy.AddToPath(path[i]);
-            }
-
             Instantiate(enemy, trsfrm.position, Quaternion.identity);
+            enemy.Path = path;
             yield return new WaitForSeconds(seconds);
         }
     }

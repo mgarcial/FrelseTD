@@ -14,7 +14,7 @@ public class Enemigo : MonoBehaviour
     private Transform position;
     private EnemyManager _enemyManager;
     private NavMeshAgent navMeshAgent;
-    private List<Transform> pathing = new List<Transform>();
+    [SerializeField] private List<Transform> path;
     private int nextPos = 0;
 
     public string Name
@@ -34,9 +34,10 @@ public class Enemigo : MonoBehaviour
         set { speed = value; }
     }
 
-    public void AddToPath(Transform point)
+    public List<Transform> Path
     {
-        pathing.Add(point);
+        get { return path; }
+        set { path = value; }
     }
 
     private void Awake()
@@ -57,7 +58,7 @@ public class Enemigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(pathing.Count);
+        Debug.Log(path.Count);
         /*navMeshAgent.SetDestination(path[nextPos].position);
 
         Vector3 distance = position.position - path[nextPos].position;
