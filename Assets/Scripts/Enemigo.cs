@@ -59,7 +59,7 @@ public class Enemigo : MonoBehaviour
     void Update()
     {
         Debug.Log(path.Count);
-        /*navMeshAgent.SetDestination(path[nextPos].position);
+        navMeshAgent.SetDestination(path[nextPos].position);
 
         Vector3 distance = position.position - path[nextPos].position;
 
@@ -72,7 +72,7 @@ public class Enemigo : MonoBehaviour
             else{
                 Die();
             }
-        }*/
+        }
     }
 
     public int GetCircuits() => circuits;
