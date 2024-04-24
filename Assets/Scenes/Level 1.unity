@@ -907,11 +907,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1215071731333268802, guid: edf1111b0a474e14b83d43dd6188f32a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.8
+      value: -20.57
       objectReference: {fileID: 0}
     - target: {fileID: 1215071731333268802, guid: edf1111b0a474e14b83d43dd6188f32a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.55
+      value: 4.93
       objectReference: {fileID: 0}
     - target: {fileID: 1215071731333268802, guid: edf1111b0a474e14b83d43dd6188f32a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2041,6 +2041,8 @@ MonoBehaviour:
   enemiesInWave:
   - {fileID: -2641334438081798566, guid: e314f6b38fcee6d4e928aa72526808c7, type: 3}
   - {fileID: 5707303092525677747, guid: 3151caf06a54e5c4b91379e3a0a70657, type: 3}
+  - {fileID: 5707303092525677747, guid: 3151caf06a54e5c4b91379e3a0a70657, type: 3}
+  - {fileID: 5707303092525677747, guid: 3151caf06a54e5c4b91379e3a0a70657, type: 3}
   pathOfWave:
   - {fileID: 73991293}
   spawnPoint: 1
@@ -2175,6 +2177,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesInWave:
   - {fileID: 2972400629386434136, guid: 91b2cef672fb5c145b67405de9fd7ad8, type: 3}
+  - {fileID: -8775131065296400341, guid: a391c67cfd9464541b573ab9b5a56f94, type: 3}
+  - {fileID: -8775131065296400341, guid: a391c67cfd9464541b573ab9b5a56f94, type: 3}
+  - {fileID: -8775131065296400341, guid: a391c67cfd9464541b573ab9b5a56f94, type: 3}
+  - {fileID: -8775131065296400341, guid: a391c67cfd9464541b573ab9b5a56f94, type: 3}
+  - {fileID: -8775131065296400341, guid: a391c67cfd9464541b573ab9b5a56f94, type: 3}
   - {fileID: -8775131065296400341, guid: a391c67cfd9464541b573ab9b5a56f94, type: 3}
   pathOfWave:
   - {fileID: 73991293}
@@ -2707,11 +2714,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1215071731333268802, guid: edf1111b0a474e14b83d43dd6188f32a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.612143
+      value: -11.69
       objectReference: {fileID: 0}
     - target: {fileID: 1215071731333268802, guid: edf1111b0a474e14b83d43dd6188f32a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.966152
+      value: 10.67
       objectReference: {fileID: 0}
     - target: {fileID: 1215071731333268802, guid: edf1111b0a474e14b83d43dd6188f32a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18701,11 +18708,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1215071731333268802, guid: edf1111b0a474e14b83d43dd6188f32a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.52
+      value: -13.84
       objectReference: {fileID: 0}
     - target: {fileID: 1215071731333268802, guid: edf1111b0a474e14b83d43dd6188f32a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.79
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 1215071731333268802, guid: edf1111b0a474e14b83d43dd6188f32a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18942,6 +18949,8 @@ MonoBehaviour:
   - {fileID: 2473317884260946124, guid: e46cf93f814016f49aa2bed1e55c8807, type: 3}
   - {fileID: 2473317884260946124, guid: e46cf93f814016f49aa2bed1e55c8807, type: 3}
   - {fileID: -4880044366409537347, guid: 009f0344d13d33e43983419259b550ad, type: 3}
+  - {fileID: -4880044366409537347, guid: 009f0344d13d33e43983419259b550ad, type: 3}
+  - {fileID: -4880044366409537347, guid: 009f0344d13d33e43983419259b550ad, type: 3}
   pathOfWave:
   - {fileID: 73991293}
   spawnPoint: 0
@@ -19024,7 +19033,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -122.33101, y: -3.7801514}
+  m_AnchoredPosition: {x: -122.33099, y: -3.7801514}
   m_SizeDelta: {x: -1592.4, y: -47.559998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1984236137
