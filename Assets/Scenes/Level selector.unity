@@ -433,13 +433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed454d4513bcef4081cc278261d3258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelButtons:
-  - {fileID: 326449533}
-  - {fileID: 1354242468}
-  - {fileID: 1685504300}
-  - {fileID: 139961095}
-  Lock: {fileID: 1249519588402378625, guid: c4d8fbee9b0b4b44cbc7183757a8339a, type: 3}
-  Done: {fileID: 2022085004138956175, guid: ac56e46cc4db3674ab99b7900b650c6d, type: 3}
 --- !u!1 &586277103
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,6 +680,7 @@ GameObject:
   - component: {fileID: 1486726404}
   - component: {fileID: 1486726403}
   - component: {fileID: 1486726402}
+  - component: {fileID: 1486726405}
   m_Layer: 5
   m_Name: Levels
   m_TagString: Untagged
@@ -780,6 +774,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486726400}
   m_CullTransparentMesh: 1
+--- !u!114 &1486726405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486726400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed454d4513bcef4081cc278261d3258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1605397767
 GameObject:
   m_ObjectHideFlags: 0

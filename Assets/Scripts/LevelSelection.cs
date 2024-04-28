@@ -6,30 +6,20 @@ using UnityEngine.UI;
 
 public class LevelSelection : MonoBehaviour
 {
-    public Button[] levelButtons;
-    public Image Lock;
-    public Image Done;
+    private Button[] levelButtons;
     private int highestLevel;
 
     // Start is called before the first frame update
     void Start()
     {
-        highestLevel = PlayerPrefs.GetInt("highestLevel", 1);
+        highestLevel = Preferences.GetMaxLvl();
 
+       levelButtons = GetComponentsInChildren<Button>();
         for (int i = 0; i < levelButtons.Length; i++)
         {
-            int levelNum = i + 1;
-            if (levelNum > highestLevel)
+            if (i + 1 > highestLevel)
             {
                 levelButtons[i].interactable = false;
-                levelButtons[i].GetComponent<Image>().sprite = Lock.sprite;
-                levelButtons[i].GetComponentInChildren<Text>().text = "";
-            }
-            else
-            {
-                levelButtons[i].interactable = true;
-                levelButtons[i].GetComponentInChildren<Text>().text = "" + levelNum;
-                levelButtons[i].GetComponent<Image>().sprite = Done.sprite;
             }
         }
 
