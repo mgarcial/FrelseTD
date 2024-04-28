@@ -14,8 +14,9 @@ public class Enemigo : MonoBehaviour
     private Transform position;
     private EnemyManager _enemyManager;
     private NavMeshAgent navMeshAgent;
-    [SerializeField] private List<Transform> path;
     private int nextPos = 0;
+
+    public Transform endPoint;
 
     public string Name
     {
@@ -32,12 +33,6 @@ public class Enemigo : MonoBehaviour
     {
         get { return speed; }
         set { speed = value; }
-    }
-
-    public List<Transform> Path
-    {
-        get { return path; }
-        set { path = value; }
     }
 
     private void Awake()
@@ -58,20 +53,13 @@ public class Enemigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(path.Count);
-        navMeshAgent.SetDestination(path[nextPos].position);
+        navMeshAgent.SetDestination(endPoint.position);
 
-        Vector3 distance = position.position - path[nextPos].position;
+        Vector3 distance = position.position - endPoint.position;
 
         if (distance.magnitude <= 1.0f)
         {
-            if(nextPos < path.Count)
-            {
-                nextPos++;
-            }
-            else{
-                Die();
-            }
+            Die();
         }
     }
 

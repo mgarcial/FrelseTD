@@ -7,8 +7,9 @@ public class EnemyManager : MonoBehaviour
     public static EnemyManager instance;
 
     //Wave atributes
-    [SerializeField] private List<Waves> waves;
-    [SerializeField] private List<Spawner> spawnPoints;
+    [SerializeField] private List<WaveSO> waves;
+    [SerializeField] private List<Transform> spawnPoints;
+    [SerializeField] private Transform endPoint;
 
     private int waveCounter;
 
@@ -54,16 +55,6 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    public void AddSpawner(Spawner spawn)
-    {
-        spawnPoints.Add(spawn);
-    }
-
-    public void AddWave(Waves wave)
-    {
-        waves.Add(wave);
-    }
-
     public List<Enemigo> GetEnemiesList() => enemies;
 
     public int GetEnemyCount() => enemies.Count;
@@ -72,7 +63,19 @@ public class EnemyManager : MonoBehaviour
     //Para probar
     public void StartWave()
     {
-        Waves nextWave = waves[waveCounter];
-        spawnPoints[nextWave.SpawnPoint].InstanteWave(nextWave.EnemiesInWave, nextWave.PathOfWave);
+        WaveSO nextWave = waves[waveCounter];
+
+        StartCoroutine(StartWaveRoutine(1.0f, nextWave));
+    }
+
+    IEnumerator StartWaveRoutine(float seconds, WaveSO wave)
+    {
+        foreach (Enemigo enemy in wave.enemiesOfWave)
+        {
+            enemy.endPoint = endPoint;
+            Instantiate(enemy, spawnPoints[wave.spawnPoint].position, Quaternion.identity);
+            //enemy.endPoint = endPoint;
+            yield return new WaitForSeconds(seconds);
+        }
     }
 }
