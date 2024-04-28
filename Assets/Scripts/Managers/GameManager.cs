@@ -9,6 +9,21 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        pauseMenu = FindObjectOfType<PauseMenu>();
+        enemyManager = FindObjectOfType<EnemyManager>();
+    }
 
     [SerializeField] private int maxHealth;
     [SerializeField] private int initialMoney;
@@ -26,6 +41,7 @@ public class GameManager : MonoBehaviour
     private float _gameSpeed;
 
     private EnemyManager enemyManager;
+    private PauseMenu pauseMenu;
 
 
     /*private void OnEnable()
@@ -51,17 +67,6 @@ public class GameManager : MonoBehaviour
         _gameSpeed = 1f;
         health = maxHealth;
         circuitos = initialMoney;
-    }
-    private void Awake()
-    {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
     }
 
     void Update(){
@@ -121,6 +126,8 @@ public class GameManager : MonoBehaviour
         health = maxHealth;
         circuitos = initialMoney;
         enemyManager.ClearEnemiesList();
+        _gameSpeed = 1f;
+        SetGameSpeed(_gameSpeed);
         Debug.Log("LevelCleaned");
     }
     public void NextLevel()
