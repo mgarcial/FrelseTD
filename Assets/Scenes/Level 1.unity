@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 350774322}
   - component: {fileID: 350774324}
   - component: {fileID: 350774323}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PausePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1422,7 +1422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 508137637}
   - component: {fileID: 508137636}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pause Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1620,7 +1620,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1037878277
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &582566874
@@ -1958,7 +1958,7 @@ GameObject:
   - component: {fileID: 840182841}
   - component: {fileID: 840182840}
   - component: {fileID: 840182839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Resume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2761,7 +2761,7 @@ GameObject:
   - component: {fileID: 1190539912}
   - component: {fileID: 1190539914}
   - component: {fileID: 1190539913}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: DarkPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18986,7 +18986,7 @@ GameObject:
   - component: {fileID: 1898142462}
   - component: {fileID: 1898142461}
   - component: {fileID: 1898142460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
