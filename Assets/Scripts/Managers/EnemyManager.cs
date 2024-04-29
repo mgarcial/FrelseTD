@@ -77,5 +77,7 @@ public class EnemyManager : MonoBehaviour
             //enemy.endPoint = endPoint;
             yield return new WaitForSeconds(seconds);
         }
+
+        waveCounter++;
     }
 }

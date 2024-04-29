@@ -104,7 +104,8 @@ MonoBehaviour:
   enemyName: FastShip
   circuits: 10
   hitPoints: 0
-  speed: 0
+  speed: 5.67
+  endPoint: {fileID: 0}
 --- !u!114 &-6626805185634331233
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -100,11 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a70791a3bf75f4789f8dc1be1072de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPoint: {fileID: 0}
   enemyName: Helicarrier
   circuits: 10
   hitPoints: 0
-  speed: 0
+  speed: 5.67
+  endPoint: {fileID: 0}
 --- !u!195 &-937956837121067325
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -14,7 +14,6 @@ public class Enemigo : MonoBehaviour
     private Transform position;
     private EnemyManager _enemyManager;
     private NavMeshAgent navMeshAgent;
-    private int nextPos = 0;
 
     public Transform endPoint;
 
@@ -48,6 +47,8 @@ public class Enemigo : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.updateUpAxis = false;
         navMeshAgent.updateRotation = false;
+
+        navMeshAgent.speed = speed;
     }
 
     // Update is called once per frame
