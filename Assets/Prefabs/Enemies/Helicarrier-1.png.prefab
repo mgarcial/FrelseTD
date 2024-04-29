@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Helicarrier
-  circuits: 10
+  circuits: 80
   hitPoints: 0
   speed: 5.67
   endPoint: {fileID: 0}

@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b106baae653bf44a13187cd3ab5be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
+  fireRate: 0.7
   projectilePrefab: {fileID: 4527297996618758778, guid: 6c778eb9bdd8f4a47ae7933b19606efb, type: 3}
   firePoint: {fileID: 7128020484162701056}
 --- !u!1 &9110046720694979057
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afae8f27204be54f80fa9cafa3a1eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeScan: 4
+  rangeScan: 7.5
 --- !u!212 &7460781834735376254
 SpriteRenderer:
   m_ObjectHideFlags: 0

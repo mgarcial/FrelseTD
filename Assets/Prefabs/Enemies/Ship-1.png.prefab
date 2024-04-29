@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Basic
   circuits: 10
-  hitPoints: 0
+  hitPoints: 10
   speed: 5.67
   endPoint: {fileID: 0}
 --- !u!195 &-4593199884528321367

@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: FastShip
   circuits: 10
-  hitPoints: 0
+  hitPoints: 6
   speed: 5.67
   endPoint: {fileID: 0}
 --- !u!114 &-6626805185634331233
