@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: -4593199884528321367}
   - component: {fileID: 4510931665976513799}
   - component: {fileID: 5636111357600787288}
+  - component: {fileID: -8598619685052331874}
   m_Layer: 7
   m_Name: Ship-1.png
   m_TagString: Untagged
@@ -450,6 +451,19 @@ CircleCollider2D:
   m_Offset: {x: -0.014890909, y: 0.17868948}
   serializedVersion: 2
   m_Radius: 0.5577967
+--- !u!114 &-8598619685052331874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5002386316453405936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64fc4c257c7f764f99c1538faffefdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &6678639974211444915
 GameObject:
   m_ObjectHideFlags: 0

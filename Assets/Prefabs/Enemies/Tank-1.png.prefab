@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 330268194859752354}
   - component: {fileID: 6922890199492128885}
   - component: {fileID: 79152038401344114}
+  - component: {fileID: -1712396024560701120}
   m_Layer: 7
   m_Name: Tank-1.png
   m_TagString: Untagged
@@ -487,6 +488,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0037226677, y: 0.018613338}
   m_Size: {x: 2.5227733, y: 2.5227733}
   m_Direction: 0
+--- !u!114 &-1712396024560701120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5600453077869431889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64fc4c257c7f764f99c1538faffefdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &8030378767191359100
 GameObject:
   m_ObjectHideFlags: 0

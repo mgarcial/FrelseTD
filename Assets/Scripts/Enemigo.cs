@@ -15,6 +15,8 @@ public class Enemigo : MonoBehaviour
     private Transform position;
     private EnemyManager _enemyManager;
     private NavMeshAgent navMeshAgent;
+    private GameManager gameManager;
+    private DamageDeal damageDeal;
 
     public Transform endPoint;
     public HealthbarBehavior healthBar;
@@ -40,6 +42,8 @@ public class Enemigo : MonoBehaviour
     {
         position = GetComponent<Transform>();
         _enemyManager = EnemyManager.instance;
+        gameManager = GameManager.instance;
+        damageDeal = GetComponent<DamageDeal>();
     }
 
     void Start()
@@ -64,6 +68,7 @@ public class Enemigo : MonoBehaviour
 
         if (distance.magnitude <= 1.0f)
         {
+            gameManager.TakeDamage(damageDeal.GetDamage());
             Die();
         }
     }

@@ -411,6 +411,7 @@ GameObject:
   - component: {fileID: -937956837121067325}
   - component: {fileID: -2006316806541259852}
   - component: {fileID: 552112049152617565}
+  - component: {fileID: -1703955960196871409}
   m_Layer: 7
   m_Name: Helicarrier-1.png
   m_TagString: Untagged
@@ -563,3 +564,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-1703955960196871409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9069120766310953065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64fc4c257c7f764f99c1538faffefdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10

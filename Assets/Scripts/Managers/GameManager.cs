@@ -120,6 +120,7 @@ public class GameManager : MonoBehaviour
         Destroy(gameObject);
     }
 
+
     private void CleanLevel()
     {
         health = maxHealth;
