@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        pauseMenu = FindObjectOfType<PauseMenu>();
         enemyManager = FindObjectOfType<EnemyManager>();
     }
 
