@@ -8,24 +8,26 @@ public class Enemigo : MonoBehaviour
 {
     [SerializeField] private string enemyName;
     [SerializeField] private int circuits = 10;
-    [SerializeField] private int hitPoints = 10;
+    [SerializeField] private float maxHitPoints = 10;
     [SerializeField] private float speed;
 
+    private float hitPoints;
     private Transform position;
     private EnemyManager _enemyManager;
     private NavMeshAgent navMeshAgent;
 
     public Transform endPoint;
+    public HealthbarBehavior healthBar;
 
     public string Name
     {
         get { return enemyName; }
     }
 
-    public int HitPoints
+    public float HitPoints
     {
-        get { return hitPoints; }
-        set { hitPoints = value; }
+        get { return maxHitPoints; }
+        set { maxHitPoints = value; }
     }
 
     public float Speed
@@ -44,6 +46,8 @@ public class Enemigo : MonoBehaviour
     {
         _enemyManager.AddEnemy(this);
 
+        hitPoints = maxHitPoints;
+        healthBar.SetHealth(hitPoints, maxHitPoints);
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.updateUpAxis = false;
         navMeshAgent.updateRotation = false;
@@ -68,6 +72,8 @@ public class Enemigo : MonoBehaviour
     internal void TakeDamage(int dmg)
     {
         hitPoints -= dmg;
+        healthBar.SetHealth(hitPoints, maxHitPoints);
+        Debug.Log("i took " + dmg +" and have " + hitPoints+ " left");
         if (hitPoints <= 0)
         {
             Die();
