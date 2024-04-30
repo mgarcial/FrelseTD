@@ -42,19 +42,6 @@ public class GameManager : MonoBehaviour
     private EnemyManager enemyManager;
     private PauseMenu pauseMenu;
 
-
-    /*private void OnEnable()
-    {
-        enemyManager.OnEnemyKilledEvent += AddToMoney;
-        enemyManager.OnAllEnemiesDeadEvent += WaveFinished;
-    }*/
-
-    /*private void OnDisable()
-    {
-        enemyManager.OnEnemyKilledEvent -= AddToMoney;
-        enemyManager.OnAllEnemiesDeadEvent -= WaveFinished;
-
-    }*/
     public int Circuitos
     {
         get { return goldRate; }
