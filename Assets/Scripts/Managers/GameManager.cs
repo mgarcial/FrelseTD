@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
     private float _gameSpeed;
 
     private EnemyManager enemyManager;
-    private PauseMenu pauseMenu;
 
     public int Circuitos
     {
