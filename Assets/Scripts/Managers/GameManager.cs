@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
     {
         _gameSpeed = 1f;
         health = maxHealth;
+        Debug.Log($"base has {health} health points left");
         circuitos = initialMoney;
     }
 
@@ -156,6 +157,7 @@ public class GameManager : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         health -= dmg;
+        Debug.Log($"the base has taken {dmg} damage, and has {health} hit points left");
         if(health <= 0)
         {
             health = 0;
