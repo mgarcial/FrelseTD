@@ -12,7 +12,7 @@ public class Enemigo : MonoBehaviour
     [SerializeField] private float speed;
 
     private float hitPoints;
-    private Transform position;
+    private Transform pos;
     private EnemyManager _enemyManager;
     private NavMeshAgent navMeshAgent;
     private GameManager gameManager;
@@ -40,7 +40,7 @@ public class Enemigo : MonoBehaviour
 
     private void Awake()
     {
-        position = GetComponent<Transform>();
+        pos = GetComponent<Transform>();
         _enemyManager = EnemyManager.instance;
         gameManager = GameManager.instance;
         damageDeal = GetComponent<DamageDeal>();
@@ -64,7 +64,7 @@ public class Enemigo : MonoBehaviour
     {
         navMeshAgent.SetDestination(endPoint.position);
 
-        Vector3 distance = position.position - endPoint.position;
+        Vector2 distance = new(pos.position.x - endPoint.position.x, pos.position.y - endPoint.position.y);
 
         if (distance.magnitude <= 1.0f)
         {
@@ -74,6 +74,7 @@ public class Enemigo : MonoBehaviour
     }
 
     public int GetCircuits() => circuits;
+
     internal void TakeDamage(int dmg)
     {
         hitPoints -= dmg;

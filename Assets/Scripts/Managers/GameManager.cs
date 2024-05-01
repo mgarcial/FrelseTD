@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        enemyManager = FindObjectOfType<EnemyManager>();
+        enemyManager = EnemyManager.instance;
     }
 
     [SerializeField] private int maxHealth;
