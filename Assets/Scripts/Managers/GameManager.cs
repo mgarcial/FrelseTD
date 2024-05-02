@@ -147,12 +147,13 @@ public class GameManager : MonoBehaviour
         {
             health = 0;
             LooseLevel();
+            Debug.Log("level lost");
         }
     }
 
     private void LooseLevel()
     {
-        RestartLevel();
+        SceneManager.LoadScene("Main screen");
     }
 
     public int GetCurrentMoney() => circuitos;
