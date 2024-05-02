@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("Enemies Sounds")]
+    [SerializeField] private AudioClip enemyHitSound;
+    [SerializeField] private AudioClip enemyDeathSound;
+    [SerializeField] private AudioClip playerDeathSound;
+
+    [Header("Shop Sounds")]
+    [SerializeField] private AudioClip towerPlacedSound;
+    [SerializeField] private AudioClip towerSelectedSound;
+
+    private AudioSource _audioSource;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void PlayEnemyHit() => _audioSource.PlayOneShot(enemyHitSound);
+
 }
