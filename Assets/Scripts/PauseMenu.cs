@@ -11,21 +11,25 @@ public class PauseMenu : MonoBehaviour
     {
         KeyboardInput();
     }
+
     public void Pause()
     {
         pauseMenu.SetActive(true);
-        Time.timeScale = 0;
+        EventManager.instance.TimeChange(TimeStates.pause);
     }
+
     public void Restart()
     {
         pauseMenu.SetActive(false);
-        Time.timeScale = 1;
+        EventManager.instance.TimeChange(TimeStates.unpause);
     }
+
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Screen");
-        Time.timeScale = 1;
+        EventManager.instance.TimeChange(TimeStates.unpause);;
     }
+
     private void KeyboardInput()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -33,5 +37,4 @@ public class PauseMenu : MonoBehaviour
             Pause();
         }
     }
-
 }

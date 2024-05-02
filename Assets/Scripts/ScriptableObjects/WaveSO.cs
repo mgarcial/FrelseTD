@@ -4,6 +4,6 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Wave")] public class WaveSO : ScriptableObject
 {
-    public List<Enemigo> enemiesOfWave;
+    public List<Enemy> enemiesOfWave;
     public int spawnPoint;
 }

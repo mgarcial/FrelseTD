@@ -20,7 +20,7 @@ public class EnemyManager : MonoBehaviour
     public delegate void AllEnemiesDeadDelegate();
     public event AllEnemiesDeadDelegate OnAllEnemiesDeadEvent;
 
-    [SerializeField] private List<Enemigo> enemies;
+    [SerializeField] private List<Enemy> enemies;
 
     private void Awake()
     {
@@ -33,18 +33,18 @@ public class EnemyManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        enemies = new List<Enemigo>();
+        enemies = new List<Enemy>();
         waveCounter = 0;
     }
 
-    public void AddEnemy(Enemigo enemy)
+    public void AddEnemy(Enemy enemy)
     {
         enemies.Add(enemy);
         //Debug.Log("Enemy added: " + enemy.name);
         //Debug.Log(enemies.Count);
     }
 
-    public void RemoveEnemy(Enemigo enemy)
+    public void RemoveEnemy(Enemy enemy)
     {
         enemies.Remove(enemy);
         Debug.Log("Enemy killed: " + enemy.name);
@@ -55,7 +55,7 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    public List<Enemigo> GetEnemiesList() => enemies;
+    public List<Enemy> GetEnemiesList() => enemies;
 
     public int GetEnemyCount() => enemies.Count;
     public void ClearEnemiesList() => enemies.Clear();
@@ -70,7 +70,7 @@ public class EnemyManager : MonoBehaviour
 
     IEnumerator StartWaveRoutine(float seconds, WaveSO wave)
     {
-        foreach (Enemigo enemy in wave.enemiesOfWave)
+        foreach (Enemy enemy in wave.enemiesOfWave)
         {
             enemy.endPoint = endPoint;
             Instantiate(enemy, spawnPoints[wave.spawnPoint].position, Quaternion.identity);

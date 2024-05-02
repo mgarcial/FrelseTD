@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemigo : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [SerializeField] private string enemyName;
     [SerializeField] private int circuits = 10;

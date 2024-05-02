@@ -6,6 +6,15 @@ using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
 
+public enum Events
+{
+    EngineerEvent,
+    StrikeEvent,
+    ClimateEvent,
+    TerroristEvent,
+    SurvivorsEvent
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -21,6 +30,7 @@ public class GameManager : MonoBehaviour
         }
 
         enemyManager = EnemyManager.instance;
+        eventManager = EventManager.instance;
     }
 
     [SerializeField] private int maxHealth;
@@ -32,13 +42,14 @@ public class GameManager : MonoBehaviour
     public CustomCursor CC;
     public Tile[] tiles;
 
-    private Building bAColocar;
+    private Tower bAColocar;
 
     private int goldRate = 0;
 
     private float _gameSpeed;
 
     private EnemyManager enemyManager;
+    private EventManager eventManager;
 
     public int Circuitos
     {
@@ -52,6 +63,12 @@ public class GameManager : MonoBehaviour
         health = maxHealth;
         Debug.Log($"base has {health} health points left");
         circuitos = initialMoney;
+
+        if(eventManager == null)
+        {
+            Debug.Log("hay un error");
+        }
+        eventManager.OnTimeChange += SetGameTime;
     }
 
     void Update(){
@@ -81,7 +98,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void BuyBuilding(Building b){
+    public void BuyBuilding(Tower b){
         if (circuitos >= b.cost){
             Debug.Log("boton oprimido");
             GameObject Edificio = b.gameObject;
@@ -94,9 +111,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void PruebaBoton()
+    public void SetGameTime(TimeStates timeState)
     {
-        Debug.Log(70);
+        switch (timeState)
+        {
+            case TimeStates.pause:
+                Time.timeScale = 0;
+                break;
+            case TimeStates.unpause:
+                Time.timeScale = 1;
+                break;
+        }
     }
 
     public void RestartLevel()
