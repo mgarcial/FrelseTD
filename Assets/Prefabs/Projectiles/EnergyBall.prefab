@@ -102,6 +102,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  stunsEnemy: 0
+  burnsEnemy: 1
+  burningDamage: 2
+  burningDuration: 3
 --- !u!50 &-6492145198815754290
 Rigidbody2D:
   serializedVersion: 4

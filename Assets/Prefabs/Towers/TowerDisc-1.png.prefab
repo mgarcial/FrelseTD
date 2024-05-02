@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 591463193198206240}
   - component: {fileID: 1478706242698199463}
   - component: {fileID: -2140425413915547641}
+  - component: {fileID: -5808178770679629315}
   m_Layer: 0
   m_Name: TowerDisc-1.png
   m_TagString: Untagged
@@ -162,6 +163,36 @@ MonoBehaviour:
   fireRate: 8
   projectilePrefab: {fileID: 7404013647744456085, guid: 776806cf13e438d40aac39a7db8f6116, type: 3}
   firePoint: {fileID: 895268268909682952}
+--- !u!114 &-5808178770679629315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5791259031675025756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000153af79901995034d53797bfa384d6c899ec98153db3830efb3b23c2
+  m_ShapePath:
+  - {x: -1.28, y: -1.2799999, z: 0}
+  - {x: -1.28, y: 1.2800001, z: 0}
+  - {x: 1.28, y: 1.2800001, z: 0}
+  - {x: 1.28, y: -1.2799999, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -3426
+  m_LocalBounds:
+    m_Center: {x: 0, y: 0.00000011920929, z: 0}
+    m_Extent: {x: 1.28, y: 1.28, z: 0}
 --- !u!1 &8858307710674971650
 GameObject:
   m_ObjectHideFlags: 0

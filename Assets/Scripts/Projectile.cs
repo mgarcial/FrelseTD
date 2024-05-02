@@ -6,6 +6,12 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
+    [SerializeField] private bool stunsEnemy = false;
+    [SerializeField] private bool burnsEnemy = false;
+
+    [SerializeField] private int burningDamage = 1; 
+    [SerializeField] private float burningDuration = 3f; 
+
 
     private Rigidbody2D _rb;
     private DamageDeal _damageDeal;
@@ -33,15 +39,12 @@ public class Projectile : MonoBehaviour
         {
             Vector2 direction = (_target.position - transform.position).normalized;
 
-            // Set velocity based on the calculated direction and speed
             _rb.velocity = direction * speed;
 
-            // Calculate rotation angle to point towards the target
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
             angle += 270f;
 
-            // Apply rotation to the arrow's transform (only rotate around Z-axis)
             transform.rotation = Quaternion.Euler(0, 0, angle);
 
             if (!_trailRenderer.enabled)
@@ -60,7 +63,29 @@ public class Projectile : MonoBehaviour
         {
             enemy.TakeDamage(_damageDeal.GetDamage());
             Debug.Log("i hit" + enemy);
+            if (stunsEnemy)
+            {
+                enemy.Stunned();
+            }
+
+            if (burnsEnemy)
+            {
+                // Apply burning effect to the enemy
+                StartCoroutine(ApplyBurningEffect(enemy));
+            }
+
             Destroy(gameObject);
+        }
+    }
+
+    IEnumerator ApplyBurningEffect(Enemigo enemy)
+    {
+        float timer = 0f;
+        while (timer < burningDuration)
+        {
+            enemy.TakeDamage(burningDamage);
+            yield return new WaitForSeconds(1f); 
+            timer += 1f;
         }
     }
 

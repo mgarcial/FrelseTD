@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4289828025745328897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.223, z: 0}
+  m_LocalPosition: {x: 0, y: 0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7453912915264422374}
   - component: {fileID: 4484260736619582993}
   - component: {fileID: -58377349924427469}
+  - component: {fileID: 8775746749189363398}
   m_Layer: 0
   m_Name: TowerEnergy-1.png
   m_TagString: Untagged
@@ -131,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e31cbee4391d043bab9fd8300285ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 10
   rate: 0
 --- !u!114 &-58377349924427469
 MonoBehaviour:
@@ -146,8 +147,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 556220400723098361, guid: e2dde34e258691a4fbe5cb81e086f1bd, type: 3}
   firePoint: {fileID: 5137183743818465346}
+--- !u!114 &8775746749189363398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5816538149300545605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000153af79901995034d53797bfa384d6c899ec98153db3830efb3b23c2
+  m_ShapePath:
+  - {x: -1.2799997, y: -1.2800002, z: 0}
+  - {x: -1.2799997, y: 1.28, z: 0}
+  - {x: 1.2800002, y: 1.28, z: 0}
+  - {x: 1.2800002, y: -1.2800002, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 40812
+  m_LocalBounds:
+    m_Center: {x: 0.00000023841858, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 1.28, y: 1.2800001, z: 0}
 --- !u!1 &6827878880301252027
 GameObject:
   m_ObjectHideFlags: 0

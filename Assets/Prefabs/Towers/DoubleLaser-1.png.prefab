@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: -3963698520420795442}
   - component: {fileID: -3174040885127049673}
   - component: {fileID: 8146769846704744974}
+  - component: {fileID: 1767872687728371982}
   m_Layer: 0
   m_Name: DoubleLaser-1.png
   m_TagString: Untagged
@@ -241,3 +242,33 @@ MonoBehaviour:
   fireRate: 2
   projectilePrefab: {fileID: 2721564580865956137, guid: 14978f821f009d54898c622e64badcfe, type: 3}
   firePoint: {fileID: 4207432254327260676}
+--- !u!114 &1767872687728371982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8481464202893230230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000153af79901995034d53797bfa384d6c899ec98153db3830efb3b23c2
+  m_ShapePath:
+  - {x: -1.28, y: -1.28, z: 0}
+  - {x: -1.28, y: 1.28, z: 0}
+  - {x: 1.2800001, y: 1.28, z: 0}
+  - {x: 1.2800001, y: -1.28, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -3438
+  m_LocalBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 1.28, y: 1.28, z: 0}

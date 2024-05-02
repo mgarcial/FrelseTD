@@ -10,6 +10,7 @@ public class Enemigo : MonoBehaviour
     [SerializeField] private int circuits = 10;
     [SerializeField] private float maxHitPoints = 10;
     [SerializeField] private float speed;
+    [SerializeField] private float stunDuration = 1.0f;
 
     private float hitPoints;
     private Transform pos;
@@ -84,6 +85,19 @@ public class Enemigo : MonoBehaviour
         {
             Die();
         }
+    }
+
+    internal void Stunned()
+    {
+        navMeshAgent.speed = 0;
+        StartCoroutine(RevertSpeedAfterStun());
+    }
+
+    IEnumerator RevertSpeedAfterStun()
+    {
+        yield return new WaitForSeconds(stunDuration);
+
+        navMeshAgent.speed = speed;
     }
 
     public void Die()
