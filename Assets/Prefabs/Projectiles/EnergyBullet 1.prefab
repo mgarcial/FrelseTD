@@ -101,8 +101,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f116b4afdf2d1649b6f41871197e805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   stunsEnemy: 1
+  burnsEnemy: 0
+  burningDamage: 2
+  burningDuration: 3
 --- !u!50 &-8156063497637522467
 Rigidbody2D:
   serializedVersion: 4

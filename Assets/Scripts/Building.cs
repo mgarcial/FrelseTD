@@ -28,7 +28,7 @@ public class Building : MonoBehaviour
         Debug.Log("paso scan");
 
     }
-
+ 
     private void Update()
     {
         if(_scanner.TargetFound())

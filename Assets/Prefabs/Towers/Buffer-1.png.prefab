@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2428344338732191775}
   - component: {fileID: 4640814105348599094}
-  - component: {fileID: 4458052829966750684}
+  - component: {fileID: -8003152900717297488}
   - component: {fileID: 2090651202551080562}
   - component: {fileID: 3773247335756365573}
   m_Layer: 0
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4458052829966750684
+--- !u!114 &-8003152900717297488
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,11 +96,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 699711978889966609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1e31cbee4391d043bab9fd8300285ed, type: 3}
+  m_Script: {fileID: 11500000, guid: f467a64a0d4f0b8428800ac2f208811c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 6
+  cost: 0
   rate: 0
+  buffRadius: 5
+  fireRateMultiplier: 2
 --- !u!114 &2090651202551080562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b106baae653bf44a13187cd3ab5be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 2
+  baseFireRate: 2
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
 --- !u!114 &3773247335756365573

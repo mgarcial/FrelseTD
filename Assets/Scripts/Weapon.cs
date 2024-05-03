@@ -2,11 +2,18 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private float fireRate = 2f;
+    [SerializeField] private float baseFireRate = 2f;
+    private float fireRate;
+
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
 
     private float _fireRateCooldown;
+
+    void Start()
+    {
+        fireRate = baseFireRate; 
+    }
 
     void Update()
     {
@@ -28,5 +35,10 @@ public class Weapon : MonoBehaviour
                 projectile.SetTarget(target);
             }
         }
+    }
+
+    public void BuffFireRate(float multiplier)
+    {
+        fireRate *= multiplier; 
     }
 }
