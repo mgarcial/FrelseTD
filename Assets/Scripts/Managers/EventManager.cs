@@ -41,6 +41,7 @@ public class EventManager : MonoBehaviour
     public void EventStart()
     {
         GameManager.instance.eventPanel.SetActive(true);
+        Debug.Log(OnEventStart == null);
         OnEventStart?.Invoke();
     }
 }

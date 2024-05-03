@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739b0de115fb42741821e2d2ddd4e379, type: 3}
   m_Name: Event 1
   m_EditorClassIdentifier: 
-  eventName: 
-  description: 
-  option1Text: 
-  option2Text: 
+  eventName: Evento 1
+  description: "Esta es una prueba de evento. Sali\xF3 el evento 1"
+  option1Text: Aceptar 1
+  option2Text: Denegar 1
   eventType: 0

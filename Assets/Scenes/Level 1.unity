@@ -329,13 +329,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1817525261}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1817525265}
+        m_TargetAssemblyTypeName: EventPanel, Assembly-CSharp
+        m_MethodName: Decline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1765,13 +1765,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1817525261}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1817525265}
+        m_TargetAssemblyTypeName: EventPanel, Assembly-CSharp
+        m_MethodName: Accept
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -19465,6 +19465,7 @@ GameObject:
   - component: {fileID: 1817525262}
   - component: {fileID: 1817525264}
   - component: {fileID: 1817525263}
+  - component: {fileID: 1817525265}
   m_Layer: 5
   m_Name: EventPanel
   m_TagString: Untagged
@@ -19534,6 +19535,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817525261}
   m_CullTransparentMesh: 1
+--- !u!114 &1817525265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817525261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a47e32127d5424f9e8980f8538ddcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - {fileID: 11400000, guid: f45b9b1a42322274897844e610af184b, type: 2}
+  - {fileID: 11400000, guid: 8509ff6926e76ab4f9a78c5900a31e60, type: 2}
+  - {fileID: 11400000, guid: 5dfdc9fa8c342dd4b922f53f06b08a9c, type: 2}
+  - {fileID: 11400000, guid: e45bd3b0e8d45184ba97be445aef613f, type: 2}
+  - {fileID: 11400000, guid: 9d7353051607c7f41a9b5e5efd73b5bd, type: 2}
+  title: {fileID: 409280648}
+  description: {fileID: 854017345}
+  acceptButtonText: {fileID: 622472142}
+  declineButtonText: {fileID: 2008748544}
 --- !u!1 &1837060614
 GameObject:
   m_ObjectHideFlags: 0
