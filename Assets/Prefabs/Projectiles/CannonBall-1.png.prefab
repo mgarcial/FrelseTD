@@ -102,6 +102,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  stunsEnemy: 0
+  burnsEnemy: 0
+  burningDamage: 1
+  burningDuration: 3
 --- !u!50 &-2170850858106615303
 Rigidbody2D:
   serializedVersion: 4
@@ -151,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e64fc4c257c7f764f99c1538faffefdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 9
 --- !u!96 &-8186333458646017035
 TrailRenderer:
   serializedVersion: 2

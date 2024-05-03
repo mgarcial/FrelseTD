@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circuits: 80
-  maxHitPoints: 10
+  maxHitPoints: 30
   speed: 5
   stunDuration: 1
   endPoint: {fileID: 0}
