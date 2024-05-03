@@ -20,10 +20,9 @@ public class EventPanel : MonoBehaviour
 
     private void StartEvent()
     {
-        Debug.Log("Empezó el evento");
         int rnd = Random.Range(0, events.Count);
         currentEvent = events[rnd];
-        //events.RemoveAt(rnd);
+        events.RemoveAt(rnd);
 
         title.text = currentEvent.eventName;
         description.text = currentEvent.description;
@@ -33,11 +32,40 @@ public class EventPanel : MonoBehaviour
 
     public void Accept()
     {
+        switch (currentEvent.eventType)
+        {
+            case Events.ClimateEvent:
+                break;
+            case Events.EngineerEvent:
+                break;
+            case Events.StrikeEvent:
+                break;
+            case Events.SurvivorsEvent:
+                break;
+            case Events.TerroristEvent:
+                break;
+        }
 
+        EventManager.instance.TimeChange(TimeStates.unpause);
+        this.gameObject.SetActive(false);
     }
 
     public void Decline()
     {
-
+        switch (currentEvent.eventType)
+        {
+            case Events.ClimateEvent:
+                break;
+            case Events.EngineerEvent:
+                break;
+            case Events.StrikeEvent:
+                break;
+            case Events.SurvivorsEvent:
+                break;
+            case Events.TerroristEvent:
+                break;
+        }
+        EventManager.instance.TimeChange(TimeStates.unpause);
+        this.gameObject.SetActive(false);
     }
 }
