@@ -20287,7 +20287,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a47e32127d5424f9e8980f8538ddcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  events: []
+  events:
+  - {fileID: 11400000, guid: 0cf450c880b7f074e9396b0fb4dd454c, type: 2}
+  - {fileID: 11400000, guid: 47c96153b84aab646800aab308e49ba8, type: 2}
+  - {fileID: 11400000, guid: 1816d8cd51dc9704e91d245cac97f9b3, type: 2}
+  - {fileID: 11400000, guid: 9f866e279c59cc94aadca3e83d4b4b7a, type: 2}
   title: {fileID: 738364773}
   description: {fileID: 54257452}
   acceptButtonText: {fileID: 1567793140}
