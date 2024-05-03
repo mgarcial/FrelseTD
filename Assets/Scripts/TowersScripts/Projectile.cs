@@ -58,7 +58,7 @@ public class Projectile : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        Enemigo enemy = collision.gameObject.GetComponent<Enemigo>();
+        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
         if (enemy != null)
         {
             enemy.TakeDamage(_damageDeal.GetDamage());
@@ -78,7 +78,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    IEnumerator ApplyBurningEffect(Enemigo enemy)
+    IEnumerator ApplyBurningEffect(Enemy enemy)
     {
         float timer = 0f;
         while (timer < burningDuration)

@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemigo : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    [SerializeField] private string enemyName;
     [SerializeField] private int circuits = 10;
     [SerializeField] private float maxHitPoints = 10;
     [SerializeField] private float speed;
@@ -21,11 +20,6 @@ public class Enemigo : MonoBehaviour
 
     public Transform endPoint;
     public HealthbarBehavior healthBar;
-
-    public string Name
-    {
-        get { return enemyName; }
-    }
 
     public float HitPoints
     {

@@ -6,12 +6,21 @@ using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
 
+public enum Events
+{
+    EngineerEvent,
+    StrikeEvent,
+    ClimateEvent,
+    TerroristEvent,
+    SurvivorsEvent
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -21,6 +30,7 @@ public class GameManager : MonoBehaviour
         }
 
         enemyManager = EnemyManager.instance;
+        eventManager = EventManager.instance;
     }
 
     [SerializeField] private int maxHealth;
@@ -31,6 +41,7 @@ public class GameManager : MonoBehaviour
     public GameObject grid;
     public CustomCursor CC;
     public Tile[] tiles;
+    public GameObject eventPanel;
 
     private Building bAColocar;
 
@@ -39,6 +50,7 @@ public class GameManager : MonoBehaviour
     private float _gameSpeed;
 
     private EnemyManager enemyManager;
+    private EventManager eventManager;
 
     public int Circuitos
     {
@@ -52,18 +64,24 @@ public class GameManager : MonoBehaviour
         health = maxHealth;
         Debug.Log($"base has {health} health points left");
         circuitos = initialMoney;
+
+        eventManager.OnTimeChange += SetGameTime;
     }
 
-    void Update(){
+    void Update()
+    {
         circuitosDisplay.text = "Recursos: " + circuitos.ToString();
 
-        if(Input.GetMouseButtonDown(0) && bAColocar != null){
+        if (Input.GetMouseButtonDown(0) && bAColocar != null)
+        {
             Tile nearestTile = null;
             float shortestDistance = 100;
-            foreach(Tile tile in tiles){
+            foreach (Tile tile in tiles)
+            {
                 float dist = Vector2.Distance(tile.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
-                if(dist < shortestDistance){
+                if (dist < shortestDistance)
+                {
                     shortestDistance = dist;
                     nearestTile = tile;
                 }
@@ -120,9 +138,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void PruebaBoton()
+    public void SetGameTime(TimeStates timeState)
     {
-        Debug.Log(70);
+        switch (timeState)
+        {
+            case TimeStates.pause:
+                Time.timeScale = 0;
+                break;
+            case TimeStates.unpause:
+                Time.timeScale = 1;
+                break;
+        }
     }
 
     public void RestartLevel()
@@ -169,7 +195,7 @@ public class GameManager : MonoBehaviour
     {
         health -= dmg;
         Debug.Log($"the base has taken {dmg} damage, and has {health} hit points left");
-        if(health <= 0)
+        if (health <= 0)
         {
             health = 0;
             LooseLevel();
@@ -183,9 +209,4 @@ public class GameManager : MonoBehaviour
     }
 
     public int GetCurrentMoney() => circuitos;
-
-    private void WaveFinished()
-    {
-        
-    }
 }

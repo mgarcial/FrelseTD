@@ -23,9 +23,9 @@ public class Scanner : MonoBehaviour
     {
         Transform enemyTargeted = null;
 
-        List<Enemigo> enemies = _enemyManager.GetEnemiesList();
+        List<Enemy> enemies = _enemyManager.GetEnemiesList();
     
-        foreach(Enemigo enemy in enemies)
+        foreach(Enemy enemy in enemies)
         {
             float currentDistance = Vector2.Distance(transform.position, enemy.transform.position);
 

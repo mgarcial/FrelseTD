@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventSO : MonoBehaviour
+[CreateAssetMenu(menuName = "Event")]
+public class EventSO : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string eventName;
+    public string description;
+    public string option1Text;
+    public string option2Text;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Events eventType;
 }

@@ -330,13 +330,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7386888087781532728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a70791a3bf75f4789f8dc1be1072de, type: 3}
+  m_Script: {fileID: 11500000, guid: 943e4338bcfa08543839a62de8735f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: ProTank
   circuits: 10
   maxHitPoints: 10
-  speed: 5.67
+  speed: 0
+  stunDuration: 1
   endPoint: {fileID: 0}
   healthBar: {fileID: 9002536596657821899}
 --- !u!195 &3823931511526194570
