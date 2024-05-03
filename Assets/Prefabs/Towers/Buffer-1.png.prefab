@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2428344338732191775}
   - component: {fileID: 4640814105348599094}
-  - component: {fileID: -8003152900717297488}
   - component: {fileID: 2090651202551080562}
   - component: {fileID: 3773247335756365573}
+  - component: {fileID: 6920637428221803113}
   m_Layer: 0
   m_Name: Buffer-1.png
   m_TagString: Untagged
@@ -87,22 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8003152900717297488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 699711978889966609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f467a64a0d4f0b8428800ac2f208811c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 0
-  rate: 0
-  buffRadius: 5
-  fireRateMultiplier: 2
 --- !u!114 &2090651202551080562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
   m_ComponentVersion: 1
-  m_HasRenderer: 0
+  m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 0
@@ -144,7 +128,23 @@ MonoBehaviour:
   - {x: 1.2799997, y: -1.2800002, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -3430
+  m_InstanceId: 37892
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 1.2799997, y: 1.2800002, z: 0}
+--- !u!114 &6920637428221803113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699711978889966609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f467a64a0d4f0b8428800ac2f208811c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 0
+  rate: 0
+  buffRadius: 10
+  fireRateMultiplier: 2

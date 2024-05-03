@@ -81,16 +81,42 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void BuyBuilding(Building b){
-        if (circuitos >= b.cost){
-            Debug.Log("boton oprimido");
-            GameObject Edificio = b.gameObject;
-            CC.gameObject.SetActive(true);
-            CC.setCursor(Edificio.GetComponent<SpriteRenderer>());
-            Cursor.visible = false;
-            circuitos -= b.cost;
-            grid.SetActive(true);
-            bAColocar = b;
+    public void BuyBuilding(MonoBehaviour building)
+    {
+        // Check if the object passed is a Building or BuffTower
+        if (building is Building)
+        {
+            Building b = (Building)building; // Cast the MonoBehaviour to Building
+            if (circuitos >= b.cost)
+            {
+                Debug.Log("Button pressed");
+                GameObject Edificio = b.gameObject;
+                CC.gameObject.SetActive(true);
+                CC.setCursor(Edificio.GetComponent<SpriteRenderer>());
+                Cursor.visible = false;
+                circuitos -= b.cost;
+                grid.SetActive(true);
+                bAColocar = b;
+            }
+        }
+        else if (building is BuffTower)
+        {
+            BuffTower buffTower = (BuffTower)building; // Cast the MonoBehaviour to BuffTower
+            if (circuitos >= buffTower.cost)
+            {
+                Debug.Log("Button pressed for BuffTower");
+                GameObject Edificio = buffTower.gameObject;
+                CC.gameObject.SetActive(true);
+                CC.setCursor(Edificio.GetComponent<SpriteRenderer>());
+                Cursor.visible = false;
+                circuitos -= buffTower.cost;
+                grid.SetActive(true);
+                bAColocar = buffTower;
+            }
+        }
+        else
+        {
+            Debug.LogError("Invalid building type: " + building.GetType().ToString());
         }
     }
 
