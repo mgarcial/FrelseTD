@@ -3,7 +3,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private float baseFireRate = 2f;
-    private float fireRate;
+    [SerializeField] private float fireRate;
 
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
@@ -12,7 +12,8 @@ public class Weapon : MonoBehaviour
 
     void Start()
     {
-        fireRate = baseFireRate; 
+        fireRate = baseFireRate;
+        Debug.Log($"this is my fire rate{fireRate}");
     }
 
     void Update()
@@ -39,6 +40,7 @@ public class Weapon : MonoBehaviour
 
     public void BuffFireRate(float multiplier)
     {
-        fireRate *= multiplier; 
+        fireRate *= multiplier;
+        Debug.Log($"Im gettin this {fireRate} now");
     }
 }

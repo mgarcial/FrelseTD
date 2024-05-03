@@ -6,36 +6,46 @@ public class BuffTower : Building
     [SerializeField] private float buffRadius = 10f;
     [SerializeField] private float fireRateMultiplier = 2f;
 
-    protected void Update()
+    private Dictionary<Weapon, bool> weaponsBuffed = new Dictionary<Weapon, bool>();
+
+    private void Update()
     {
+        List<Weapon> nearbyWeapons = FindNearbyWeapons();
 
-        List<Building> nearbyTowers = FindNearbyTowers();
-
-        foreach (Building tower in nearbyTowers)
+        foreach (Weapon weapon in nearbyWeapons)
         {
-            Weapon weapon = tower.GetComponentInChildren<Weapon>();
-            if (weapon != null)
+            if (!weaponsBuffed.ContainsKey(weapon) || !weaponsBuffed[weapon])
             {
                 weapon.BuffFireRate(fireRateMultiplier);
-                Debug.Log($"Im buffing {tower}");
+                weaponsBuffed[weapon] = true;
             }
         }
     }
 
-    private List<Building> FindNearbyTowers()
+    private List<Weapon> FindNearbyWeapons()
     {
-        List<Building> nearbyTowers = new List<Building>();
+        List<Weapon> nearbyWeapons = new List<Weapon>();
 
-        Building[] allTowers = FindObjectsOfType<Building>();
+        Weapon[] allWeapons = FindObjectsOfType<Weapon>();
 
-        foreach (Building tower in allTowers)
+        foreach (Weapon weapon in allWeapons)
         {
-            if (Vector3.Distance(transform.position, tower.transform.position) <= buffRadius)
+            if (Vector3.Distance(transform.position, weapon.transform.position) <= buffRadius)
             {
-                nearbyTowers.Add(tower);
+                nearbyWeapons.Add(weapon);
+            }
+            else
+            {
+                weaponsBuffed.Remove(weapon);
             }
         }
 
-        return nearbyTowers;
+        return nearbyWeapons;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, buffRadius);
     }
 }
