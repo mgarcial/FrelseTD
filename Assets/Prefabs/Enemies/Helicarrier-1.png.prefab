@@ -499,10 +499,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 943e4338bcfa08543839a62de8735f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: Helicarrier
-  circuits: 10
+  circuits: 80
   maxHitPoints: 10
-  speed: 0
+  speed: 5
   stunDuration: 1
   endPoint: {fileID: 0}
   healthBar: {fileID: 6688408904022885955}

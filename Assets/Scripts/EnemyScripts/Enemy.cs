@@ -58,6 +58,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         navMeshAgent.SetDestination(endPoint.position);
+        Debug.Log("gola");
 
         Vector2 distance = new(pos.position.x - endPoint.position.x, pos.position.y - endPoint.position.y);
 

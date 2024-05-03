@@ -28,9 +28,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        enemyManager = EnemyManager.instance;
-        eventManager = EventManager.instance;
     }
 
     [SerializeField] private int maxHealth;
@@ -49,9 +46,6 @@ public class GameManager : MonoBehaviour
 
     private float _gameSpeed;
 
-    private EnemyManager enemyManager;
-    private EventManager eventManager;
-
     public int Circuitos
     {
         get { return goldRate; }
@@ -65,7 +59,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"base has {health} health points left");
         circuitos = initialMoney;
 
-        eventManager.OnTimeChange += SetGameTime;
+        EventManager.instance.OnTimeChange += SetGameTime;
     }
 
     void Update()
@@ -163,7 +157,7 @@ public class GameManager : MonoBehaviour
     {
         health = maxHealth;
         circuitos = initialMoney;
-        enemyManager.ClearEnemiesList();
+        EnemyManager.instance.ClearEnemiesList();
         _gameSpeed = 1f;
         SetGameSpeed(_gameSpeed);
         Debug.Log("LevelCleaned");
