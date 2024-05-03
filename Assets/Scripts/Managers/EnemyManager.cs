@@ -40,8 +40,6 @@ public class EnemyManager : MonoBehaviour
     public void AddEnemy(Enemy enemy)
     {
         enemies.Add(enemy);
-        //Debug.Log("Enemy added: " + enemy.name);
-        //Debug.Log(enemies.Count);
     }
 
     public void RemoveEnemy(Enemy enemy)
@@ -63,8 +61,13 @@ public class EnemyManager : MonoBehaviour
     //Para probar
     public void StartWave()
     {
-        WaveSO nextWave = waves[waveCounter];
+        if(waveCounter == 2 || waveCounter == 6 || waveCounter == 11)
+        {
+            EventManager.instance.EventStart();
+            EventManager.instance.TimeChange(TimeStates.pause);
+        }
 
+        WaveSO nextWave = waves[waveCounter];
         StartCoroutine(StartWaveRoutine(1.0f, nextWave));
     }
 

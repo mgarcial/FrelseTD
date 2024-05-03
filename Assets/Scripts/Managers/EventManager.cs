@@ -37,5 +37,10 @@ public class EventManager : MonoBehaviour
         OnWaveEvent?.Invoke();
     }
 
-
+    public event Action OnEventStart;
+    public void EventStart()
+    {
+        GameManager.instance.eventPanel.SetActive(true);
+        OnEventStart?.Invoke();
+    }
 }

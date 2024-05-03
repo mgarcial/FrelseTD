@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     public GameObject grid;
     public CustomCursor CC;
     public Tile[] tiles;
+    public GameObject eventPanel;
 
     private Tower bAColocar;
 
@@ -50,6 +51,8 @@ public class GameManager : MonoBehaviour
 
     private EnemyManager enemyManager;
     private EventManager eventManager;
+
+    
 
     public int Circuitos
     {
