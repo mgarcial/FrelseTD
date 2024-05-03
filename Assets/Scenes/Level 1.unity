@@ -582,7 +582,7 @@ MonoBehaviour:
         m_MethodName: BuyBuilding
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4458052829966750684, guid: 3b32605643dc36144824bacac2f8437d, type: 3}
+          m_ObjectArgument: {fileID: 6920637428221803113, guid: 3b32605643dc36144824bacac2f8437d, type: 3}
           m_ObjectArgumentAssemblyTypeName: Building, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
