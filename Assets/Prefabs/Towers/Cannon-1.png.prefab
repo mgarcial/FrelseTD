@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e31cbee4391d043bab9fd8300285ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 8
+  cost: 120
   rate: 0
 --- !u!114 &-4878127149841368814
 MonoBehaviour:
@@ -191,8 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b106baae653bf44a13187cd3ab5be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseFireRate: 1.8
-  fireRate: 1.8
+  baseFireRate: 1.4
+  fireRate: 1.4
   projectilePrefab: {fileID: 5507655980466135698, guid: d8ad5bc82d5da9f4e986cdab86e0aedc, type: 3}
   firePoint: {fileID: 8681905215710610459}
 --- !u!114 &8824943443172874396

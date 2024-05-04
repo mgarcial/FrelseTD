@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f467a64a0d4f0b8428800ac2f208811c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 220
   rate: 0
   buffRadius: 6.78
   fireRateMultiplier: 2

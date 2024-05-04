@@ -500,9 +500,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circuits: 80
-  maxHitPoints: 30
-  speed: 5
+  maxHitPoints: 40
+  speed: 3
   stunDuration: 1
+  burnDamagePerSecond: 2
+  burnDuration: 3
   endPoint: {fileID: 0}
   healthBar: {fileID: 6688408904022885955}
 --- !u!195 &-937956837121067325

@@ -2420,6 +2420,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d413c7e1995706140b750970a10f46f9, type: 2}
   - {fileID: 11400000, guid: ea8d8776bbefa15419c0b9480bfc0637, type: 2}
   - {fileID: 11400000, guid: 61287046846127f4cb3fa75ac8bf37f6, type: 2}
+  - {fileID: 11400000, guid: 87168f71a0ea438479ceba6e0328e6cd, type: 2}
+  - {fileID: 11400000, guid: 44ddf3971f48bda48815435745ea5aaa, type: 2}
+  - {fileID: 11400000, guid: 3be95c9aeb15e1a4abd94f32b4a3b93b, type: 2}
+  - {fileID: 11400000, guid: 3f215e062e4d26e4fadfd6a15dbfe0b0, type: 2}
+  - {fileID: 11400000, guid: f32e216891bd3df49aae74d5ae9378ea, type: 2}
+  - {fileID: 11400000, guid: 46ca72c6348cc824f94d5c7ea19bff1e, type: 2}
   spawnPoints:
   - {fileID: 1923557655}
   - {fileID: 355349939}
@@ -20413,7 +20419,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -122.33099, y: -3.7801514}
+  m_AnchoredPosition: {x: -122.33101, y: -3.7801514}
   m_SizeDelta: {x: -1592.4, y: -47.559998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1984236137
