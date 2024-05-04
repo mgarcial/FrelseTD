@@ -70,22 +70,10 @@ public class Projectile : MonoBehaviour
 
             if (burnsEnemy)
             {
-                // Apply burning effect to the enemy
-                StartCoroutine(ApplyBurningEffect(enemy));
+                enemy.StartBurning();
             }
 
             Destroy(gameObject);
-        }
-    }
-
-    IEnumerator ApplyBurningEffect(Enemy enemy)
-    {
-        float timer = 0f;
-        while (timer < burningDuration)
-        {
-            enemy.TakeDamage(burningDamage);
-            yield return new WaitForSeconds(1f); 
-            timer += 1f;
         }
     }
 

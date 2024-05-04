@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float maxHitPoints = 10;
     [SerializeField] private float speed;
     [SerializeField] private float stunDuration = 1.0f;
+    [SerializeField] private float burnDamagePerSecond = 2.0f;
+    [SerializeField] private float burnDuration = 3.0f;
 
     private float hitPoints;
     private Transform pos;
@@ -17,6 +19,8 @@ public class Enemy : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private GameManager gameManager;
     private DamageDeal damageDeal;
+    private bool isBurning = false;
+    private float burnTimer = 0f;
 
     public Transform endPoint;
     public HealthbarBehavior healthBar;
@@ -57,6 +61,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isBurning)
+        {
+            TakeBurnDamage();
+        }
         navMeshAgent.SetDestination(endPoint.position);
 
         Vector2 distance = new(pos.position.x - endPoint.position.x, pos.position.y - endPoint.position.y);
@@ -94,6 +102,32 @@ public class Enemy : MonoBehaviour
         navMeshAgent.speed = speed;
     }
 
+    public void StartBurning()
+    {
+        if (!isBurning)
+        {
+            isBurning = true;
+            StartCoroutine(BurnTimer());
+        }
+    }
+
+    private void TakeBurnDamage()
+    {
+        float damageThisFrame = burnDamagePerSecond * Time.deltaTime;
+        hitPoints -= damageThisFrame;
+        healthBar.SetHealth(hitPoints, maxHitPoints);
+        Debug.Log("I'm burning! Took " + damageThisFrame + " damage. Hit points left: " + hitPoints);
+
+        if (hitPoints <= 0)
+        {
+            Die();
+        }
+    }
+    private IEnumerator BurnTimer()
+    {
+        yield return new WaitForSeconds(burnDuration);
+        isBurning = false;
+    }
     public void Die()
     {
         _enemyManager.RemoveEnemy(this);
