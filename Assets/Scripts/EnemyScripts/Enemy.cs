@@ -20,7 +20,6 @@ public class Enemy : MonoBehaviour
     private GameManager gameManager;
     private DamageDeal damageDeal;
     private bool isBurning = false;
-    private float burnTimer = 0f;
 
     public Transform endPoint;
     public HealthbarBehavior healthBar;
@@ -116,7 +115,6 @@ public class Enemy : MonoBehaviour
         float damageThisFrame = burnDamagePerSecond * Time.deltaTime;
         hitPoints -= damageThisFrame;
         healthBar.SetHealth(hitPoints, maxHitPoints);
-        Debug.Log("I'm burning! Took " + damageThisFrame + " damage. Hit points left: " + hitPoints);
 
         if (hitPoints <= 0)
         {

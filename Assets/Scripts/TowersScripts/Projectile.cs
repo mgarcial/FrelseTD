@@ -9,10 +9,6 @@ public class Projectile : MonoBehaviour
     [SerializeField] private bool stunsEnemy = false;
     [SerializeField] private bool burnsEnemy = false;
 
-    [SerializeField] private int burningDamage = 1; 
-    [SerializeField] private float burningDuration = 3f; 
-
-
     private Rigidbody2D _rb;
     private DamageDeal _damageDeal;
     private Transform _target;

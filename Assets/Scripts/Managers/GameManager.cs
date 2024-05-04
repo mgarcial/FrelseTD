@@ -28,12 +28,15 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        _enemyManager = EnemyManager.instance;
     }
 
     [SerializeField] private int maxHealth;
     [SerializeField] private int initialMoney;
     private int health;
     public int circuitos;
+
     public TMP_Text circuitosDisplay;
     public GameObject grid;
     public CustomCursor CC;
@@ -41,7 +44,7 @@ public class GameManager : MonoBehaviour
     public GameObject eventPanel;
 
     private Building bAColocar;
-
+    private EnemyManager _enemyManager;
     private int goldRate = 0;
 
     private float _gameSpeed;
@@ -50,6 +53,16 @@ public class GameManager : MonoBehaviour
     {
         get { return goldRate; }
         set { goldRate += value; }
+    }
+
+    private void OnEnable()
+    {
+        _enemyManager.OnEnemyKilledEvent += AddToMoney;
+    }
+
+    private void OnDisable()
+    {
+        _enemyManager.OnEnemyKilledEvent -= AddToMoney;
     }
 
     private void Start()
