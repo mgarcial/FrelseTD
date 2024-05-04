@@ -181,6 +181,20 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Destroy(gameObject);
     }
+
+    public void WinLevel()
+    {
+        _gameSpeed = 0;
+        SetGameSpeed(_gameSpeed);
+        UnlockNextLevel();
+    }
+
+    private void UnlockNextLevel()
+    {
+        int currentLvl = Preferences.GetCurrentLvl();
+        Preferences.SetMaxLvl(currentLvl + 1);
+    }
+
     public void ExitToMainMenu()
     {
         CleanLevel();
