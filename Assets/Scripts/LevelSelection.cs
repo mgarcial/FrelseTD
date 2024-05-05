@@ -26,6 +26,7 @@ public class LevelSelection : MonoBehaviour
     }
     public void LoadLevel(int levelNum)
     {
+        Preferences.SetCurrentLvl(levelNum);
         SceneManager.LoadScene("Level " + levelNum);
     }
 
