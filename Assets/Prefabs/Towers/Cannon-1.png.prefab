@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afae8f27204be54f80fa9cafa3a1eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeScan: 10
+  rangeScan: 6
 --- !u!1 &5074736074392050766
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
   m_ComponentVersion: 1
-  m_HasRenderer: 0
+  m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 0
@@ -221,7 +221,7 @@ MonoBehaviour:
   - {x: 1.2800001, y: -1.2800002, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -3446
+  m_InstanceId: 36982
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 1.28, y: 1.2800001, z: 0}
