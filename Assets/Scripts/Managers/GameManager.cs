@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        _enemyManager = EnemyManager.instance;
     }
 
     [SerializeField] private int maxHealth;
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour
     public GameObject eventPanel;
 
     private Building bAColocar;
+    private EnemyManager _enemyManager;
 
     private int goldRate = 0;
 
@@ -50,6 +53,15 @@ public class GameManager : MonoBehaviour
     {
         get { return goldRate; }
         set { goldRate += value; }
+    }
+    private void OnEnable()
+    {
+        _enemyManager.OnEnemyKilledEvent += AddToMoney;
+    }
+
+    private void OnDisable()
+    {
+        _enemyManager.OnEnemyKilledEvent -= AddToMoney;
     }
 
     private void Start()
@@ -181,6 +193,19 @@ public class GameManager : MonoBehaviour
         CleanLevel();
         FindObjectOfType<LevelManager>().LoadMainMenuScene();
         Destroy(gameObject);
+    }
+
+    public void WinLevel()
+    {
+        _gameSpeed = 0;
+        SetGameSpeed(_gameSpeed);
+        UnlockNextLevel();
+    }
+
+    private void UnlockNextLevel()
+    {
+        int currentLvl = Preferences.GetCurrentLvl();
+        Preferences.SetMaxLvl(currentLvl + 1);
     }
     public void SetGameSpeed(float speed)
     {
