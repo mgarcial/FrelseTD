@@ -40,16 +40,13 @@ public class EnemyManager : MonoBehaviour
     public void AddEnemy(Enemy enemy)
     {
         enemies.Add(enemy);
-        //Debug.Log("Enemy added: " + enemy.name);
-        //Debug.Log(enemies.Count);
     }
 
     public void RemoveEnemy(Enemy enemy)
     {
         enemies.Remove(enemy);
-        Debug.Log("Enemy killed: " + enemy.name);
         OnEnemyKilledEvent?.Invoke(enemy.GetCircuits());
-        if (enemies.Count == 0)
+        if (waveCounter == waves.Count + 1 && enemies.Count == 0)
         {
             OnAllEnemiesDeadEvent?.Invoke();
         }
@@ -63,7 +60,7 @@ public class EnemyManager : MonoBehaviour
     //Para probar
     public void StartWave()
     {
-        if (waveCounter == 2 || waveCounter == 6 || waveCounter == 11)
+        if (waveCounter == 2 || waveCounter == 5 || waveCounter == 8)
         {
             EventManager.instance.EventStart();
             EventManager.instance.TimeChange(TimeStates.pause);
