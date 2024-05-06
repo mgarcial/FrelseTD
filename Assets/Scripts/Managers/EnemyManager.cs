@@ -46,7 +46,7 @@ public class EnemyManager : MonoBehaviour
     {
         enemies.Remove(enemy);
         OnEnemyKilledEvent?.Invoke(enemy.GetCircuits());
-        if (waveCounter == waves.Count + 1 && enemies.Count == 0)
+        if (waveCounter == waves.Count && enemies.Count == 0)
         {
             OnAllEnemiesDeadEvent?.Invoke();
         }

@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     public CustomCursor CC;
     public Tile[] tiles;
     public GameObject eventPanel;
+    public GameObject WinPanel;
 
     private Building bAColocar;
     private EnemyManager _enemyManager;
@@ -57,11 +58,13 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         _enemyManager.OnEnemyKilledEvent += AddToMoney;
+        _enemyManager.OnAllEnemiesDeadEvent += WinLevel;
     }
 
     private void OnDisable()
     {
         _enemyManager.OnEnemyKilledEvent -= AddToMoney;
+        _enemyManager.OnAllEnemiesDeadEvent -= WinLevel;
     }
 
     private void Start()
@@ -200,6 +203,7 @@ public class GameManager : MonoBehaviour
         _gameSpeed = 0;
         SetGameSpeed(_gameSpeed);
         UnlockNextLevel();
+        WinPanel.SetActive(true);
     }
 
     private void UnlockNextLevel()
