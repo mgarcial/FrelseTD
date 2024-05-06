@@ -5,6 +5,7 @@ public class LevelManager : MonoBehaviour
 {
     public void LoadGameScene(int lvl)
     {
+        Preferences.SetCurrentLvl(lvl);
         SceneManager.LoadScene("Level " + lvl);
     }
 
