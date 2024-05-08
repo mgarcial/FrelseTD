@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8162371430294974257}
   - component: {fileID: 1643243442680241953}
   - component: {fileID: 3854450880046943710}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Health Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1677177968205539954}
   - component: {fileID: 294455327269201652}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 3348569659428584672}
   - component: {fileID: 4541566646852891210}
   - component: {fileID: 9182172033735229665}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2573327614863507659}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,6 +430,7 @@ MonoBehaviour:
   burnDamagePerSecond: 2
   burnDuration: 3
   endPoint: {fileID: 0}
+  baseBuilding: {fileID: 0}
   healthBar: {fileID: 3854450880046943710}
 --- !u!195 &330268194859752354
 NavMeshAgent:
@@ -514,7 +515,7 @@ GameObject:
   - component: {fileID: 4016851928437671279}
   - component: {fileID: 1682823501674020806}
   - component: {fileID: 5640174910806670376}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     private bool isBurning = false;
 
     public Transform endPoint;
+    public GameObject baseBuilding;
     public HealthbarBehavior healthBar;
 
     public float HitPoints
@@ -74,6 +75,7 @@ public class Enemy : MonoBehaviour
             Die();
         }
     }
+
 
     public int GetCircuits() => circuits;
 

@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     public Tile[] tiles;
     public GameObject eventPanel;
     public GameObject WinPanel;
+    public GameObject LosePanel;
 
     private Building bAColocar;
     private EnemyManager _enemyManager;
@@ -236,7 +237,9 @@ public class GameManager : MonoBehaviour
 
     private void LooseLevel()
     {
-        SceneManager.LoadScene("Main screen");
+        _gameSpeed = 0;
+        SetGameSpeed(_gameSpeed);
+        LosePanel.SetActive(true);
     }
 
     public int GetCurrentMoney() => circuitos;

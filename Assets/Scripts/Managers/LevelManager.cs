@@ -19,6 +19,8 @@ public class LevelManager : MonoBehaviour
 
     public void LoadMainMenuScene() => SceneManager.LoadScene("Main Screen");
 
+    public void LoadLevelSelector() => SceneManager.LoadScene("Level selector");
+
     public void QuitGame()
     {
         Application.Quit();
