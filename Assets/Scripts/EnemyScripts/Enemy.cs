@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float stunDuration = 1.0f;
     [SerializeField] private float burnDamagePerSecond = 2.0f;
     [SerializeField] private float burnDuration = 3.0f;
+    [SerializeField] private ParticleSystem deathVFX;
 
     private float hitPoints;
     private Transform pos;
@@ -22,7 +23,6 @@ public class Enemy : MonoBehaviour
     private bool isBurning = false;
 
     public Transform endPoint;
-    public GameObject baseBuilding;
     public HealthbarBehavior healthBar;
 
     public float HitPoints
@@ -130,7 +130,16 @@ public class Enemy : MonoBehaviour
     }
     public void Die()
     {
+        deathVFX.Play();
         _enemyManager.RemoveEnemy(this);
+        deathVFX.transform.parent = null;
+        gameObject.SetActive(false);
+        Invoke("DestroyGameObject", deathVFX.main.duration); 
+    }
+
+    private void DestroyGameObject()
+    {
+        Destroy(deathVFX.gameObject);
         Destroy(gameObject);
     }
 }
