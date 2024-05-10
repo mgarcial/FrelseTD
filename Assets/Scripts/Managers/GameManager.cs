@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int initialMoney;
     private int health;
     public int circuitos;
-    public TMP_Text circuitosDisplay;
+    public Text circuitosDisplay;
     public GameObject grid;
     public CustomCursor CC;
     public Tile[] tiles;
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        circuitosDisplay.text = "Recursos: " + circuitos.ToString();
+        circuitosDisplay.text =  circuitos.ToString();
 
         if (Input.GetMouseButtonDown(0) && bAColocar != null)
         {

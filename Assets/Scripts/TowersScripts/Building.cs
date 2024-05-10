@@ -25,7 +25,7 @@ public class Building : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("ScanEnemies", 0f, 0.1f);
-        Debug.Log("paso scan");
+        //Debug.Log("paso scan");
 
     }
  
