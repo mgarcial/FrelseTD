@@ -8,7 +8,6 @@ public class Building : MonoBehaviour
 
     private Scanner _scanner;
     private Weapon _weapon;
-    private bool _isHover = false;
     public int rate;
     
 
@@ -49,9 +48,5 @@ public class Building : MonoBehaviour
     public void DestroyTower()
     {
         Destroy(gameObject);
-    }
-    public void HoverMode(bool hover)
-    {
-        _isHover = hover;
     }
 }

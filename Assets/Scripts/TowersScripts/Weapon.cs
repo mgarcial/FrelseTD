@@ -42,7 +42,7 @@ public class Weapon : MonoBehaviour
 
     public void BuffFireRate(float multiplier)
     {
-        fireRate *= multiplier;
+        fireRate /= multiplier;
         Debug.Log($"Im gettin this {fireRate} now");
     }
 }
