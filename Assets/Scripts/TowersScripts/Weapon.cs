@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float fireRate;
 
     [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private ParticleSystem shootVFX;
     [SerializeField] private Transform firePoint;
 
     private float _fireRateCooldown;
@@ -30,6 +31,7 @@ public class Weapon : MonoBehaviour
         if (_fireRateCooldown <= 0)
         {
             GameObject projectileFired = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+            shootVFX.Play();
             Projectile projectile = projectileFired.GetComponent<Projectile>();
             if (projectile != null)
             {
