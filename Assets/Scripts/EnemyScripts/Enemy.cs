@@ -21,6 +21,9 @@ public class Enemy : MonoBehaviour
     private GameManager gameManager;
     private DamageDeal damageDeal;
     private bool isBurning = false;
+    private bool isActive = true;
+    private float inactivityTimer = 0f;
+    private float inactivityThreshold = 5f;
 
     public Transform endPoint;
     public HealthbarBehavior healthBar;
@@ -61,18 +64,30 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isBurning)
+        if (isActive)
         {
-            TakeBurnDamage();
+            if (isBurning)
+            {
+                TakeBurnDamage();
+            }
+            navMeshAgent.SetDestination(endPoint.position);
+
+            Vector2 distance = new Vector2(pos.position.x - endPoint.position.x, pos.position.y - endPoint.position.y);
+
+            if (distance.magnitude <= 1.0f)
+            {
+                gameManager.TakeDamage(damageDeal.GetDamage());
+                Die();
+            }
         }
-        navMeshAgent.SetDestination(endPoint.position);
-
-        Vector2 distance = new(pos.position.x - endPoint.position.x, pos.position.y - endPoint.position.y);
-
-        if (distance.magnitude <= 1.0f)
+        else
         {
-            gameManager.TakeDamage(damageDeal.GetDamage());
-            Die();
+            inactivityTimer += Time.deltaTime;
+
+            if (inactivityTimer >= inactivityThreshold)
+            {
+                DestroyGameObject();
+            }
         }
     }
 
@@ -128,12 +143,22 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(burnDuration);
         isBurning = false;
     }
+    public void SetActive(bool active)
+    {
+        isActive = active;
+
+        if (isActive)
+        {
+            inactivityTimer = 0f;
+        }
+    }
     public void Die()
     {
         deathVFX.Play();
         _enemyManager.RemoveEnemy(this);
         deathVFX.transform.parent = null;
         gameObject.SetActive(false);
+        SetActive(false);
         Invoke("DestroyGameObject", deathVFX.main.duration); 
     }
 
