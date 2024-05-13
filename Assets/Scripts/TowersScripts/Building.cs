@@ -8,14 +8,13 @@ public class Building : MonoBehaviour
 
     private Scanner _scanner;
     private Weapon _weapon;
-    public int rate;
+    private bool _isHover = false;
     
 
     GameManager gm = GameManager.instance;
 
     private void Awake()
     {
-        gm.Circuitos = rate;
         _weapon = GetComponent<Weapon>();
         _scanner = GetComponentInChildren<Scanner>();
         Debug.Log("Scanner found: " + (_scanner != null));

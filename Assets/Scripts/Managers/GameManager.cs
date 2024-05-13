@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] private int initialMoney;
     private int health;
-    public int circuitos;
+    private int circuits;
     public Text circuitosDisplay;
     public GameObject grid;
     public CustomCursor CC;
@@ -51,11 +51,6 @@ public class GameManager : MonoBehaviour
 
     private float _gameSpeed;
 
-    public int Circuitos
-    {
-        get { return goldRate; }
-        set { goldRate += value; }
-    }
     private void OnEnable()
     {
         _enemyManager.OnEnemyKilledEvent += AddToMoney;
@@ -73,14 +68,14 @@ public class GameManager : MonoBehaviour
         _gameSpeed = 1f;
         health = maxHealth;
         Debug.Log($"base has {health} health points left");
-        circuitos = initialMoney;
+        circuits = initialMoney;
 
         EventManager.instance.OnTimeChange += SetGameTime;
     }
 
     void Update()
     {
-        circuitosDisplay.text =  circuitos.ToString();
+        circuitosDisplay.text =  circuits.ToString();
 
         if (Input.GetMouseButtonDown(0) && bAColocar != null)
         {
@@ -106,7 +101,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    circuitos += bAColocar.cost;
+                    circuits += bAColocar.cost;
                 }
                 
                 grid.SetActive(false);
@@ -123,14 +118,14 @@ public class GameManager : MonoBehaviour
         if (building is Building)
         {
             Building b = (Building)building; // Cast the MonoBehaviour to Building
-            if (circuitos >= b.cost)
+            if (circuits >= b.cost)
             {
                 Debug.Log("Button pressed");
                 GameObject Edificio = b.gameObject;
                 CC.gameObject.SetActive(true);
                 CC.setCursor(Edificio.GetComponent<SpriteRenderer>());
                 Cursor.visible = false;
-                circuitos -= b.cost;
+                circuits -= b.cost;
                 grid.SetActive(true);
                 bAColocar = b;
             }
@@ -138,14 +133,14 @@ public class GameManager : MonoBehaviour
         else if (building is BuffTower)
         {
             BuffTower buffTower = (BuffTower)building; // Cast the MonoBehaviour to BuffTower
-            if (circuitos >= buffTower.cost)
+            if (circuits >= buffTower.cost)
             {
                 Debug.Log("Button pressed for BuffTower");
                 GameObject Edificio = buffTower.gameObject;
                 CC.gameObject.SetActive(true);
                 CC.setCursor(Edificio.GetComponent<SpriteRenderer>());
                 Cursor.visible = false;
-                circuitos -= buffTower.cost;
+                circuits -= buffTower.cost;
                 grid.SetActive(true);
                 bAColocar = buffTower;
             }
@@ -156,7 +151,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetGameTime(TimeStates timeState)
+    private void SetGameTime(TimeStates timeState)
     {
         switch (timeState)
         {
@@ -180,7 +175,7 @@ public class GameManager : MonoBehaviour
     private void CleanLevel()
     {
         health = maxHealth;
-        circuitos = initialMoney;
+        circuits = initialMoney;
         EnemyManager.instance.ClearEnemiesList();
         _gameSpeed = 1f;
         SetGameSpeed(_gameSpeed);
@@ -220,7 +215,7 @@ public class GameManager : MonoBehaviour
 
     public void AddToMoney(int amount)
     {
-        circuitos += amount;
+        circuits += amount;
     }
 
     public void TakeDamage(int dmg)
@@ -242,5 +237,10 @@ public class GameManager : MonoBehaviour
         LosePanel.SetActive(true);
     }
 
-    public int GetCurrentMoney() => circuitos;
+    public int GetCurrentCircuits() => circuits;
+
+    public void ChangeCircuits(int changeAmount)
+    {
+        circuits += changeAmount;
+    }
 }
