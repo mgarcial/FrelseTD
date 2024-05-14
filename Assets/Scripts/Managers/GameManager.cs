@@ -1,9 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using System;
 using UnityEngine.SceneManagement;
 
 public enum Events
@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int maxHealth;
     [SerializeField] private int initialMoney;
+
     private int health;
     private int circuits;
     public Text circuitosDisplay;
@@ -44,7 +45,8 @@ public class GameManager : MonoBehaviour
     public GameObject WinPanel;
     public GameObject LosePanel;
 
-    private Building bAColocar;
+    private Building buildingToPlace;
+    private List<Tile> occupiedTiles = new List<Tile>(); 
     private EnemyManager _enemyManager;
 
     private int goldRate = 0;
@@ -71,13 +73,14 @@ public class GameManager : MonoBehaviour
         circuits = initialMoney;
 
         EventManager.instance.OnTimeChange += SetGameTime;
+        EventManager.instance.OnDeclineEngineerEvent += DestroyTurret;
     }
 
     void Update()
     {
         circuitosDisplay.text =  circuits.ToString();
 
-        if (Input.GetMouseButtonDown(0) && bAColocar != null)
+        if (Input.GetMouseButtonDown(0) && buildingToPlace != null)
         {
             Tile nearestTile = null;
             float shortestDistance = 100;
@@ -96,18 +99,21 @@ public class GameManager : MonoBehaviour
             {
                 if(shortestDistance <= 3.0f)
                 {
-                    Instantiate(bAColocar, nearestTile.transform.position, Quaternion.identity);
+                    Instantiate(buildingToPlace, nearestTile.transform.position, Quaternion.identity);
+                    nearestTile.buildingHere = buildingToPlace;
+                    Debug.Log(nearestTile);
+                    occupiedTiles.Add(nearestTile);
                     nearestTile.isOccupied = true;
                 }
                 else
                 {
-                    circuits += bAColocar.cost;
+                    circuits += buildingToPlace.cost;
                 }
                 
                 grid.SetActive(false);
                 CC.gameObject.SetActive(false);
                 Cursor.visible = true;
-                bAColocar = null;
+                buildingToPlace = null;
             }
         }
     }
@@ -120,14 +126,13 @@ public class GameManager : MonoBehaviour
             Building b = (Building)building; // Cast the MonoBehaviour to Building
             if (circuits >= b.cost)
             {
-                Debug.Log("Button pressed");
                 GameObject Edificio = b.gameObject;
                 CC.gameObject.SetActive(true);
                 CC.setCursor(Edificio.GetComponent<SpriteRenderer>());
                 Cursor.visible = false;
                 circuits -= b.cost;
                 grid.SetActive(true);
-                bAColocar = b;
+                buildingToPlace = b;
             }
         }
         else if (building is BuffTower)
@@ -142,7 +147,7 @@ public class GameManager : MonoBehaviour
                 Cursor.visible = false;
                 circuits -= buffTower.cost;
                 grid.SetActive(true);
-                bAColocar = buffTower;
+                buildingToPlace = buffTower;
             }
         }
         else
@@ -162,6 +167,16 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1;
                 break;
         }
+    }
+
+    //Al usarse sale el error de que no se puede destruir el edificio para no teenr perdida de datos, el internet dice que guarde una copia de la instancia de la torre, lo hago despues, ojala preguntandole a los profes
+    private void DestroyTurret()
+    {
+        int indexToDestroy = UnityEngine.Random.Range(0, occupiedTiles.Count);
+
+        occupiedTiles[indexToDestroy].isOccupied = false;
+        Destroy(occupiedTiles[indexToDestroy].buildingHere);
+        occupiedTiles[indexToDestroy].buildingHere = null;
     }
 
     public void RestartLevel()

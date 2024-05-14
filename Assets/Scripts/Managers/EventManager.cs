@@ -49,4 +49,10 @@ public class EventManager : MonoBehaviour
     {
         OnAcceptEngineerEvent?.Invoke(cuantity);
     }
+
+    public event Action OnDeclineEngineerEvent;
+    public void DeclineEngineerEvent()
+    {
+        OnDeclineEngineerEvent?.Invoke();
+    }
 }

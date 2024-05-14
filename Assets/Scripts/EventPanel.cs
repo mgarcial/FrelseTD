@@ -65,7 +65,7 @@ public class EventPanel : MonoBehaviour
             case Events.ClimateEvent:
                 break;
             case Events.EngineerEvent:
-                //EventManager.instance.DeclineEngineerEvent();
+                EventManager.instance.DeclineEngineerEvent();
                 break;
             case Events.StrikeEvent:
                 break;
