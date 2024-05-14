@@ -44,9 +44,15 @@ public class EventManager : MonoBehaviour
         OnEventStart?.Invoke();
     }
 
-    public event Action OnEngineerEvent;
-    public void EngineerEvent()
+    public event Action<float> OnAcceptEngineerEvent;
+    public void AcceptEngineerEvent(float cuantity)
     {
-        OnEngineerEvent?.Invoke();
+        OnAcceptEngineerEvent?.Invoke(cuantity);
+    }
+
+    public event Action OnDeclineEngineerEvent;
+    public void DeclineEngineerEvent()
+    {
+        OnDeclineEngineerEvent?.Invoke();
     }
 }

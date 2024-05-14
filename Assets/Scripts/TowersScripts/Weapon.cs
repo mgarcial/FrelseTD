@@ -11,10 +11,15 @@ public class Weapon : MonoBehaviour
 
     private float _fireRateCooldown;
 
-    void Start()
+    void Awake()
     {
         fireRate = baseFireRate;
-        Debug.Log($"this is my fire rate{fireRate}");
+        EventManager.instance.OnAcceptEngineerEvent += ChangeFireRate;
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.instance.OnAcceptEngineerEvent -= ChangeFireRate;
     }
 
     void Update()
@@ -40,7 +45,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public void BuffFireRate(float multiplier)
+    public void ChangeFireRate(float multiplier)
     {
         fireRate /= multiplier;
         Debug.Log($"Im gettin this {fireRate} now");

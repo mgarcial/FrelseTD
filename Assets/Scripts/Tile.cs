@@ -5,8 +5,10 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public bool isOccupied;
-    public Color greenC;
-    public Color redC;
+    [SerializeField] private Color greenC;
+    [SerializeField] private Color redC;
+
+    public Building buildingHere;
 
     private SpriteRenderer rend;
 

@@ -98,7 +98,6 @@ public class Enemy : MonoBehaviour
     {
         hitPoints -= dmg;
         healthBar.SetHealth(hitPoints, maxHitPoints);
-        Debug.Log("i took " + dmg +" and have " + hitPoints+ " left");
         if (hitPoints <= 0)
         {
             Die();

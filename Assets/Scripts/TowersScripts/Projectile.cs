@@ -58,7 +58,6 @@ public class Projectile : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(_damageDeal.GetDamage());
-            Debug.Log("i hit" + enemy);
             if (stunsEnemy)
             {
                 enemy.Stunned();

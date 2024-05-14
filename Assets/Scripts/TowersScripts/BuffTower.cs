@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class BuffTower : Building
 {
     [SerializeField] private float buffRadius = 10f;
-    [SerializeField] private float fireRateMultiplier = 2f;
+    [SerializeField] private float fireRateMultiplier = 0.5f;
 
     private Dictionary<Weapon, bool> weaponsBuffed = new Dictionary<Weapon, bool>();
 
@@ -16,7 +16,7 @@ public class BuffTower : Building
         {
             if (!weaponsBuffed.ContainsKey(weapon) || !weaponsBuffed[weapon])
             {
-                weapon.BuffFireRate(fireRateMultiplier);
+                weapon.ChangeFireRate(fireRateMultiplier);
                 weaponsBuffed[weapon] = true;
             }
         }

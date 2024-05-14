@@ -1,9 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using System;
 using UnityEngine.SceneManagement;
 
 public enum Events
@@ -34,8 +34,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int maxHealth;
     [SerializeField] private int initialMoney;
+
     private int health;
-    public int circuitos;
+    private int circuits;
     public Text circuitosDisplay;
     public GameObject grid;
     public CustomCursor CC;
@@ -44,18 +45,14 @@ public class GameManager : MonoBehaviour
     public GameObject WinPanel;
     public GameObject LosePanel;
 
-    private Building bAColocar;
+    private Building buildingToPlace;
+    private List<Tile> occupiedTiles = new List<Tile>(); 
     private EnemyManager _enemyManager;
 
     private int goldRate = 0;
 
     private float _gameSpeed;
 
-    public int Circuitos
-    {
-        get { return goldRate; }
-        set { goldRate += value; }
-    }
     private void OnEnable()
     {
         _enemyManager.OnEnemyKilledEvent += AddToMoney;
@@ -73,16 +70,17 @@ public class GameManager : MonoBehaviour
         _gameSpeed = 1f;
         health = maxHealth;
         Debug.Log($"base has {health} health points left");
-        circuitos = initialMoney;
+        circuits = initialMoney;
 
         EventManager.instance.OnTimeChange += SetGameTime;
+        EventManager.instance.OnDeclineEngineerEvent += DestroyTurret;
     }
 
     void Update()
     {
-        circuitosDisplay.text =  circuitos.ToString();
+        circuitosDisplay.text =  circuits.ToString();
 
-        if (Input.GetMouseButtonDown(0) && bAColocar != null)
+        if (Input.GetMouseButtonDown(0) && buildingToPlace != null)
         {
             Tile nearestTile = null;
             float shortestDistance = 100;
@@ -101,18 +99,21 @@ public class GameManager : MonoBehaviour
             {
                 if(shortestDistance <= 3.0f)
                 {
-                    Instantiate(bAColocar, nearestTile.transform.position, Quaternion.identity);
+                    Instantiate(buildingToPlace, nearestTile.transform.position, Quaternion.identity);
+                    nearestTile.buildingHere = buildingToPlace;
+                    Debug.Log(nearestTile);
+                    occupiedTiles.Add(nearestTile);
                     nearestTile.isOccupied = true;
                 }
                 else
                 {
-                    circuitos += bAColocar.cost;
+                    circuits += buildingToPlace.cost;
                 }
                 
                 grid.SetActive(false);
                 CC.gameObject.SetActive(false);
                 Cursor.visible = true;
-                bAColocar = null;
+                buildingToPlace = null;
             }
         }
     }
@@ -123,31 +124,30 @@ public class GameManager : MonoBehaviour
         if (building is Building)
         {
             Building b = (Building)building; // Cast the MonoBehaviour to Building
-            if (circuitos >= b.cost)
+            if (circuits >= b.cost)
             {
-                Debug.Log("Button pressed");
                 GameObject Edificio = b.gameObject;
                 CC.gameObject.SetActive(true);
                 CC.setCursor(Edificio.GetComponent<SpriteRenderer>());
                 Cursor.visible = false;
-                circuitos -= b.cost;
+                circuits -= b.cost;
                 grid.SetActive(true);
-                bAColocar = b;
+                buildingToPlace = b;
             }
         }
         else if (building is BuffTower)
         {
             BuffTower buffTower = (BuffTower)building; // Cast the MonoBehaviour to BuffTower
-            if (circuitos >= buffTower.cost)
+            if (circuits >= buffTower.cost)
             {
                 Debug.Log("Button pressed for BuffTower");
                 GameObject Edificio = buffTower.gameObject;
                 CC.gameObject.SetActive(true);
                 CC.setCursor(Edificio.GetComponent<SpriteRenderer>());
                 Cursor.visible = false;
-                circuitos -= buffTower.cost;
+                circuits -= buffTower.cost;
                 grid.SetActive(true);
-                bAColocar = buffTower;
+                buildingToPlace = buffTower;
             }
         }
         else
@@ -156,7 +156,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetGameTime(TimeStates timeState)
+    private void SetGameTime(TimeStates timeState)
     {
         switch (timeState)
         {
@@ -167,6 +167,16 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1;
                 break;
         }
+    }
+
+    //Al usarse sale el error de que no se puede destruir el edificio para no teenr perdida de datos, el internet dice que guarde una copia de la instancia de la torre, lo hago despues, ojala preguntandole a los profes
+    private void DestroyTurret()
+    {
+        int indexToDestroy = UnityEngine.Random.Range(0, occupiedTiles.Count);
+
+        occupiedTiles[indexToDestroy].isOccupied = false;
+        Destroy(occupiedTiles[indexToDestroy].buildingHere);
+        occupiedTiles[indexToDestroy].buildingHere = null;
     }
 
     public void RestartLevel()
@@ -180,7 +190,7 @@ public class GameManager : MonoBehaviour
     private void CleanLevel()
     {
         health = maxHealth;
-        circuitos = initialMoney;
+        circuits = initialMoney;
         EnemyManager.instance.ClearEnemiesList();
         _gameSpeed = 1f;
         SetGameSpeed(_gameSpeed);
@@ -220,7 +230,7 @@ public class GameManager : MonoBehaviour
 
     public void AddToMoney(int amount)
     {
-        circuitos += amount;
+        circuits += amount;
     }
 
     public void TakeDamage(int dmg)
@@ -242,5 +252,10 @@ public class GameManager : MonoBehaviour
         LosePanel.SetActive(true);
     }
 
-    public int GetCurrentMoney() => circuitos;
+    public int GetCurrentCircuits() => circuits;
+
+    public void ChangeCircuits(int changeAmount)
+    {
+        circuits += changeAmount;
+    }
 }

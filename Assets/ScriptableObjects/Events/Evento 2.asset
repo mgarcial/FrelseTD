@@ -16,4 +16,4 @@ MonoBehaviour:
   description: "Prueba del panel. Se eligi\xF3 el evento 2"
   option1Text: Aceptar 2
   option2Text: Denegar 2
-  eventType: 1
+  eventType: 0
