@@ -103,6 +103,7 @@ MonoBehaviour:
   baseFireRate: 2
   fireRate: 0
   projectilePrefab: {fileID: 0}
+  shootVFX: {fileID: 0}
   firePoint: {fileID: 0}
 --- !u!114 &3773247335756365573
 MonoBehaviour:
@@ -147,7 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 220
-  rate: 0
   buffRadius: 6.78
   fireRateMultiplier: 2
 --- !u!1 &7150819102587871281

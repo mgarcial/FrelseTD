@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Transform firePoint;
 
     private float _fireRateCooldown;
+    public float GetFireRate() => fireRate;
 
     void Awake()
     {
@@ -45,4 +46,5 @@ public class Weapon : MonoBehaviour
         fireRate /= multiplier;
         Debug.Log($"Im gettin this {fireRate} now");
     }
+
 }
