@@ -25458,7 +25458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  initialMoney: 110
+  initialMoney: 302
   circuitosDisplay: {fileID: 1113006755}
   grid: {fileID: 1964374247}
   CC: {fileID: 416306200}
