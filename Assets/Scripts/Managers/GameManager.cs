@@ -99,9 +99,8 @@ public class GameManager : MonoBehaviour
             {
                 if(shortestDistance <= 3.0f)
                 {
-                    Instantiate(buildingToPlace, nearestTile.transform.position, Quaternion.identity);
-                    nearestTile.buildingHere = buildingToPlace;
-                    Debug.Log(nearestTile);
+                    Building towerBuilt = Instantiate(buildingToPlace, nearestTile.transform.position, Quaternion.identity);
+                    nearestTile.buildingHere = towerBuilt;
                     occupiedTiles.Add(nearestTile);
                     nearestTile.isOccupied = true;
                 }
@@ -173,9 +172,11 @@ public class GameManager : MonoBehaviour
     private void DestroyTurret()
     {
         int indexToDestroy = UnityEngine.Random.Range(0, occupiedTiles.Count);
+        Debug.Log(indexToDestroy);
+        Debug.Log(occupiedTiles[indexToDestroy].buildingHere);
 
         occupiedTiles[indexToDestroy].isOccupied = false;
-        Destroy(occupiedTiles[indexToDestroy].buildingHere);
+        occupiedTiles[indexToDestroy].buildingHere.DestroyTower();
         occupiedTiles[indexToDestroy].buildingHere = null;
     }
 

@@ -60,7 +60,7 @@ public class EnemyManager : MonoBehaviour
     //Para probar
     public void StartWave()
     {
-        if (waveCounter == 2 || waveCounter == 5 || waveCounter == 8)
+        if (waveCounter == 1 || waveCounter == 2 || waveCounter == 8)
         {
             EventManager.instance.EventStart();
             EventManager.instance.TimeChange(TimeStates.pause);

@@ -17,11 +17,6 @@ public class Weapon : MonoBehaviour
         EventManager.instance.OnAcceptEngineerEvent += ChangeFireRate;
     }
 
-    private void OnDestroy()
-    {
-        EventManager.instance.OnAcceptEngineerEvent -= ChangeFireRate;
-    }
-
     void Update()
     {
         if (_fireRateCooldown <= 0)
