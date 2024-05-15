@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 943e4338bcfa08543839a62de8735f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circuits: 50
+  circuits: 35
   maxHitPoints: 45
   speed: 5
   stunDuration: 1
