@@ -11,6 +11,10 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private List<Transform> spawnPoints;
     [SerializeField] private Transform endPoint;
 
+    [SerializeField] private int Event1Wave;
+    [SerializeField] private int Event2Wave;
+    [SerializeField] private int Event3Wave;
+
     private int waveCounter;
 
     //others
@@ -60,7 +64,7 @@ public class EnemyManager : MonoBehaviour
     //Para probar
     public void StartWave()
     {
-        if (waveCounter == 1 || waveCounter == 2 || waveCounter == 8)
+        if (waveCounter == (Event1Wave -1) || waveCounter == (Event2Wave -1) || waveCounter == (Event3Wave -1))
         {
             EventManager.instance.EventStart();
             EventManager.instance.TimeChange(TimeStates.pause);
