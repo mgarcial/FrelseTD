@@ -63,6 +63,10 @@ public class GameManager : MonoBehaviour
     {
         _enemyManager.OnEnemyKilledEvent -= AddToMoney;
         _enemyManager.OnAllEnemiesDeadEvent -= WinLevel;
+        EventManager.instance.OnTimeChange -= SetGameTime;
+        EventManager.instance.OnEngineerEvent -= EngineerEvent;
+        EventManager.instance.OnTerroristEvent -= TerroristEvent;
+        EventManager.instance.OnClimateEvent -= ClimateEvent;
     }
 
     private void Start()
@@ -73,7 +77,9 @@ public class GameManager : MonoBehaviour
         circuits = initialMoney;
 
         EventManager.instance.OnTimeChange += SetGameTime;
-        EventManager.instance.OnDeclineEngineerEvent += DestroyTurret;
+        EventManager.instance.OnEngineerEvent += EngineerEvent;
+        EventManager.instance.OnTerroristEvent += TerroristEvent;
+        EventManager.instance.OnClimateEvent += ClimateEvent;
     }
 
     void Update()
@@ -168,12 +174,46 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void EngineerEvent(EventChoices choice, float cuantity)
+    {
+        switch (choice)
+        {
+            case EventChoices.decline:
+                DestroyTurret();
+                break;
+        }
+    }
+
+    private void TerroristEvent(EventChoices choice, int cuantity)
+    {
+        switch (choice)
+        {
+            case EventChoices.accept:
+                for(int i = 0; i < cuantity; i++)
+                {
+                    DestroyTurret();
+                }
+                break;
+            case EventChoices.decline:
+                health -= cuantity;
+                break;
+        }
+    }
+
+    private void ClimateEvent(EventChoices choice, float cuantity)
+    {
+        switch (choice)
+        {
+            case EventChoices.accept:
+                circuits -= (int)cuantity;
+                break;
+        }
+    }
+
     //Al usarse sale el error de que no se puede destruir el edificio para no teenr perdida de datos, el internet dice que guarde una copia de la instancia de la torre, lo hago despues, ojala preguntandole a los profes
     private void DestroyTurret()
     {
         int indexToDestroy = UnityEngine.Random.Range(0, occupiedTiles.Count);
-        Debug.Log(indexToDestroy);
-        Debug.Log(occupiedTiles[indexToDestroy].buildingHere);
 
         occupiedTiles[indexToDestroy].isOccupied = false;
         occupiedTiles[indexToDestroy].buildingHere.DestroyTower();

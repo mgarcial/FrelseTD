@@ -9,6 +9,12 @@ public enum TimeStates
     unpause
 }
 
+public enum EventChoices
+{
+    accept,
+    decline
+}
+
 public class EventManager : MonoBehaviour
 {
     //singleton inplementation
@@ -44,15 +50,33 @@ public class EventManager : MonoBehaviour
         OnEventStart?.Invoke();
     }
 
-    public event Action<float> OnAcceptEngineerEvent;
-    public void AcceptEngineerEvent(float cuantity)
+    public event Action<EventChoices, float> OnEngineerEvent;
+    public void EngineerEvent(EventChoices choice, float cuantity)
     {
-        OnAcceptEngineerEvent?.Invoke(cuantity);
+        OnEngineerEvent?.Invoke(choice, cuantity);
     }
 
-    public event Action OnDeclineEngineerEvent;
-    public void DeclineEngineerEvent()
+    public event Action<EventChoices> OnStrikeEvent;
+    public void StrikeEvent(EventChoices choice)
     {
-        OnDeclineEngineerEvent?.Invoke();
+        OnStrikeEvent?.Invoke(choice);
+    }
+
+    public event Action<EventChoices, float> OnClimateEvent;
+    public void ClimateEvent(EventChoices choice, float cuantity)
+    {
+        OnClimateEvent?.Invoke(choice, cuantity);
+    }
+
+    public event Action<EventChoices> OnSurvivorsEvent;
+    public void SurvivorsEvent(EventChoices choice)
+    {
+        OnSurvivorsEvent?.Invoke(choice);
+    }
+
+    public event Action<EventChoices, int> OnTerroristEvent;
+    public void TerroristEvent(EventChoices choice, int cuantity)
+    {
+        OnTerroristEvent?.Invoke(choice, cuantity);
     }
 }

@@ -12,10 +12,17 @@ public class Weapon : MonoBehaviour
     private float _fireRateCooldown;
     public float GetFireRate() => fireRate;
 
+    private void OnDisable()
+    {
+        EventManager.instance.OnEngineerEvent -= EngineerEvent;
+        EventManager.instance.OnClimateEvent -= ClimateEvent;
+    }
+
     void Awake()
     {
         fireRate = baseFireRate;
-        EventManager.instance.OnAcceptEngineerEvent += ChangeFireRate;
+        EventManager.instance.OnEngineerEvent += EngineerEvent;
+        EventManager.instance.OnClimateEvent += ClimateEvent;
     }
 
     void Update()
@@ -38,6 +45,26 @@ public class Weapon : MonoBehaviour
             {
                 projectile.SetTarget(target);
             }
+        }
+    }
+
+    private void EngineerEvent(EventChoices choice, float cuantity)
+    {
+        switch (choice)
+        {
+            case EventChoices.accept:
+                ChangeFireRate(cuantity);
+                break;
+        }
+    }
+
+    private void ClimateEvent(EventChoices choice, float cuantity)
+    {
+        switch (choice)
+        {
+            case EventChoices.decline:
+                ChangeFireRate(cuantity);
+                break;
         }
     }
 

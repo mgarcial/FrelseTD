@@ -44,7 +44,6 @@ public class Building : MonoBehaviour
     }
     public void DestroyTower()
     {
-        EventManager.instance.OnAcceptEngineerEvent -= _weapon.ChangeFireRate;
         Destroy(gameObject);
     }
 }
