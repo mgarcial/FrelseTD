@@ -10,6 +10,7 @@ public class StatsDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public GameObject prefab;
     public DamageDeal damageDeal;
     public GameObject panel;
+    public Projectile projectile;
     public Text stats;
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -31,6 +32,7 @@ public class StatsDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         string statsInfo = "";
 
+
         Building building = prefab.GetComponentInChildren<Building>();
         if(building != null)
         {
@@ -43,7 +45,23 @@ public class StatsDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             statsInfo += "Fire Rate: " + weapon.GetFireRate() + "\n";
         }
 
+        if(damageDeal != null)
+        {
             statsInfo += "Damage: " + damageDeal.GetDamage() + "\n";
+        }
+
+        if(projectile != null)
+        {
+            if(projectile.StunsEnemy)
+            {
+                statsInfo += "Paralyze the enemy" + "\n"; 
+            }
+
+            if(projectile.BurnsEnemy)
+            {
+                statsInfo += "Makes the enemy burn" + "\n";
+            }
+        }
 
         return statsInfo;
     }

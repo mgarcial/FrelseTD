@@ -4883,7 +4883,7 @@ GameObject:
   - component: {fileID: 6325648407966708820}
   - component: {fileID: 9027689692812116023}
   - component: {fileID: 9002536596657821899}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Health Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4930,7 +4930,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_TargetDisplay: 0
 --- !u!114 &6325648407966708820
 MonoBehaviour:
@@ -4999,7 +4999,7 @@ GameObject:
   - component: {fileID: 7759687728648344652}
   - component: {fileID: 5367633888649207822}
   - component: {fileID: 2694327083654460513}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5073,7 +5073,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 347412091765669718}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5295,7 +5295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2543101200976385459}
   - component: {fileID: 8848397997684953980}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5386,7 +5386,7 @@ GameObject:
   - component: {fileID: 4899647353673556415}
   - component: {fileID: 310427925195167255}
   - component: {fileID: 1909618705064125998}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3170400217477009429}
   - component: {fileID: 2959604725419030199}
   m_Layer: 0
-  m_Name: EnergyBullet 1
+  m_Name: StunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 2047745654266435529}
   - component: {fileID: 4739186712075669936}
   - component: {fileID: 6144066371162510961}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: DeathVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5096,7 +5096,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_TargetDisplay: 0
 --- !u!114 &5669647986679615138
 MonoBehaviour:
@@ -5169,7 +5169,7 @@ GameObject:
   - component: {fileID: 4510931665976513799}
   - component: {fileID: 5636111357600787288}
   - component: {fileID: -8598619685052331874}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Ship-1.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}

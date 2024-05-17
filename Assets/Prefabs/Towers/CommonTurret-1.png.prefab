@@ -89,7 +89,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -171,16 +171,24 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000153af79901995034d53797bfa384d6c899ec98153db3830efb3b23c2
   m_ShapePath:
-  - {x: -1.2799997, y: -1.28, z: 0}
-  - {x: -1.2799997, y: 1.28, z: 0}
-  - {x: 1.28, y: 1.28, z: 0}
-  - {x: 1.28, y: -1.28, z: 0}
-  m_ShapePathHash: 0
+  - {x: -0.86547625, y: -1.1089268, z: 0}
+  - {x: -0.3110296, y: -0.44867954, z: 0}
+  - {x: -0.31760934, y: -0.28418595, z: 0}
+  - {x: -0.86372775, y: 0.26193252, z: 0}
+  - {x: -0.85714805, y: 0.4659045, z: 0}
+  - {x: -0.15486382, y: 1.1878836, z: 0}
+  - {x: 0.14828447, y: 1.1878837, z: 0}
+  - {x: 0.8601644, y: 0.4659045, z: 0}
+  - {x: 0.8667441, y: 0.24219331, z: 0}
+  - {x: 0.29430652, y: -0.27760625, z: 0}
+  - {x: 0.29430652, y: -0.45525923, z: 0}
+  - {x: 0.89179516, y: -1.0957674, z: 0}
+  m_ShapePathHash: 692696397
   m_Mesh: {fileID: 0}
-  m_InstanceId: 37372
+  m_InstanceId: 41774
   m_LocalBounds:
-    m_Center: {x: 0.00000011920929, y: 0, z: 0}
-    m_Extent: {x: 1.2799999, y: 1.28, z: 0}
+    m_Center: {x: 0.013159454, y: 0.03947854, z: 0}
+    m_Extent: {x: 0.8786357, y: 1.1484053, z: 0}
 --- !u!1 &9110046720694979057
 GameObject:
   m_ObjectHideFlags: 0

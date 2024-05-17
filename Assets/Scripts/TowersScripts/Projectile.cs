@@ -13,6 +13,10 @@ public class Projectile : MonoBehaviour
     private DamageDeal _damageDeal;
     private Transform _target;
     private TrailRenderer _trailRenderer;
+
+    public bool StunsEnemy { get => stunsEnemy; set => stunsEnemy = value; }
+    public bool BurnsEnemy { get => burnsEnemy; set => burnsEnemy = value; }
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
