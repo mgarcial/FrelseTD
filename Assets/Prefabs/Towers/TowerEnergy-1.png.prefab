@@ -201,7 +201,7 @@ MonoBehaviour:
   - {x: -0.42064545, y: -1.181911, z: 0}
   m_ShapePathHash: -1363348300
   m_Mesh: {fileID: 0}
-  m_InstanceId: 43764
+  m_InstanceId: 88270
   m_LocalBounds:
     m_Center: {x: 0.0014982224, y: 0.047147512, z: 0}
     m_Extent: {x: 0.8461666, y: 1.2332157, z: 0}
@@ -262,6 +262,10 @@ PrefabInstance:
       value: Lightning
       objectReference: {fileID: 0}
     - target: {fileID: 4678799422144329551, guid: c22853bfcf32f4e4c8ade2727aafb1cb, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678799422144329551, guid: c22853bfcf32f4e4c8ade2727aafb1cb, type: 3}
       propertyPath: TrailModule.mode
       value: 0
       objectReference: {fileID: 0}
@@ -295,11 +299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4678799422144329551, guid: c22853bfcf32f4e4c8ade2727aafb1cb, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.35
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4678799422144329551, guid: c22853bfcf32f4e4c8ade2727aafb1cb, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4678799422144329551, guid: c22853bfcf32f4e4c8ade2727aafb1cb, type: 3}
       propertyPath: TrailModule.colorOverTrail.minColor.b
