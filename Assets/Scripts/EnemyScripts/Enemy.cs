@@ -77,6 +77,7 @@ public class Enemy : MonoBehaviour
             if (distance.magnitude <= 1.0f)
             {
                 gameManager.TakeDamage(damageDeal.GetDamage());
+                circuits = 0;
                 Die();
             }
         }

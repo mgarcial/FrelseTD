@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     public GameObject eventPanel;
     public GameObject WinPanel;
     public GameObject LosePanel;
+    public HealthbarBehavior healthBar;
 
     private Building buildingToPlace;
     private List<Tile> occupiedTiles = new List<Tile>(); 
@@ -73,6 +74,7 @@ public class GameManager : MonoBehaviour
     {
         _gameSpeed = 1f;
         health = maxHealth;
+        healthBar.SetHealth(health, maxHealth);
         Debug.Log($"base has {health} health points left");
         circuits = initialMoney;
 
@@ -277,7 +279,8 @@ public class GameManager : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         health -= dmg;
-        Debug.Log($"the base has taken {dmg} damage, and has {health} hit points left");
+        //Debug.Log($"the base has taken {dmg} damage, and has {health} hit points left");
+        healthBar.SetHealth(health, maxHealth);
         if (health <= 0)
         {
             health = 0;
