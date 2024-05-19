@@ -15,5 +15,5 @@ MonoBehaviour:
   enemiesOfWave:
   - {fileID: -8775131065296400341, guid: a391c67cfd9464541b573ab9b5a56f94, type: 3}
   - {fileID: -8775131065296400341, guid: a391c67cfd9464541b573ab9b5a56f94, type: 3}
-  - {fileID: -2641334438081798566, guid: e314f6b38fcee6d4e928aa72526808c7, type: 3}
+  - {fileID: -4880044366409537347, guid: 009f0344d13d33e43983419259b550ad, type: 3}
   spawnPoint: 0
