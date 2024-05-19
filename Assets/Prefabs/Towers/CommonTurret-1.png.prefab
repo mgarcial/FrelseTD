@@ -146,8 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b106baae653bf44a13187cd3ab5be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseFireRate: 0.9
-  fireRate: 0.9
+  baseFireRate: 0.85
+  fireRate: 0.85
   projectilePrefab: {fileID: 4527297996618758778, guid: 6c778eb9bdd8f4a47ae7933b19606efb, type: 3}
   shootVFX: {fileID: 5932645841077233575}
   firePoint: {fileID: 7128020484162701056}
@@ -185,7 +185,7 @@ MonoBehaviour:
   - {x: 0.89179516, y: -1.0957674, z: 0}
   m_ShapePathHash: 692696397
   m_Mesh: {fileID: 0}
-  m_InstanceId: 41774
+  m_InstanceId: 49758
   m_LocalBounds:
     m_Center: {x: 0.013159454, y: 0.03947854, z: 0}
     m_Extent: {x: 0.8786357, y: 1.1484053, z: 0}
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afae8f27204be54f80fa9cafa3a1eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeScan: 7.5
+  rangeScan: 8
 --- !u!212 &7460781834735376254
 SpriteRenderer:
   m_ObjectHideFlags: 0
