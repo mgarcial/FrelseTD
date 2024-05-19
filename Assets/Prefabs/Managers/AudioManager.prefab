@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3343585065627169923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3343585065627170045}
+  - component: {fileID: 3343585065627169922}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3343585065627170045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3343585065627169923}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 524.10236, y: 269.9001, z: 132886.98}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3343585065627169922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3343585065627169923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6cfc18f985cc84eba85d60c6beed6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawnSound: {fileID: 8300000, guid: 397fbfe13a5b0bf42996b368cc6c2fc2, type: 3}
+  enemyDeathSound: {fileID: 8300000, guid: adbe188df040db44dbbb4443e120d1ca, type: 3}
+  playerDeathSound: {fileID: 8300000, guid: 50a2aa307074b8745b1decafb016d1dd, type: 3}
+  playerWinSound: {fileID: 8300000, guid: 5a9bd57fb51ce364cb8548a7474f1739, type: 3}
+  towerPlacedSound: {fileID: 8300000, guid: 0dbc3a85d40e2224c8aaa461be1d00d6, type: 3}
+  buttonPressed: {fileID: 8300000, guid: 7cdb77c830ad45240a57769e7cd4179f, type: 3}
+  commonTowerShot: {fileID: 0}
+  energyTowerShot: {fileID: 8300000, guid: c91f8cd1475debe438ad750517554f4e, type: 3}
+  burnTowerShot: {fileID: 8300000, guid: 7964afc3b30e71348a9c22c497c6edab, type: 3}
+  CannonTowerShot: {fileID: 0}
+  stunTowerShot: {fileID: 0}
