@@ -201,7 +201,7 @@ MonoBehaviour:
   - {x: -0.42064545, y: -1.181911, z: 0}
   m_ShapePathHash: -1363348300
   m_Mesh: {fileID: 0}
-  m_InstanceId: 88270
+  m_InstanceId: 49726
   m_LocalBounds:
     m_Center: {x: 0.0014982224, y: 0.047147512, z: 0}
     m_Extent: {x: 0.8461666, y: 1.2332157, z: 0}
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afae8f27204be54f80fa9cafa3a1eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeScan: 7.5
+  rangeScan: 8
 --- !u!1001 &4360369261303276555
 PrefabInstance:
   m_ObjectHideFlags: 0
