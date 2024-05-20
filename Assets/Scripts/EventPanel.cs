@@ -16,6 +16,7 @@ public class EventPanel : MonoBehaviour
     //Engineer event parameters in percentages
     [SerializeField] float engineerBuffToTowers = 1.2f;
     [SerializeField] float engineerCircuitsToTake = 0.3f;
+    [SerializeField] float engineerCircuitsToReimburse = 0.5f;
 
     [SerializeField] int terroristTowersToDestroy = 2;
     [SerializeField] int terroristHealthToTake = 3;
@@ -55,9 +56,6 @@ public class EventPanel : MonoBehaviour
             case Events.StrikeEvent:
                 EventManager.instance.StrikeEvent(EventChoices.accept);
                 break;
-            case Events.SurvivorsEvent:
-                EventManager.instance.SurvivorsEvent(EventChoices.accept);
-                break;
             case Events.TerroristEvent:
                 EventManager.instance.TerroristEvent(EventChoices.accept, terroristTowersToDestroy);
                 break;
@@ -75,13 +73,10 @@ public class EventPanel : MonoBehaviour
                 EventManager.instance.ClimateEvent(EventChoices.decline, climateDebuffToTowers);
                 break;
             case Events.EngineerEvent:
-                EventManager.instance.EngineerEvent(EventChoices.decline, 0);
+                EventManager.instance.EngineerEvent(EventChoices.decline, engineerCircuitsToReimburse);
                 break;
             case Events.StrikeEvent:
                 EventManager.instance.StrikeEvent(EventChoices.decline);
-                break;
-            case Events.SurvivorsEvent:
-                EventManager.instance.SurvivorsEvent(EventChoices.decline);
                 break;
             case Events.TerroristEvent:
                 EventManager.instance.TerroristEvent(EventChoices.decline, terroristHealthToTake);

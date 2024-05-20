@@ -68,12 +68,6 @@ public class EventManager : MonoBehaviour
         OnClimateEvent?.Invoke(choice, cuantity);
     }
 
-    public event Action<EventChoices> OnSurvivorsEvent;
-    public void SurvivorsEvent(EventChoices choice)
-    {
-        OnSurvivorsEvent?.Invoke(choice);
-    }
-
     public event Action<EventChoices, int> OnTerroristEvent;
     public void TerroristEvent(EventChoices choice, int cuantity)
     {

@@ -50,8 +50,6 @@ public class GameManager : MonoBehaviour
     private List<Tile> occupiedTiles = new List<Tile>(); 
     private EnemyManager _enemyManager;
 
-    private int goldRate = 0;
-
     private float _gameSpeed;
 
     private void OnEnable()
@@ -181,7 +179,8 @@ public class GameManager : MonoBehaviour
         switch (choice)
         {
             case EventChoices.decline:
-                DestroyTurret();
+                Building buildingToDestroy = DestroyTurret();
+                ChangeCircuits((int)MathF.Round(buildingToDestroy.cost * cuantity));
                 break;
         }
     }
@@ -213,13 +212,17 @@ public class GameManager : MonoBehaviour
     }
 
     //Al usarse sale el error de que no se puede destruir el edificio para no teenr perdida de datos, el internet dice que guarde una copia de la instancia de la torre, lo hago despues, ojala preguntandole a los profes
-    private void DestroyTurret()
+    private Building DestroyTurret()
     {
+        Building buildingToDestroy;
         int indexToDestroy = UnityEngine.Random.Range(0, occupiedTiles.Count);
 
         occupiedTiles[indexToDestroy].isOccupied = false;
+        buildingToDestroy = occupiedTiles[indexToDestroy].buildingHere;
         occupiedTiles[indexToDestroy].buildingHere.DestroyTower();
         occupiedTiles[indexToDestroy].buildingHere = null;
+
+        return buildingToDestroy;
     }
 
     public void RestartLevel()
