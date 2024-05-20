@@ -27,6 +27,13 @@ public class EventPanel : MonoBehaviour
     [SerializeField] float DebuffToTowers = 0.7f;
     [SerializeField] int CircuitsToWaste = 250;
 
+    [Header("Strike Event Stats")]
+    [SerializeField] int AcceptCounter;
+    [SerializeField] int DeclineCounter;
+    [SerializeField] int BaseHealth;
+    [SerializeField] int RewardCircuits;
+    [SerializeField] float ReducedMoneyRate;
+
     private void Awake()
     {
         EventManager.instance.OnEventStart += StartEvent;
@@ -57,7 +64,7 @@ public class EventPanel : MonoBehaviour
                 EventManager.instance.EngineerEvent(EventChoices.accept, BuffToTowers);
                 break;
             case Events.StrikeEvent:
-                //EventManager.instance.StrikeEvent(EventChoices.accept);
+                EventManager.instance.StrikeEvent(EventChoices.accept, BaseHealth, AcceptCounter, RewardCircuits);
                 break;
             case Events.TerroristEvent:
                 EventManager.instance.TerroristEvent(EventChoices.accept, TowersToDestroy);
@@ -79,7 +86,7 @@ public class EventPanel : MonoBehaviour
                 EventManager.instance.EngineerEvent(EventChoices.decline, CircuitsToReimburse);
                 break;
             case Events.StrikeEvent:
-                //EventManager.instance.StrikeEvent(EventChoices.decline);
+                EventManager.instance.StrikeEvent(EventChoices.decline, ReducedMoneyRate, DeclineCounter, 0);
                 break;
             case Events.TerroristEvent:
                 EventManager.instance.TerroristEvent(EventChoices.decline, HealthToTake);
