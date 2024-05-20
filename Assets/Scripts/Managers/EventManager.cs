@@ -37,6 +37,18 @@ public class EventManager : MonoBehaviour
         OnTimeChange?.Invoke(timeStates);
     }
 
+    public event Action<int> OnEnemyKilled;
+    public void EnemyKilled(int amount)
+    {
+        OnEnemyKilled?.Invoke(amount);
+    }
+
+    public event Action OnAllEnemiesDead;
+    public void AllEnemiesDead()
+    {
+        OnAllEnemiesDead?.Invoke();
+    }
+
     public event Action OnWaveEvent;
     public void WaveEvent()
     {

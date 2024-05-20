@@ -17,13 +17,6 @@ public class EnemyManager : MonoBehaviour
 
     private int waveCounter;
 
-    //others
-    public delegate void EnemyKilledDelegate(int amount);
-    public event EnemyKilledDelegate OnEnemyKilledEvent;
-
-    public delegate void AllEnemiesDeadDelegate();
-    public event AllEnemiesDeadDelegate OnAllEnemiesDeadEvent;
-
     [SerializeField] private List<Enemy> enemies;
 
     private void Awake()
@@ -49,10 +42,10 @@ public class EnemyManager : MonoBehaviour
     public void RemoveEnemy(Enemy enemy)
     {
         enemies.Remove(enemy);
-        OnEnemyKilledEvent?.Invoke(enemy.GetCircuits());
+        EventManager.instance.EnemyKilled(enemy.GetCircuits());
         if (waveCounter == waves.Count && enemies.Count == 0)
         {
-            OnAllEnemiesDeadEvent?.Invoke();
+            EventManager.instance.AllEnemiesDead();
         }
     }
 

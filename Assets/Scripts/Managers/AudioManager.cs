@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
     }
     void Start()
     {
-        _audioSource.mute = !Preferences.GetToggleSfx();
+        //_audioSource.mute = !Preferences.GetToggleSfx();
     }
 
     public void PlayEnemySpawn() => _audioSource.PlayOneShot(enemySpawnSound);

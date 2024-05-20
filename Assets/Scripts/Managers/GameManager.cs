@@ -28,8 +28,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        _enemyManager = EnemyManager.instance;
     }
 
     [SerializeField] private int maxHealth;
@@ -48,20 +46,13 @@ public class GameManager : MonoBehaviour
 
     private Building buildingToPlace;
     private List<Tile> occupiedTiles = new List<Tile>(); 
-    private EnemyManager _enemyManager;
 
     private float _gameSpeed;
 
-    private void OnEnable()
-    {
-        _enemyManager.OnEnemyKilledEvent += AddToMoney;
-        _enemyManager.OnAllEnemiesDeadEvent += WinLevel;
-    }
-
     private void OnDisable()
     {
-        _enemyManager.OnEnemyKilledEvent -= AddToMoney;
-        _enemyManager.OnAllEnemiesDeadEvent -= WinLevel;
+        EventManager.instance.OnEnemyKilled -= AddToMoney;
+        EventManager.instance.OnAllEnemiesDead -= WinLevel;
         EventManager.instance.OnTimeChange -= SetGameTime;
         EventManager.instance.OnEngineerEvent -= EngineerEvent;
         EventManager.instance.OnTerroristEvent -= TerroristEvent;
@@ -80,6 +71,8 @@ public class GameManager : MonoBehaviour
         EventManager.instance.OnEngineerEvent += EngineerEvent;
         EventManager.instance.OnTerroristEvent += TerroristEvent;
         EventManager.instance.OnClimateEvent += ClimateEvent;
+        EventManager.instance.OnEnemyKilled += AddToMoney;
+        EventManager.instance.OnAllEnemiesDead += WinLevel;
     }
 
     void Update()

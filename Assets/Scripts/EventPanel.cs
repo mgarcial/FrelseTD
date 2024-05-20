@@ -8,21 +8,24 @@ public class EventPanel : MonoBehaviour
     [SerializeField] private List<EventSO> events;
     private EventSO currentEvent;
 
+    [Header("Showing Text")]
     [SerializeField] private TMP_Text title;
     [SerializeField] private TMP_Text description;
     [SerializeField] private TMP_Text acceptButtonText;
     [SerializeField] private TMP_Text declineButtonText;
 
-    //Engineer event parameters in percentages
-    [SerializeField] float engineerBuffToTowers = 1.2f;
-    [SerializeField] float engineerCircuitsToTake = 0.3f;
-    [SerializeField] float engineerCircuitsToReimburse = 0.5f;
+    [Header("Engineer Event Stats")]
+    [SerializeField] float BuffToTowers = 1.2f;
+    [SerializeField] float CircuitsToTake = 0.3f;
+    [SerializeField] float CircuitsToReimburse = 0.5f;
 
-    [SerializeField] int terroristTowersToDestroy = 2;
-    [SerializeField] int terroristHealthToTake = 3;
+    [Header("Terrorist Event Stats")]
+    [SerializeField] int TowersToDestroy = 2;
+    [SerializeField] int HealthToTake = 3;
 
-    [SerializeField] float climateDebuffToTowers = 0.7f;
-    [SerializeField] int climateCircuitsToTake = 250;
+    [Header("Climate Event Stats")]
+    [SerializeField] float DebuffToTowers = 0.7f;
+    [SerializeField] int CircuitsToWaste = 250;
 
     private void Awake()
     {
@@ -46,18 +49,18 @@ public class EventPanel : MonoBehaviour
         switch (currentEvent.eventType)
         {
             case Events.ClimateEvent:
-                EventManager.instance.ClimateEvent(EventChoices.accept, climateCircuitsToTake);
+                EventManager.instance.ClimateEvent(EventChoices.accept, CircuitsToWaste);
                 break;
             case Events.EngineerEvent:
-                int circuitsToTake = (int)Mathf.Round(GameManager.instance.GetCurrentCircuits() * engineerCircuitsToTake);
+                int circuitsToTake = (int)Mathf.Round(GameManager.instance.GetCurrentCircuits() * CircuitsToTake);
                 GameManager.instance.ChangeCircuits(-circuitsToTake);
-                EventManager.instance.EngineerEvent(EventChoices.accept, engineerBuffToTowers);
+                EventManager.instance.EngineerEvent(EventChoices.accept, BuffToTowers);
                 break;
             case Events.StrikeEvent:
                 EventManager.instance.StrikeEvent(EventChoices.accept);
                 break;
             case Events.TerroristEvent:
-                EventManager.instance.TerroristEvent(EventChoices.accept, terroristTowersToDestroy);
+                EventManager.instance.TerroristEvent(EventChoices.accept, TowersToDestroy);
                 break;
         }
 
@@ -70,16 +73,16 @@ public class EventPanel : MonoBehaviour
         switch (currentEvent.eventType)
         {
             case Events.ClimateEvent:
-                EventManager.instance.ClimateEvent(EventChoices.decline, climateDebuffToTowers);
+                EventManager.instance.ClimateEvent(EventChoices.decline, DebuffToTowers);
                 break;
             case Events.EngineerEvent:
-                EventManager.instance.EngineerEvent(EventChoices.decline, engineerCircuitsToReimburse);
+                EventManager.instance.EngineerEvent(EventChoices.decline, CircuitsToReimburse);
                 break;
             case Events.StrikeEvent:
                 EventManager.instance.StrikeEvent(EventChoices.decline);
                 break;
             case Events.TerroristEvent:
-                EventManager.instance.TerroristEvent(EventChoices.decline, terroristHealthToTake);
+                EventManager.instance.TerroristEvent(EventChoices.decline, HealthToTake);
                 break;
         }
         EventManager.instance.TimeChange(TimeStates.unpause);
