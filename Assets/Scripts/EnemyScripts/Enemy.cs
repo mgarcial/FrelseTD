@@ -102,6 +102,7 @@ public class Enemy : MonoBehaviour
         if (hitPoints <= 0)
         {
             Die();
+            AudioManager.GetInstance().PlayEnemyDeath();
         }
     }
 

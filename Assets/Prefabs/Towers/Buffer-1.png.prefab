@@ -147,7 +147,7 @@ MonoBehaviour:
   - {x: 0.16310991, y: -0.48095876, z: 0}
   m_ShapePathHash: 526650452
   m_Mesh: {fileID: 0}
-  m_InstanceId: 40842
+  m_InstanceId: 38666
   m_LocalBounds:
     m_Center: {x: -0.0036186278, y: 0.046379924, z: 0}
     m_Extent: {x: 0.4764585, y: 1.2355039, z: 0}
@@ -164,8 +164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 220
-  buffRadius: 6.78
-  fireRateMultiplier: 2
+  buffRadius: 15
+  fireRateMultiplier: 1.4
 --- !u!1 &7150819102587871281
 GameObject:
   m_ObjectHideFlags: 0

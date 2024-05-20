@@ -262,11 +262,13 @@ public class GameManager : MonoBehaviour
     {
         CleanLevel();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        AudioManager.GetInstance().PlayButtonPressed();
         Destroy(gameObject);
     }
     public void ExitToMainMenu()
     {
         CleanLevel();
+        AudioManager.GetInstance().PlayButtonPressed();
         FindObjectOfType<LevelManager>().LoadMainMenuScene();
         Destroy(gameObject);
     }

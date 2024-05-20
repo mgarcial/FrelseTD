@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    private AudioManager instance;
+    
 
     [Header("Enemies & Player Sounds")]
     [SerializeField] private AudioClip enemySpawnSound;
@@ -25,35 +25,41 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip CannonTowerShot;
     [SerializeField] private AudioClip stunTowerShot;
 
-    private AudioSource _audioSource;
+    private AudioSource audioSource;
+
+    private static AudioManager instance;
+    public static AudioManager GetInstance() => instance;
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
+        if (FindObjectsOfType<AudioManager>().Length > 1)
         {
             Destroy(gameObject);
         }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        audioSource = GetComponent<AudioSource>();
+
     }
     void Start()
     {
-        //_audioSource.mute = !Preferences.GetToggleSfx();
+        audioSource.mute = !Preferences.GetToggleSfx();
     }
 
-    public void PlayEnemySpawn() => _audioSource.PlayOneShot(enemySpawnSound);
-    public void PlayEnemyDeath() => _audioSource.PlayOneShot(enemyDeathSound);
-    public void PlayPlayerDeath() => _audioSource.PlayOneShot(playerDeathSound);
-    public void PlayPlayerWin() => _audioSource.PlayOneShot(playerWinSound);
-    public void PlayTowerPlaced() => _audioSource.PlayOneShot(towerPlacedSound);
-    public void PlayButtonPressed() => _audioSource.PlayOneShot(buttonPressed);
-    public void PlayCommonTowerShot() => _audioSource.PlayOneShot(commonTowerShot);
-    public void PlayEnergyTowerShot() => _audioSource.PlayOneShot(energyTowerShot);
-    public void PlayBurnTowerShot() => _audioSource.PlayOneShot(burnTowerShot);
-    public void PlayCannonTowerShot() => _audioSource.PlayOneShot(CannonTowerShot);
-    public void PlayStunTowerShot() => _audioSource.PlayOneShot(stunTowerShot);
+    public void PlayEnemySpawn() => audioSource.PlayOneShot(enemySpawnSound);
+    public void PlayEnemyDeath() => audioSource.PlayOneShot(enemyDeathSound);
+    public void PlayPlayerDeath() => audioSource.PlayOneShot(playerDeathSound);
+    public void PlayPlayerWin() => audioSource.PlayOneShot(playerWinSound);
+    public void PlayTowerPlaced() => audioSource.PlayOneShot(towerPlacedSound);
+    public void PlayButtonPressed() => audioSource.PlayOneShot(buttonPressed);
+    public void PlayCommonTowerShot() => audioSource.PlayOneShot(commonTowerShot);
+    public void PlayEnergyTowerShot() => audioSource.PlayOneShot(energyTowerShot);
+    public void PlayBurnTowerShot() => audioSource.PlayOneShot(burnTowerShot);
+    public void PlayCannonTowerShot() => audioSource.PlayOneShot(CannonTowerShot);
+    public void PlayStunTowerShot() => audioSource.PlayOneShot(stunTowerShot);
 
 
 }
