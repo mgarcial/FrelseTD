@@ -57,7 +57,7 @@ public class EventPanel : MonoBehaviour
                 EventManager.instance.EngineerEvent(EventChoices.accept, BuffToTowers);
                 break;
             case Events.StrikeEvent:
-                EventManager.instance.StrikeEvent(EventChoices.accept);
+                //EventManager.instance.StrikeEvent(EventChoices.accept);
                 break;
             case Events.TerroristEvent:
                 EventManager.instance.TerroristEvent(EventChoices.accept, TowersToDestroy);
@@ -79,7 +79,7 @@ public class EventPanel : MonoBehaviour
                 EventManager.instance.EngineerEvent(EventChoices.decline, CircuitsToReimburse);
                 break;
             case Events.StrikeEvent:
-                EventManager.instance.StrikeEvent(EventChoices.decline);
+                //EventManager.instance.StrikeEvent(EventChoices.decline);
                 break;
             case Events.TerroristEvent:
                 EventManager.instance.TerroristEvent(EventChoices.decline, HealthToTake);
