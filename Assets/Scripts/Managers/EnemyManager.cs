@@ -19,6 +19,7 @@ public class EnemyManager : MonoBehaviour
     private int strikeEventCounter = 0;
     private int strikeEventReward;
     private float circuitsMultiplier;
+    private EventChoices strikeChoice;
 
     [SerializeField] private List<Enemy> enemies;
 
@@ -53,7 +54,7 @@ public class EnemyManager : MonoBehaviour
         switch (choice)
         {
             case EventChoices.accept:
-                GameManager.instance.SetHealth((int)rate);
+                strikeChoice = choice;
                 strikeEventCounter = counter;
                 strikeEventReward = reward;
                 break;
@@ -113,6 +114,11 @@ public class EnemyManager : MonoBehaviour
         if (strikeEventCounter == 0)
         {
             circuitsMultiplier = 1;
+
+            if(strikeChoice == EventChoices.accept)
+            {
+                EventManager.instance.StrikeFinish(strikeEventReward);
+            }
         }
     }
 }

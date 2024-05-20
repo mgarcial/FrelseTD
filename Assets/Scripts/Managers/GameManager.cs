@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int initialMoney;
 
     private int health;
+    private int previusHealth;
     private int circuits;
     public Text circuitosDisplay;
     public GameObject grid;
@@ -57,6 +58,8 @@ public class GameManager : MonoBehaviour
         EventManager.instance.OnEngineerEvent -= EngineerEvent;
         EventManager.instance.OnTerroristEvent -= TerroristEvent;
         EventManager.instance.OnClimateEvent -= ClimateEvent;
+        EventManager.instance.OnStrikeEvent -= StrikeEvent;
+        EventManager.instance.OnStrikeFinish -= StrikeFinish;
     }
 
     private void Start()
@@ -71,8 +74,10 @@ public class GameManager : MonoBehaviour
         EventManager.instance.OnEngineerEvent += EngineerEvent;
         EventManager.instance.OnTerroristEvent += TerroristEvent;
         EventManager.instance.OnClimateEvent += ClimateEvent;
+        EventManager.instance.OnStrikeEvent += StrikeEvent;
         EventManager.instance.OnEnemyKilled += AddToMoney;
         EventManager.instance.OnAllEnemiesDead += WinLevel;
+        EventManager.instance.OnStrikeFinish += StrikeFinish;
     }
 
     void Update()
@@ -204,7 +209,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //Al usarse sale el error de que no se puede destruir el edificio para no teenr perdida de datos, el internet dice que guarde una copia de la instancia de la torre, lo hago despues, ojala preguntandole a los profes
+    private void StrikeEvent(EventChoices choice, float rate, int counter, int reward)
+    {
+        switch (choice)
+        {
+            case EventChoices.accept:
+                previusHealth = health;
+                health = (int)rate;
+                healthBar.SetHealth(health, maxHealth);
+                break;
+        }
+    }
+
+    private void StrikeFinish(int reward)
+    {
+        circuits += reward;
+        health = previusHealth;
+        healthBar.SetHealth(health - 1, maxHealth);
+    }
+
     private Building DestroyTurret()
     {
         Building buildingToDestroy;

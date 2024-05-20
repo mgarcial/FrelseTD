@@ -85,4 +85,10 @@ public class EventManager : MonoBehaviour
     {
         OnTerroristEvent?.Invoke(choice, cuantity);
     }
+
+    public event Action<int> OnStrikeFinish;
+    public void StrikeFinish(int reward)
+    {
+        OnStrikeFinish?.Invoke(reward);
+    }
 }
