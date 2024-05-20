@@ -68,10 +68,10 @@ public class EventManager : MonoBehaviour
         OnEngineerEvent?.Invoke(choice, cuantity);
     }
 
-    public event Action<EventChoices> OnStrikeEvent;
-    public void StrikeEvent(EventChoices choice)
+    public event Action<EventChoices, float, int, int> OnStrikeEvent;
+    public void StrikeEvent(EventChoices choice, float rate, int counter, int reward)
     {
-        OnStrikeEvent?.Invoke(choice);
+        OnStrikeEvent?.Invoke(choice, rate, counter, reward);
     }
 
     public event Action<EventChoices, float> OnClimateEvent;

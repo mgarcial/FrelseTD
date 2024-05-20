@@ -285,6 +285,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetHealth(int amount)
+    {
+        health = amount;
+    }
+
     private void LooseLevel()
     {
         _gameSpeed = 0;

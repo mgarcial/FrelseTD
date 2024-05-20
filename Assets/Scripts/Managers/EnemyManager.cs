@@ -16,6 +16,9 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private int Event3Wave;
 
     private int waveCounter;
+    private int strikeEventCounter = 0;
+    private int strikeEventReward;
+    private float circuitsMultiplier;
 
     [SerializeField] private List<Enemy> enemies;
 
@@ -29,9 +32,36 @@ public class EnemyManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
 
+    private void Start()
+    {
         enemies = new List<Enemy>();
         waveCounter = 0;
+        circuitsMultiplier = 1;
+
+        EventManager.instance.OnStrikeEvent += StrikeEvent;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.instance.OnStrikeEvent -= StrikeEvent;
+    }
+
+    private void StrikeEvent(EventChoices choice, float rate, int counter, int reward)
+    {
+        switch (choice)
+        {
+            case EventChoices.accept:
+                GameManager.instance.SetHealth((int)rate);
+                strikeEventCounter = counter;
+                strikeEventReward = reward;
+                break;
+            case EventChoices.decline:
+                strikeEventCounter = counter;
+                circuitsMultiplier = rate;
+                break;
+        }
     }
 
     public void AddEnemy(Enemy enemy)
@@ -42,7 +72,7 @@ public class EnemyManager : MonoBehaviour
     public void RemoveEnemy(Enemy enemy)
     {
         enemies.Remove(enemy);
-        EventManager.instance.EnemyKilled(enemy.GetCircuits());
+        EventManager.instance.EnemyKilled((int)Mathf.Round(enemy.GetCircuits() * circuitsMultiplier));
         if (waveCounter == waves.Count && enemies.Count == 0)
         {
             EventManager.instance.AllEnemiesDead();
@@ -78,5 +108,11 @@ public class EnemyManager : MonoBehaviour
         }
 
         waveCounter++;
+        strikeEventCounter--;
+
+        if (strikeEventCounter == 0)
+        {
+            circuitsMultiplier = 1;
+        }
     }
 }
