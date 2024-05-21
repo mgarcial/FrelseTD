@@ -158,6 +158,15 @@ public class GameManager : MonoBehaviour
                 GameObject Edificio = buffTower.gameObject;
                 CC.gameObject.SetActive(true);
                 CC.setCursor(Edificio.GetComponent<SpriteRenderer>());
+                Scanner scanner = Edificio.GetComponentInChildren<Scanner>();
+                if (scanner != null)
+                {
+                    Debug.Log("got the buff scanner");
+                    GameObject rangeIndicator = scanner.rangeIndicator;
+                    rangeDisplay.gameObject.SetActive(true);
+                    rangeDisplay.setCursor(rangeIndicator.GetComponent<SpriteRenderer>());
+                    rangeDisplay.transform.localScale = new Vector3(scanner.rangeScan * 2, scanner.rangeScan * 2, 1);
+                }
                 Cursor.visible = false;
                 circuits -= buffTower.cost;
                 grid.SetActive(true);
