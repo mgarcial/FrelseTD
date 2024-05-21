@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private List<WaveSO> waves;
     [SerializeField] private List<Transform> spawnPoints;
     [SerializeField] private Transform endPoint;
+    [SerializeField] private List<GameObject> nextWaveAnnouncers;
 
     [SerializeField] private int Event1Wave;
     [SerializeField] private int Event2Wave;
@@ -95,6 +97,15 @@ public class EnemyManager : MonoBehaviour
         }
 
         WaveSO nextWave = waves[waveCounter];
+        StartCoroutine(WaveAnnaouncerRoutine(nextWave.spawnPoint, nextWave));
+    }
+    IEnumerator WaveAnnaouncerRoutine(int spawnPoint, WaveSO nextWave)
+    {
+        nextWaveAnnouncers[spawnPoint].SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+
+        nextWaveAnnouncers[spawnPoint].SetActive(false);
         StartCoroutine(StartWaveRoutine(1.0f, nextWave));
     }
 
