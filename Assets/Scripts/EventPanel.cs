@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class EventPanel : MonoBehaviour
 {
@@ -9,10 +9,10 @@ public class EventPanel : MonoBehaviour
     private EventSO currentEvent;
 
     [Header("Showing Text")]
-    [SerializeField] private TMP_Text title;
-    [SerializeField] private TMP_Text description;
-    [SerializeField] private TMP_Text acceptButtonText;
-    [SerializeField] private TMP_Text declineButtonText;
+    [SerializeField] private Text title;
+    [SerializeField] private Text description;
+    [SerializeField] private Text acceptButtonText;
+    [SerializeField] private Text declineButtonText;
 
     [Header("Engineer Event Stats")]
     [SerializeField] float BuffToTowers = 1.2f;
