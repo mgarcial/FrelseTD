@@ -104,8 +104,9 @@ public class EnemyManager : MonoBehaviour
         nextWaveAnnouncers[spawnPoint].SetActive(true);
 
         yield return new WaitForSeconds(3f);
-
         nextWaveAnnouncers[spawnPoint].SetActive(false);
+        yield return new WaitForSeconds(.6f);
+
         StartCoroutine(StartWaveRoutine(1.0f, nextWave));
     }
 

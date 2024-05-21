@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
 
     private void OnDisable()
     {
-        EventManager.instance.OnEnemyKilled -= AddToMoney;
+        EventManager.instance.OnEnemyKilled -= ChangeCircuits;
         EventManager.instance.OnAllEnemiesDead -= WinLevel;
         EventManager.instance.OnTimeChange -= SetGameTime;
         EventManager.instance.OnEngineerEvent -= EngineerEvent;
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
         EventManager.instance.OnTerroristEvent += TerroristEvent;
         EventManager.instance.OnClimateEvent += ClimateEvent;
         EventManager.instance.OnStrikeEvent += StrikeEvent;
-        EventManager.instance.OnEnemyKilled += AddToMoney;
+        EventManager.instance.OnEnemyKilled += ChangeCircuits;
         EventManager.instance.OnAllEnemiesDead += WinLevel;
         EventManager.instance.OnStrikeFinish += StrikeFinish;
     }
@@ -312,11 +312,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = speed;
     }
 
-    public void AddToMoney(int amount)
-    {
-        circuits += amount;
-    }
-
     public void TakeDamage(int dmg)
     {
         health -= dmg;
@@ -347,5 +342,10 @@ public class GameManager : MonoBehaviour
     public void ChangeCircuits(int changeAmount)
     {
         circuits += changeAmount;
+
+        if(circuits < 0)
+        {
+            circuits = 0;
+        }
     }
 }
