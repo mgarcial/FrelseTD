@@ -13,19 +13,23 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Pause()
-    {
+    {   
+        AudioManager.GetInstance().PlayButtonPressed();
         pauseMenu.SetActive(true);
         EventManager.instance.TimeChange(TimeStates.pause);
     }
 
     public void Restart()
     {
+        AudioManager.GetInstance().PlayButtonPressed();
         pauseMenu.SetActive(false);
         EventManager.instance.TimeChange(TimeStates.unpause);
     }
 
     public void MainMenu()
     {
+        GameManager.instance.CleanLevel();
+        AudioManager.GetInstance().PlayButtonPressed();
         SceneManager.LoadScene("Main Screen");
         EventManager.instance.TimeChange(TimeStates.unpause); ;
     }

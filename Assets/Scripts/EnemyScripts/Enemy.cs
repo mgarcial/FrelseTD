@@ -46,6 +46,7 @@ public class Enemy : MonoBehaviour
         _enemyManager = EnemyManager.instance;
         gameManager = GameManager.instance;
         damageDeal = GetComponent<DamageDeal>();
+        AudioManager.GetInstance().PlayEnemySpawn();
     }
 
     void Start()

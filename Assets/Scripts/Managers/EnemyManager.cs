@@ -90,6 +90,7 @@ public class EnemyManager : MonoBehaviour
     //Para probar
     public void StartWave()
     {
+        AudioManager.GetInstance().PlayButtonPressed();
         if (waveCounter == (Event1Wave -1) || waveCounter == (Event2Wave -1) || waveCounter == (Event3Wave -1))
         {
             EventManager.instance.EventStart();

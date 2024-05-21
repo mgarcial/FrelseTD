@@ -26,7 +26,14 @@ public class LevelSelection : MonoBehaviour
     }
     public void LoadLevel(int levelNum)
     {
+        AudioManager.GetInstance().PlayButtonPressed();
         Preferences.SetCurrentLvl(levelNum);
+        StartCoroutine(LoadLevelAfterDelay(levelNum));
+    }
+
+    private IEnumerator LoadLevelAfterDelay(int levelNum)
+    {
+        yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene("Level " + levelNum);
     }
 

@@ -116,6 +116,7 @@ public class GameManager : MonoBehaviour
                 
                 grid.SetActive(false);
                 CC.gameObject.SetActive(false);
+                AudioManager.GetInstance().PlayTowerPlaced();
                 rangeDisplay.gameObject.SetActive(false);
                 Cursor.visible = true;
                 buildingToPlace = null;
@@ -263,13 +264,14 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevel()
     {
+        AudioManager.GetInstance().PlayButtonPressed();
         FindObjectOfType<LevelManager>().LoadCurrentScene();
         CleanLevel();
         Destroy(gameObject);
     }
 
 
-    private void CleanLevel()
+    public void CleanLevel()
     {
         health = maxHealth;
         circuits = initialMoney;
@@ -281,8 +283,8 @@ public class GameManager : MonoBehaviour
     public void NextLevel()
     {
         CleanLevel();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         AudioManager.GetInstance().PlayButtonPressed();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Destroy(gameObject);
     }
     public void ExitToMainMenu()
@@ -320,6 +322,7 @@ public class GameManager : MonoBehaviour
         if (health <= 0)
         {
             health = 0;
+            AudioManager.GetInstance().PlayPlayerDeath();
             LooseLevel();
             Debug.Log("level lost");
         }
