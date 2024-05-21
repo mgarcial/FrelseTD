@@ -5206,6 +5206,7 @@ GameObject:
   - component: {fileID: 6922890199492128885}
   - component: {fileID: 79152038401344114}
   - component: {fileID: -1712396024560701120}
+  - component: {fileID: -4536916757912983464}
   m_Layer: 7
   m_Name: Tank-1.png
   m_TagString: Untagged
@@ -5250,7 +5251,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5375,6 +5376,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+--- !u!114 &-4536916757912983464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5600453077869431889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 0
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 
+  m_ShapePath:
+  - {x: -1.28, y: -1.2799999, z: 0}
+  - {x: -1.28, y: 1.28, z: 0}
+  - {x: 1.28, y: 1.28, z: 0}
+  - {x: 1.28, y: -1.2799999, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -42592
+  m_LocalBounds:
+    m_Center: {x: 0, y: 0.00000011920929, z: 0}
+    m_Extent: {x: 1.28, y: 1.28, z: 0}
 --- !u!1 &8030378767191359100
 GameObject:
   m_ObjectHideFlags: 0
