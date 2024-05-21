@@ -1,31 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
+using System;
 
 public class Scanner : MonoBehaviour
 {
-    [SerializeField] private float rangeScan = 10f;
+    public float rangeScan = 10f;
+    public GameObject rangeIndicator;
+
     private EnemyManager _enemyManager;
     private Transform _target;
+    private bool isMouseOver;
 
     private void Awake()
     {
         _enemyManager = EnemyManager.instance;
     }
-    // Start is called before the first frame update
+
     void Start()
     {
-        float radiusScale = rangeScan * 2;
-        transform.localScale = new Vector2(radiusScale, radiusScale);
+        rangeIndicator.transform.localScale = new Vector3(rangeScan * 2, rangeScan * 2, 1);
     }
+
 
     public void Scan()
     {
         Transform enemyTargeted = null;
-
         List<Enemy> enemies = _enemyManager.GetEnemiesList();
-    
-        foreach(Enemy enemy in enemies)
+
+        foreach (Enemy enemy in enemies)
         {
             float currentDistance = Vector2.Distance(transform.position, enemy.transform.position);
 
@@ -36,8 +39,8 @@ public class Scanner : MonoBehaviour
         }
 
         _target = enemyTargeted;
-        
     }
+
     public bool TargetFound()
     {
         return _target != null;
@@ -47,11 +50,23 @@ public class Scanner : MonoBehaviour
     {
         return _target;
     }
-
-    private void OnDrawGizmos()
+    private void OnMouseEnter()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, rangeScan);
+        isMouseOver = true;
+        if (rangeIndicator != null)
+        {
+            rangeIndicator.SetActive(true);
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        isMouseOver = false;
+        if (rangeIndicator != null)
+        {
+            rangeIndicator.SetActive(false);
+        }
     }
 
 }
+

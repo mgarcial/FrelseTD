@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     public Text circuitosDisplay;
     public GameObject grid;
     public CustomCursor CC;
+    public CustomCursor rangeDisplay;
     public Tile[] tiles;
     public GameObject eventPanel;
     public GameObject WinPanel;
@@ -115,6 +116,7 @@ public class GameManager : MonoBehaviour
                 
                 grid.SetActive(false);
                 CC.gameObject.SetActive(false);
+                rangeDisplay.gameObject.SetActive(false);
                 Cursor.visible = true;
                 buildingToPlace = null;
             }
@@ -132,6 +134,15 @@ public class GameManager : MonoBehaviour
                 GameObject Edificio = b.gameObject;
                 CC.gameObject.SetActive(true);
                 CC.setCursor(Edificio.GetComponent<SpriteRenderer>());
+                Scanner scanner = Edificio.GetComponentInChildren<Scanner>();
+                if(scanner != null)
+                {
+                    Debug.Log("got the scanner");
+                    GameObject rangeIndicator = scanner.rangeIndicator;
+                    rangeDisplay.gameObject.SetActive(true);
+                    rangeDisplay.setCursor(rangeIndicator.GetComponent<SpriteRenderer>());
+                    rangeDisplay.transform.localScale = new Vector3(scanner.rangeScan *2, scanner.rangeScan*2, 1);
+                }
                 Cursor.visible = false;
                 circuits -= b.cost;
                 grid.SetActive(true);

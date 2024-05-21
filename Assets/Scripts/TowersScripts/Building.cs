@@ -8,7 +8,6 @@ public class Building : MonoBehaviour
 
     private Scanner _scanner;
     private Weapon _weapon;
-    private bool _isHover = false;
 
     GameManager gm = GameManager.instance;
 
