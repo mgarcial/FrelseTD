@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Evento 1
   m_EditorClassIdentifier: 
   eventName: Evento Ingeniero
-  description: "si aceptas aumenta el da\xF1o de todas las torres 20% pero te quitan
-    un 30% de tus circuitos (Se podr\xEDa quitar una cantidad especifica de 200)
-    Si te niegas se destruye una de tus torretas"
+  description: "Un ingeniero de combate quiere venderte una mejora para tus torretas.
+    Si aceptas aumenta el da\xF1o de todas las torres 20% pero te quitan un 30% de
+    tus circuitos. Si te niegas se destruye 1 de tus torretas"
   option1Text: Aceptar
   option2Text: Denegar
   eventType: 0
