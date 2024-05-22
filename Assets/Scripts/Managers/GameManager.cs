@@ -216,7 +216,6 @@ public class GameManager : MonoBehaviour
                 break;
             case EventChoices.decline:
                 health -= cuantity;
-                healthBar.SetHealth(health, maxHealth);
                 break;
         }
     }
