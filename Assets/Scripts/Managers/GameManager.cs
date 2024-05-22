@@ -298,6 +298,7 @@ public class GameManager : MonoBehaviour
 
     public void WinLevel()
     {
+        AudioManager.GetInstance().PlayPlayerWin();
         _gameSpeed = 0;
         SetGameSpeed(_gameSpeed);
         UnlockNextLevel();
