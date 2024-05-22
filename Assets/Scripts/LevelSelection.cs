@@ -27,7 +27,7 @@ public class LevelSelection : MonoBehaviour
     }
     public void LoadLevel(int levelNum)
     {
-        AudioManager.GetInstance().PlayButtonPressed();
+        AudioManager.GetInstance().PlayLevelSelected();
         Preferences.SetCurrentLvl(levelNum);
         StartCoroutine(LoadLevelAfterDelay(levelNum));
     }
@@ -47,6 +47,7 @@ public class LevelSelection : MonoBehaviour
     {
         AudioManager.GetInstance().PlayButtonPressed();
         Preferences.ClearMaxLevel();
+        SceneManager.LoadScene("Main Screen");
     }
 
 }

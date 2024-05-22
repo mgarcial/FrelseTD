@@ -105,6 +105,7 @@ public class GameManager : MonoBehaviour
                 if(shortestDistance <= 3.0f)
                 {
                     Building towerBuilt = Instantiate(buildingToPlace, nearestTile.transform.position, Quaternion.identity);
+                    AudioManager.GetInstance().PlayTowerPlaced();
                     nearestTile.buildingHere = towerBuilt;
                     occupiedTiles.Add(nearestTile);
                     nearestTile.isOccupied = true;
@@ -116,7 +117,6 @@ public class GameManager : MonoBehaviour
                 
                 grid.SetActive(false);
                 CC.gameObject.SetActive(false);
-                AudioManager.GetInstance().PlayTowerPlaced();
                 rangeDisplay.gameObject.SetActive(false);
                 Cursor.visible = true;
                 buildingToPlace = null;
@@ -132,6 +132,7 @@ public class GameManager : MonoBehaviour
             Building b = (Building)building; // Cast the MonoBehaviour to Building
             if (circuits >= b.cost)
             {
+                AudioManager.GetInstance().PlayTowerBuyed();
                 GameObject Edificio = b.gameObject;
                 CC.gameObject.SetActive(true);
                 CC.setCursor(Edificio.GetComponent<SpriteRenderer>());
@@ -155,6 +156,7 @@ public class GameManager : MonoBehaviour
             BuffTower buffTower = (BuffTower)building; // Cast the MonoBehaviour to BuffTower
             if (circuits >= buffTower.cost)
             {
+                AudioManager.GetInstance().PlayTowerBuyed();
                 Debug.Log("Button pressed for BuffTower");
                 GameObject Edificio = buffTower.gameObject;
                 CC.gameObject.SetActive(true);

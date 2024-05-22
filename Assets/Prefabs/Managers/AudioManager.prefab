@@ -50,7 +50,9 @@ MonoBehaviour:
   playerDeathSound: {fileID: 8300000, guid: 50a2aa307074b8745b1decafb016d1dd, type: 3}
   playerWinSound: {fileID: 8300000, guid: 5a9bd57fb51ce364cb8548a7474f1739, type: 3}
   towerPlacedSound: {fileID: 8300000, guid: 0dbc3a85d40e2224c8aaa461be1d00d6, type: 3}
+  towerBuyedSound: {fileID: 8300000, guid: bb9d42c0248f76f41b1b863f16554616, type: 3}
   buttonPressed: {fileID: 8300000, guid: 7cdb77c830ad45240a57769e7cd4179f, type: 3}
+  levelSelectedSound: {fileID: 8300000, guid: cdada53a1ec68ea43a677116e680cb80, type: 3}
   commonTowerShot: {fileID: 8300000, guid: 2ee07e334a3a5964a94002baeb2ab0fb, type: 3}
   energyTowerShot: {fileID: 8300000, guid: c91f8cd1475debe438ad750517554f4e, type: 3}
   burnTowerShot: {fileID: 8300000, guid: 7964afc3b30e71348a9c22c497c6edab, type: 3}

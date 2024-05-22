@@ -14,9 +14,11 @@ public class AudioManager : MonoBehaviour
 
     [Header("Shop Sounds")]
     [SerializeField] private AudioClip towerPlacedSound;
+    [SerializeField] private AudioClip towerBuyedSound;
 
     [Header("Button")]
     [SerializeField] private AudioClip buttonPressed;
+    [SerializeField] private AudioClip levelSelectedSound;
 
     [Header("Towers shots")]
     [SerializeField] private AudioClip commonTowerShot;
@@ -54,11 +56,13 @@ public class AudioManager : MonoBehaviour
     public void PlayPlayerDeath() => audioSource.PlayOneShot(playerDeathSound, 0.2f);
     public void PlayPlayerWin() => audioSource.PlayOneShot(playerWinSound, 0.2f);
     public void PlayTowerPlaced() => audioSource.PlayOneShot(towerPlacedSound, 0.12f);
+    public void PlayTowerBuyed() => audioSource.PlayOneShot(towerBuyedSound, 0.32f);
     public void PlayButtonPressed() => audioSource.PlayOneShot(buttonPressed, 0.28f);
-    public void PlayCommonTowerShot() => audioSource.PlayOneShot(commonTowerShot, 0.12f);
+    public void PlayLevelSelected() => audioSource.PlayOneShot(levelSelectedSound, 0.6f);
+    public void PlayCommonTowerShot() => audioSource.PlayOneShot(commonTowerShot, 0.10f);
     public void PlayEnergyTowerShot() => audioSource.PlayOneShot(energyTowerShot, 0.22f);
     public void PlayBurnTowerShot() => audioSource.PlayOneShot(burnTowerShot, 0.22f);
-    public void PlayCannonTowerShot() => audioSource.PlayOneShot(CannonTowerShot, 0.3f);
+    public void PlayCannonTowerShot() => audioSource.PlayOneShot(CannonTowerShot, 0.35f);
     public void PlayStunTowerShot() => audioSource.PlayOneShot(stunTowerShot, 0.2f);
 
 
