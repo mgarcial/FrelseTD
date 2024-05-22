@@ -37,6 +37,12 @@ public class Projectile : MonoBehaviour
     {
         if (_target != null)
         {
+            Enemy enemy = _target.GetComponent<Enemy>();
+            if (enemy == null || enemy.IsDead())
+            {
+                Destroy(gameObject);
+                return;
+            }
             Vector2 direction = (_target.position - transform.position).normalized;
 
             _rb.velocity = direction * speed;

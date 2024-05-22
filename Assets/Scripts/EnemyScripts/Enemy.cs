@@ -39,6 +39,10 @@ public class Enemy : MonoBehaviour
         get { return speed; }
         set { speed = value; }
     }
+    public bool IsDead()
+    {
+        return hitPoints <= 0;
+    }
 
     private void Awake()
     {

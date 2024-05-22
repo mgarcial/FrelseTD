@@ -185,7 +185,7 @@ MonoBehaviour:
   - {x: 0.89179516, y: -1.0957674, z: 0}
   m_ShapePathHash: 692696397
   m_Mesh: {fileID: 0}
-  m_InstanceId: 50736
+  m_InstanceId: 30018
   m_LocalBounds:
     m_Center: {x: 0.013159454, y: 0.03947854, z: 0}
     m_Extent: {x: 0.8786357, y: 1.1484053, z: 0}
@@ -373,7 +373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7261015199372508529, guid: a4b3274620b079848a073b0b10023ea1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4b3274620b079848a073b0b10023ea1, type: 3}
