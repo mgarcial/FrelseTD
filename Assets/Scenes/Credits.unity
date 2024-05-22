@@ -512,8 +512,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 331.8502, y: 195}
-  m_SizeDelta: {x: 571.1545, y: 32.1046}
+  m_AnchoredPosition: {x: 232.86142, y: 195}
+  m_SizeDelta: {x: 409.8778, y: 32.1046}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1405920357
 MonoBehaviour:
@@ -581,14 +581,8 @@ MonoBehaviour:
     UI Asset by Crusenho Agus is licensed under CC BY-SA 4.0.  https://creativecommons.org/licenses/by-sa/4.0/
 
 
-
-
     Sara
     Cardona
-
-    Roberto Andres Estupinan
-
-    Juan David jaramillo
 
 '
 --- !u!222 &1405920358

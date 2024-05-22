@@ -49,16 +49,16 @@ public class AudioManager : MonoBehaviour
         audioSource.mute = Preferences.GetToggleSfx();
     }
 
-    public void PlayEnemySpawn() => audioSource.PlayOneShot(enemySpawnSound,0.25f);
-    public void PlayEnemyDeath() => audioSource.PlayOneShot(enemyDeathSound, 0.25f);
+    public void PlayEnemySpawn() => audioSource.PlayOneShot(enemySpawnSound,0.2f);
+    public void PlayEnemyDeath() => audioSource.PlayOneShot(enemyDeathSound, 0.2f);
     public void PlayPlayerDeath() => audioSource.PlayOneShot(playerDeathSound, 0.2f);
     public void PlayPlayerWin() => audioSource.PlayOneShot(playerWinSound, 0.2f);
-    public void PlayTowerPlaced() => audioSource.PlayOneShot(towerPlacedSound, 0.12f);
-    public void PlayButtonPressed() => audioSource.PlayOneShot(buttonPressed, 0.28f);
-    public void PlayCommonTowerShot() => audioSource.PlayOneShot(commonTowerShot, 0.12f);
-    public void PlayEnergyTowerShot() => audioSource.PlayOneShot(energyTowerShot, 0.22f);
-    public void PlayBurnTowerShot() => audioSource.PlayOneShot(burnTowerShot, 0.22f);
-    public void PlayCannonTowerShot() => audioSource.PlayOneShot(CannonTowerShot, 0.3f);
+    public void PlayTowerPlaced() => audioSource.PlayOneShot(towerPlacedSound, 0.2f);
+    public void PlayButtonPressed() => audioSource.PlayOneShot(buttonPressed, 0.2f);
+    public void PlayCommonTowerShot() => audioSource.PlayOneShot(commonTowerShot, 0.2f);
+    public void PlayEnergyTowerShot() => audioSource.PlayOneShot(energyTowerShot, 0.2f);
+    public void PlayBurnTowerShot() => audioSource.PlayOneShot(burnTowerShot, 0.2f);
+    public void PlayCannonTowerShot() => audioSource.PlayOneShot(CannonTowerShot, 0.2f);
     public void PlayStunTowerShot() => audioSource.PlayOneShot(stunTowerShot, 0.2f);
 
 

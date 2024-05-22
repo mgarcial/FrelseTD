@@ -8,7 +8,6 @@ public class LevelSelection : MonoBehaviour
 {
     private Button[] levelButtons;
     private int highestLevel;
-    [SerializeField] private GameObject warningPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -36,17 +35,6 @@ public class LevelSelection : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene("Level " + levelNum);
-    }
-
-    public void ActiveWarning()
-    {
-        AudioManager.GetInstance().PlayButtonPressed();
-        warningPanel.SetActive(true);
-    }
-    public void ResetGame()
-    {
-        AudioManager.GetInstance().PlayButtonPressed();
-        Preferences.ClearMaxLevel();
     }
 
 }
