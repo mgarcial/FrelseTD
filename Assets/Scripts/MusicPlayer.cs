@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class MusicPlayer : MonoBehaviour
 {
     private AudioSource audioSource;
-    public AudioClip defaultClip;  // The default audio clip
-    public AudioClip creditsClip;  // The audio clip for the credits scene
+    public AudioClip defaultClip; 
+    public AudioClip creditsClip;  
 
     private void Awake()
     {
@@ -43,11 +43,9 @@ public class MusicPlayer : MonoBehaviour
             audioSource.Play();
         }
     }
-
-    // Method called when a new scene is loaded
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Credits")  // Change to the name of your credits scene
+        if (scene.name == "Credits")  
         {
             ChangeMusic(creditsClip);
         }
