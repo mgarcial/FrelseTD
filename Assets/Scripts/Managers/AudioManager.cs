@@ -49,12 +49,12 @@ public class AudioManager : MonoBehaviour
         audioSource.mute = Preferences.GetToggleSfx();
     }
 
-    public void PlayEnemySpawn() => audioSource.PlayOneShot(enemySpawnSound);
-    public void PlayEnemyDeath() => audioSource.PlayOneShot(enemyDeathSound);
-    public void PlayPlayerDeath() => audioSource.PlayOneShot(playerDeathSound);
-    public void PlayPlayerWin() => audioSource.PlayOneShot(playerWinSound);
-    public void PlayTowerPlaced() => audioSource.PlayOneShot(towerPlacedSound);
-    public void PlayButtonPressed() => audioSource.PlayOneShot(buttonPressed);
+    public void PlayEnemySpawn() => audioSource.PlayOneShot(enemySpawnSound,0.2f);
+    public void PlayEnemyDeath() => audioSource.PlayOneShot(enemyDeathSound, 0.2f);
+    public void PlayPlayerDeath() => audioSource.PlayOneShot(playerDeathSound, 0.2f);
+    public void PlayPlayerWin() => audioSource.PlayOneShot(playerWinSound, 0.2f);
+    public void PlayTowerPlaced() => audioSource.PlayOneShot(towerPlacedSound, 0.2f);
+    public void PlayButtonPressed() => audioSource.PlayOneShot(buttonPressed, 0.2f);
     public void PlayCommonTowerShot() => audioSource.PlayOneShot(commonTowerShot);
     public void PlayEnergyTowerShot() => audioSource.PlayOneShot(energyTowerShot);
     public void PlayBurnTowerShot() => audioSource.PlayOneShot(burnTowerShot);
