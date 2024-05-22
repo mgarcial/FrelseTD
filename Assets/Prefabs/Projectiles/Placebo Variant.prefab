@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Placebo Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6526880503429138052, guid: 6c778eb9bdd8f4a47ae7933b19606efb, type: 3}
+      propertyPath: commonBullet
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8826911500446286340, guid: 6c778eb9bdd8f4a47ae7933b19606efb, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -55,11 +55,11 @@ public class AudioManager : MonoBehaviour
     public void PlayPlayerWin() => audioSource.PlayOneShot(playerWinSound, 0.2f);
     public void PlayTowerPlaced() => audioSource.PlayOneShot(towerPlacedSound, 0.2f);
     public void PlayButtonPressed() => audioSource.PlayOneShot(buttonPressed, 0.2f);
-    public void PlayCommonTowerShot() => audioSource.PlayOneShot(commonTowerShot);
-    public void PlayEnergyTowerShot() => audioSource.PlayOneShot(energyTowerShot);
-    public void PlayBurnTowerShot() => audioSource.PlayOneShot(burnTowerShot);
-    public void PlayCannonTowerShot() => audioSource.PlayOneShot(CannonTowerShot);
-    public void PlayStunTowerShot() => audioSource.PlayOneShot(stunTowerShot);
+    public void PlayCommonTowerShot() => audioSource.PlayOneShot(commonTowerShot, 0.2f);
+    public void PlayEnergyTowerShot() => audioSource.PlayOneShot(energyTowerShot, 0.2f);
+    public void PlayBurnTowerShot() => audioSource.PlayOneShot(burnTowerShot, 0.2f);
+    public void PlayCannonTowerShot() => audioSource.PlayOneShot(CannonTowerShot, 0.2f);
+    public void PlayStunTowerShot() => audioSource.PlayOneShot(stunTowerShot, 0.2f);
 
 
 }

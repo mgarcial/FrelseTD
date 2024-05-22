@@ -104,6 +104,9 @@ MonoBehaviour:
   speed: 15
   stunsEnemy: 0
   burnsEnemy: 0
+  energyBullet: 0
+  cannonBullet: 1
+  commonBullet: 0
 --- !u!50 &-2170850858106615303
 Rigidbody2D:
   serializedVersion: 4

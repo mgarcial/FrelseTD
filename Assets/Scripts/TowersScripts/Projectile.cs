@@ -8,6 +8,9 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private bool stunsEnemy = false;
     [SerializeField] private bool burnsEnemy = false;
+    [SerializeField] private bool energyBullet = false;
+    [SerializeField] private bool cannonBullet = false;
+    [SerializeField] private bool commonBullet = false;
 
     private Rigidbody2D _rb;
     private DamageDeal _damageDeal;
@@ -22,6 +25,26 @@ public class Projectile : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _damageDeal = GetComponent<DamageDeal>();
         _trailRenderer = GetComponent<TrailRenderer>();
+        if(stunsEnemy)
+        {
+            AudioManager.GetInstance().PlayStunTowerShot();
+        }
+        else if(burnsEnemy)
+        {
+            AudioManager.GetInstance().PlayBurnTowerShot();
+        }
+        else if (energyBullet)
+        {
+            AudioManager.GetInstance().PlayEnergyTowerShot();
+        }
+        else if (cannonBullet)
+        {
+            AudioManager.GetInstance().PlayCannonTowerShot();
+        }
+        else if (commonBullet)
+        {
+            AudioManager.GetInstance().PlayCommonTowerShot();
+        }
     }
 
     private void FixedUpdate()

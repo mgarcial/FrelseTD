@@ -51,11 +51,11 @@ MonoBehaviour:
   playerWinSound: {fileID: 8300000, guid: 5a9bd57fb51ce364cb8548a7474f1739, type: 3}
   towerPlacedSound: {fileID: 8300000, guid: 0dbc3a85d40e2224c8aaa461be1d00d6, type: 3}
   buttonPressed: {fileID: 8300000, guid: 7cdb77c830ad45240a57769e7cd4179f, type: 3}
-  commonTowerShot: {fileID: 0}
+  commonTowerShot: {fileID: 8300000, guid: 2ee07e334a3a5964a94002baeb2ab0fb, type: 3}
   energyTowerShot: {fileID: 8300000, guid: c91f8cd1475debe438ad750517554f4e, type: 3}
   burnTowerShot: {fileID: 8300000, guid: 7964afc3b30e71348a9c22c497c6edab, type: 3}
-  CannonTowerShot: {fileID: 0}
-  stunTowerShot: {fileID: 0}
+  CannonTowerShot: {fileID: 8300000, guid: 03af8bc3e4c5ac346bc5f1794dc58241, type: 3}
+  stunTowerShot: {fileID: 8300000, guid: 75c3951c4c394bd489b98ee6bffa3772, type: 3}
 --- !u!82 &-7624820000352685724
 AudioSource:
   m_ObjectHideFlags: 0
@@ -71,7 +71,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
