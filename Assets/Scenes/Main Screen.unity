@@ -1556,6 +1556,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2736214558192468606, guid: 872e74c4f5affd746b0142d7978b1728, type: 3}
+      propertyPath: creditsClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 351f377923d813e4b9661e81739a614f, type: 3}
+    - target: {fileID: -2736214558192468606, guid: 872e74c4f5affd746b0142d7978b1728, type: 3}
+      propertyPath: defaultClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 65f954f65226dda46b25974249d59156, type: 3}
     - target: {fileID: 1302094764510984216, guid: 872e74c4f5affd746b0142d7978b1728, type: 3}
       propertyPath: Loop
       value: 1
