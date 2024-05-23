@@ -16,6 +16,6 @@ MonoBehaviour:
   description: "Un ingeniero de combate quiere venderte una mejora para tus torretas.
     Si aceptas aumenta el da\xF1o de todas las torres 20% pero te quitan un 30% de
     tus circuitos. Si te niegas se destruye 1 de tus torretas"
-  option1Text: Aceptar
-  option2Text: Denegar
+  option1Text: Me gustan las mejoras
+  option2Text: "No pagar\xE9 a un asesino"
   eventType: 0

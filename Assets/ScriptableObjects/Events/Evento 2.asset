@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Evento 2
   m_EditorClassIdentifier: 
   eventName: Evento de Clima
-  description: 'si aceptas, gastas 250 circuitos y no pasa nada Si niegas: Torretas
-    30% menos de velocidad de ataque'
-  option1Text: Aceptar
-  option2Text: Denegar
+  description: "General, se aproxima una tormenta de arena, hay que proteger las
+    torretas. Si las proteges, gastas 80 circuitos. Si no la torretas disparar\xE1n
+    un 30% m\xE1s lento."
+  option1Text: Hay que proteger las torretas
+  option2Text: Las torres pueden aguantar
   eventType: 2
