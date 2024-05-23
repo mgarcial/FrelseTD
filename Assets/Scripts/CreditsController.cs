@@ -12,12 +12,7 @@ public class CreditsController : MonoBehaviour
     {
         if(credits.anchoredPosition.y >= endPosition)
         {
-            StartCoroutine(WaitAndLoadScene(2f));
+            levelManager.LoadMainMenuScene();
         }
-    }
-    IEnumerator WaitAndLoadScene(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        levelManager.LoadMainMenuScene();
     }
 }

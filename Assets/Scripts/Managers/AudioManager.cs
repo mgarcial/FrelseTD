@@ -50,6 +50,18 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.mute = Preferences.GetToggleSfx();
     }
+    public void SetSFXMute(bool mute)
+    {
+        if (audioSource != null)
+        {
+            audioSource.mute = mute;
+        }
+    }
+
+    public bool IsSFXMuted()
+    {
+        return audioSource != null && audioSource.mute;
+    }
 
     public void PlayEnemySpawn() => audioSource.PlayOneShot(enemySpawnSound,0.25f);
     public void PlayEnemyDeath() => audioSource.PlayOneShot(enemyDeathSound, 0.25f);
