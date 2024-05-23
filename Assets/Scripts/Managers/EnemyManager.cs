@@ -7,15 +7,19 @@ public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance;
 
-    //Wave atributes
+    [Header("Wave managment")]
     [SerializeField] private List<WaveSO> waves;
-    [SerializeField] private List<Transform> spawnPoints;
-    [SerializeField] private Transform endPoint;
-    [SerializeField] private List<GameObject> nextWaveAnnouncers;
-
     [SerializeField] private int Event1Wave;
     [SerializeField] private int Event2Wave;
     [SerializeField] private int Event3Wave;
+
+    [Header("Spawn and enemy movement")]
+    [SerializeField] private List<Transform> spawnPoints;
+    [SerializeField] private List<GameObject> nextWaveAnnouncers;
+    [SerializeField] private Transform endPoint;
+
+    [Header("Others")]
+    [SerializeField] private Button nextWaveButton;
 
     private int waveCounter;
     private int strikeEventCounter = 0;
@@ -102,6 +106,8 @@ public class EnemyManager : MonoBehaviour
     }
     IEnumerator WaveAnnaouncerRoutine(int spawnPoint, WaveSO nextWave)
     {
+        nextWaveButton.interactable = false;
+
         nextWaveAnnouncers[spawnPoint].SetActive(true);
 
         yield return new WaitForSeconds(3f);
@@ -121,6 +127,7 @@ public class EnemyManager : MonoBehaviour
             yield return new WaitForSeconds(seconds);
         }
 
+        nextWaveButton.interactable = true;
         waveCounter++;
         strikeEventCounter--;
 
