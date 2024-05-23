@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Evento de huelga
   description: "General tenemos miedo de recolectar los escombros del enemigo, porfavor
-    permitanos ir a la mina. Si van a la mina tendr\xE1s 1 de vida temporalmente
-    pero te recompesar\xE1n con 250 cirucitos. Si los obligas a trabajar igual recolectar\xE1n
+    permitanos ir a la mina. Si van a la mina tendras 1 de vida temporalmente pero
+    te recompesar\xE1n con 250 cirucitos. Si los obligas a trabajar igual recolectar\xE1n
     un 25% menos de circuitos hasta que se les vaya el miedo"
   option1Text: Su seguridad es la prioridad, a la mina
   option2Text: El miedo no es aceptable en una guerra, sigan trabajando

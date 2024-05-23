@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Evento 4
   m_EditorClassIdentifier: 
   eventName: Evento de terroristas
-  description: "Un ranmificador enemigo se ha adentrado y tiene bombas encima, te
-    da dos opciones, explotar\xE1 una de tus torres o dentro de la base con civiles.
+  description: Un ranmificador enemigo se ha adentrado y tiene bombas encima, te
+    da dos opciones, explotara una de tus torres o dentro de la base con civiles.
     Puedes elegir destruir una torre o dejar que explote dentro de la base y perder
-    3 de vida"
-  option1Text: "Es m\xE1s importante las vidas en la base"
+    3 de vida
+  option1Text: Es mas importante las vidas en la base
   option2Text: Sin torretas todos moriremos
   eventType: 3
