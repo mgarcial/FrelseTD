@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 739b0de115fb42741821e2d2ddd4e379, type: 3}
-  m_Name: Evento 2
+  m_Name: Evento 6
   m_EditorClassIdentifier: 
-  eventName: Evento de Clima
-  description: "General, se aproxima una tormenta de arena, hay que proteger las
-    torretas. Si las proteges, gastas 80 circuitos. Si no la torretas dispararan
-    un 30% m\xE1s lento."
-  option1Text: Hay que proteger las torretas
-  option2Text: Las torres pueden aguantar
+  eventName: Evento de lluvia acida
+  description: "General viene una lluvia acida, podemos usar circuitos y defender
+    a las torretas, aunque nos costara 80 circuitos, pero si no lo hacemos la lluvia
+    reducir\xE1 la velocidad de disparo de las torretas"
+  option1Text: Una sombrilla para torretas, hagamoslo
+  option2Text: "Tendr\xE1n que derretirse un poco"
   eventType: 2
