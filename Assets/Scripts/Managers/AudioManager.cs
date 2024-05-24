@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip burnTowerShot;
     [SerializeField] private AudioClip CannonTowerShot;
     [SerializeField] private AudioClip stunTowerShot;
+    [SerializeField] private AudioClip towerExplosion;
 
     private AudioSource audioSource;
 
@@ -76,6 +77,7 @@ public class AudioManager : MonoBehaviour
     public void PlayBurnTowerShot() => audioSource.PlayOneShot(burnTowerShot, 0.22f);
     public void PlayCannonTowerShot() => audioSource.PlayOneShot(CannonTowerShot, 0.35f);
     public void PlayStunTowerShot() => audioSource.PlayOneShot(stunTowerShot, 0.2f);
+    public void PlayTowerExplosion() => audioSource.PlayOneShot(towerExplosion, 0.6f);
 
 
 }

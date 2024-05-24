@@ -9,6 +9,7 @@ public class Building : MonoBehaviour
     private Scanner _scanner;
     private Weapon _weapon;
 
+    public ParticleSystem explosionPrefab;
     GameManager gm = GameManager.instance;
 
     private void Awake()
@@ -43,6 +44,13 @@ public class Building : MonoBehaviour
     }
     public void DestroyTower()
     {
+        explosionPrefab.Play();
+
+        StartCoroutine(DestroyAfterDelay(0.1f));
+    }
+    private IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         Destroy(gameObject);
     }
 }

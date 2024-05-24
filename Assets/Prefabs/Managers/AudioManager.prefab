@@ -58,6 +58,7 @@ MonoBehaviour:
   burnTowerShot: {fileID: 8300000, guid: 7964afc3b30e71348a9c22c497c6edab, type: 3}
   CannonTowerShot: {fileID: 8300000, guid: 03af8bc3e4c5ac346bc5f1794dc58241, type: 3}
   stunTowerShot: {fileID: 8300000, guid: 75c3951c4c394bd489b98ee6bffa3772, type: 3}
+  towerExplosion: {fileID: 8300000, guid: eaa23f57ad1ccb74d9b28834264b738b, type: 3}
 --- !u!82 &-7624820000352685724
 AudioSource:
   m_ObjectHideFlags: 0

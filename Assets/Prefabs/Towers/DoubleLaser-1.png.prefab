@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 140
+  explosionPrefab: {fileID: 8235988542557461222, guid: 21902c8aaa63d064b88f0b1ef474ffda, type: 3}
 --- !u!114 &-3174040885127049673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +262,7 @@ MonoBehaviour:
   - {x: -0.17339012, y: -0.8382763, z: 0}
   m_ShapePathHash: 348227964
   m_Mesh: {fileID: 0}
-  m_InstanceId: 50120
+  m_InstanceId: 31264
   m_LocalBounds:
     m_Center: {x: -0.00018650293, y: -0.02324748, z: 0}
     m_Extent: {x: 0.5595809, y: 0.9436537, z: 0}
