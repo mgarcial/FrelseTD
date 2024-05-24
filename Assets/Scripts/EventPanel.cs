@@ -16,7 +16,7 @@ public class EventPanel : MonoBehaviour
 
     [Header("Engineer Event Stats")]
     [SerializeField] float BuffToTowers = 1.2f;
-    [SerializeField] float CircuitsToTake = 0.3f;
+    [SerializeField] int CircuitsToTake;
     [SerializeField] float CircuitsToReimburse = 0.5f;
 
     [Header("Terrorist Event Stats")]
@@ -25,7 +25,7 @@ public class EventPanel : MonoBehaviour
 
     [Header("Climate Event Stats")]
     [SerializeField] float DebuffToTowers = 0.7f;
-    [SerializeField] int CircuitsToWaste = 250;
+    [SerializeField] float CircuitsToWaste;
 
     [Header("Strike Event Stats")]
     [SerializeField] int AcceptCounter;
@@ -49,6 +49,11 @@ public class EventPanel : MonoBehaviour
         description.text = currentEvent.description;
         acceptButtonText.text = currentEvent.option1Text;
         declineButtonText.text = currentEvent.option2Text;
+
+        if(currentEvent.eventType == Events.EngineerEvent && GameManager.instance.GetCurrentCircuits() < CircuitsToTake)
+        {
+            acceptButtonText.gameObject.GetComponent<Button>().interactable = false;
+        }
     }
 
     public void Accept()
@@ -59,8 +64,7 @@ public class EventPanel : MonoBehaviour
                 EventManager.instance.ClimateEvent(EventChoices.accept, CircuitsToWaste);
                 break;
             case Events.EngineerEvent:
-                int circuitsToTake = (int)Mathf.Round(GameManager.instance.GetCurrentCircuits() * CircuitsToTake);
-                GameManager.instance.ChangeCircuits(-circuitsToTake);
+                GameManager.instance.ChangeCircuits(-CircuitsToTake);
                 EventManager.instance.EngineerEvent(EventChoices.accept, BuffToTowers);
                 break;
             case Events.StrikeEvent:
@@ -92,7 +96,9 @@ public class EventPanel : MonoBehaviour
                 EventManager.instance.TerroristEvent(EventChoices.decline, HealthToTake);
                 break;
         }
+
         EventManager.instance.TimeChange(TimeStates.unpause);
+        acceptButtonText.gameObject.GetComponent<Button>().interactable = true;
         this.gameObject.SetActive(false);
     }
 }

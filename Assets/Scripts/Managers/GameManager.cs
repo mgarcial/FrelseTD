@@ -228,7 +228,7 @@ public class GameManager : MonoBehaviour
         switch (choice)
         {
             case EventChoices.accept:
-                circuits -= (int)cuantity;
+                circuits -= (int)Math.Round(circuits * cuantity);
                 break;
         }
     }
