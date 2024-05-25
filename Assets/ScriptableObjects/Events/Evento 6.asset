@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Evento 6
   m_EditorClassIdentifier: 
   eventName: Evento de lluvia acida
-  description: "General viene una lluvia acida, podemos usar circuitos y defender
-    a las torretas, aunque nos costara 80 circuitos, pero si no lo hacemos la lluvia
-    reducir\xE1 la velocidad de disparo de las torretas"
-  option1Text: Una sombrilla para torretas, hagamoslo
-  option2Text: "Tendr\xE1n que derretirse un poco"
+  description: "General viene una lluvia acida, podemos usar circuitos y proteger
+    a las torretas, aunque nos costara 30% de los circuitos, pero si no lo hacemos
+    la lluvia reducir\xE1 la velocidad de disparo de las torretas"
+  option1Text: Una sombrilla para torretas
+  option2Text: "Tendr\xE1n que aguantar un poco"
   eventType: 2

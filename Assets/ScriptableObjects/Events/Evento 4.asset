@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Evento de terroristas
   description: Un ranmificador enemigo se ha adentrado y tiene bombas encima, te
-    da dos opciones, explotara una de tus torres o dentro de la base con civiles.
-    Puedes elegir destruir una torre o dejar que explote dentro de la base y perder
-    3 de vida
-  option1Text: Es mas importante las vidas en la base
+    da dos opciones, explotara una de tus torres o dentro de la base . Puedes elegir
+    destruir una torre o dejar que explote dentro de la base y perder 3 de vida
+  option1Text: Que exploque una torre
   option2Text: Sin torretas todos moriremos
   eventType: 3

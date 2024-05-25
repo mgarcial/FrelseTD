@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Evento de electromagnetico
   description: General, los circuitos se ven afectados por un campo electromagnetico,
-    podemos pedirle a las personas que cuiden los cirucitos pero quedariamos descubiertos
-    a 1 golpe de enemigo, pero si no lo hacemos estaremos perdiendo circuitos.
-  option1Text: Podemos sobrevivir sin defensas
-  option2Text: Si entran acabara todo, mejor defender
+    podemos crear un campo que nos protega pero usariamos demasiada energia quedariamos
+    descubiertos a 1 golpe de enemigo, pero si no lo hacemos estaremos perdiendo
+    circuitos.
+  option1Text: "Energ\xEDa al campo magnetico"
+  option2Text: Mejor estar protegidos
   eventType: 1

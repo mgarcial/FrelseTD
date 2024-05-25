@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circuits: 6
-  maxHitPoints: 4
+  maxHitPoints: 5
   speed: 9
   stunDuration: 1
   burnDamagePerSecond: 5
