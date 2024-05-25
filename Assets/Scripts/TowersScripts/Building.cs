@@ -9,11 +9,13 @@ public class Building : MonoBehaviour
     private Scanner _scanner;
     private Weapon _weapon;
 
-    public ParticleSystem explosionPrefab;
+    public GameObject explosionPrefab;
+    private SpriteRenderer _spriteRenderer;
     GameManager gm = GameManager.instance;
 
     private void Awake()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _weapon = GetComponent<Weapon>();
         _scanner = GetComponentInChildren<Scanner>();
     }
@@ -44,8 +46,30 @@ public class Building : MonoBehaviour
     }
     public void DestroyTower()
     {
-        explosionPrefab.Play();
-
+        Debug.Log("DestroyTower called");
+        if (explosionPrefab != null)
+        {
+            GameObject explosionInstance = Instantiate(explosionPrefab, transform.position, transform.rotation);
+            ParticleSystem explosionParticles = explosionInstance.GetComponent<ParticleSystem>();
+            if (explosionParticles != null)
+            {
+                Debug.Log("Playing explosion");
+                explosionParticles.Play();
+            }
+            else
+            {
+                Debug.LogError("No ParticleSystem found");
+            }
+        }
+        else
+        {
+            Debug.LogError("explosionPrefab not assigned");
+        }
+        if (_spriteRenderer != null)
+        {
+            Color color = _spriteRenderer.color;
+            _spriteRenderer.color = new Color(color.r, color.g, color.b, 0f);
+        }
         StartCoroutine(DestroyAfterDelay(0.1f));
     }
     private IEnumerator DestroyAfterDelay(float delay)
