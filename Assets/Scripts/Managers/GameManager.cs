@@ -213,7 +213,8 @@ public class GameManager : MonoBehaviour
             case EventChoices.accept:
                 for(int i = 0; i < cuantity; i++)
                 {
-                    DestroyTurret();
+                    Building buildingToDestroy = DestroyTurret();
+                    ChangeCircuits((int)MathF.Round(buildingToDestroy.cost * cuantity));
                 }
                 break;
             case EventChoices.decline:

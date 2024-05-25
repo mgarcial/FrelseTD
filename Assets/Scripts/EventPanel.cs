@@ -49,11 +49,6 @@ public class EventPanel : MonoBehaviour
         description.text = currentEvent.description;
         acceptButtonText.text = currentEvent.option1Text;
         declineButtonText.text = currentEvent.option2Text;
-
-        if(currentEvent.eventType == Events.EngineerEvent && GameManager.instance.GetCurrentCircuits() < CircuitsToTake)
-        {
-            acceptButtonText.gameObject.GetComponent<Button>().interactable = false;
-        }
     }
 
     public void Accept()
@@ -64,8 +59,11 @@ public class EventPanel : MonoBehaviour
                 EventManager.instance.ClimateEvent(EventChoices.accept, CircuitsToWaste);
                 break;
             case Events.EngineerEvent:
-                GameManager.instance.ChangeCircuits(-CircuitsToTake);
-                EventManager.instance.EngineerEvent(EventChoices.accept, BuffToTowers);
+                if(GameManager.instance.GetCurrentCircuits() < CircuitsToTake)
+                {
+                    GameManager.instance.ChangeCircuits(-CircuitsToTake);
+                    EventManager.instance.EngineerEvent(EventChoices.accept, BuffToTowers);
+                }
                 break;
             case Events.StrikeEvent:
                 EventManager.instance.StrikeEvent(EventChoices.accept, BaseHealth, AcceptCounter, RewardCircuits);
@@ -98,7 +96,6 @@ public class EventPanel : MonoBehaviour
         }
 
         EventManager.instance.TimeChange(TimeStates.unpause);
-        acceptButtonText.gameObject.GetComponent<Button>().interactable = true;
         this.gameObject.SetActive(false);
     }
 }
