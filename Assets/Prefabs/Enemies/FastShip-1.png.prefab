@@ -338,9 +338,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circuits: 6
   maxHitPoints: 4
-  speed: 7
+  speed: 9
   stunDuration: 1
-  burnDamagePerSecond: 2
+  burnDamagePerSecond: 5
   burnDuration: 3
   deathVFX: {fileID: 9218809596693429952}
   endPoint: {fileID: 0}
