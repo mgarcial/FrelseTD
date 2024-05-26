@@ -15,9 +15,9 @@ MonoBehaviour:
   eventType: 1
   eventName: Evento de Iman
   description: General, los ramificadores nos atacan con un poderoso iman, se llevan
-    el 25% de nuestros cirucitos durante 3 oleadas, podemos invertir la polaridad
+    el 25% de nuestros circuitos durante 3 oleadas, podemos invertir la polaridad
     pero quedaremos sin escudo a un golpe, pero si logramos sobrevivir podremos usar
-    el iman para recolectar 150.
+    el iman para recolectar 150 circuitos.
   option1Text: Defiendanse del iman
   option2Text: Que se lleven los circuitos
   eventImage: {fileID: 21300000, guid: d8b7c9c191732e944b64da23f0567635, type: 3}
