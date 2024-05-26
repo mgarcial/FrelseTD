@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject instructionsMenu;
     [SerializeField] private Toggle sfxToggle;
 
     private Button button;
@@ -47,6 +48,14 @@ public class PauseMenu : MonoBehaviour
         AudioManager.GetInstance().PlayButtonPressed();
         pauseMenu.SetActive(true);
         EventManager.instance.TimeChange(TimeStates.pause);
+    }
+    public void OpenInstructions()
+    {
+        instructionsMenu.SetActive(true);
+    }
+    public void CloseInstructions()
+    {
+        instructionsMenu.SetActive(false);
     }
 
     public void Restart()
