@@ -21,6 +21,12 @@ public class LevelManager : MonoBehaviour
         AudioManager.GetInstance().PlayButtonPressed();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void LoadIntroScene()
+    {
+        AudioManager.GetInstance().PlayButtonPressed();
+        SceneManager.LoadScene("Intro");
+    }
+
 
     public void LoadNextLvlScene()
     {
