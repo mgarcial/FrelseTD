@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739b0de115fb42741821e2d2ddd4e379, type: 3}
   m_Name: Evento 7
   m_EditorClassIdentifier: 
-  eventName: Evento de electromagnetico
-  description: General, los circuitos se ven afectados por un campo electromagnetico,
-    podemos crear un campo que nos protega pero usariamos demasiada energia quedariamos
-    descubiertos a 1 golpe de enemigo, pero si no lo hacemos estaremos perdiendo
-    circuitos.
-  option1Text: Energia al campo magnetico
-  option2Text: Mejor estar protegidos
+  eventName: Evento de Iman
+  description: General, los ramificadores nos atacan con un poderoso iman, se llevan
+    el 25% de nuestros cirucitos durante 3 oleadas, podemos invertir la polaridad
+    pero quedaremos sin escudo a un golpe, pero si logramos sobrevivir podremos usar
+    el iman para recolectar 150.
+  option1Text: Defiendanse del iman
+  option2Text: Que se lleven los circuitos
   eventType: 1
