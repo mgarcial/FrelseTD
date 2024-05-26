@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739b0de115fb42741821e2d2ddd4e379, type: 3}
   m_Name: Evento 5
   m_EditorClassIdentifier: 
+  eventType: 0
   eventName: Evento Mercader
   description: "Un mercader de los forjadores te ofrece una mejora para tus torretas
     en 20% la velocidad de disparo, vale 70 circuitos, dice que si no le compras
     no te tratar\xE1 de aliado y atacar\xE1 una de tus torres"
   option1Text: Un precio justo
   option2Text: No compraremos nada
-  eventType: 0
+  eventImage: {fileID: 21300000, guid: 6ac80a7ef693277458be2f02e28bceec, type: 3}

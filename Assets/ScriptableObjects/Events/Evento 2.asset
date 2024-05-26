@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739b0de115fb42741821e2d2ddd4e379, type: 3}
   m_Name: Evento 2
   m_EditorClassIdentifier: 
+  eventType: 2
   eventName: Evento de Clima
   description: "General, se aproxima una tormenta de arena, hay que proteger las
     torretas. Si las proteges, gastas 30% de tus circuitos. Si no la torretas dispararan
     un 20% m\xE1s lento."
   option1Text: Proteger las torretas
   option2Text: Las torres pueden aguantar
-  eventType: 2
+  eventImage: {fileID: 21300000, guid: 3d2cd2995320f674b85f09898288831e, type: 3}
