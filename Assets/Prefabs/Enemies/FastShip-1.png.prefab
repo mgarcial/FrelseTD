@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 943e4338bcfa08543839a62de8735f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circuits: 6
+  circuits: 8
   maxHitPoints: 5
   speed: 9
   stunDuration: 1
