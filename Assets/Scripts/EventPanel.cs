@@ -13,6 +13,7 @@ public class EventPanel : MonoBehaviour
     [SerializeField] private Text description;
     [SerializeField] private Text acceptButtonText;
     [SerializeField] private Text declineButtonText;
+    [SerializeField] private Image eventImage;
 
     [Header("Engineer Event Stats")]
     [SerializeField] float BuffToTowers = 1.2f;
@@ -37,6 +38,7 @@ public class EventPanel : MonoBehaviour
     private void Awake()
     {
         EventManager.instance.OnEventStart += StartEvent;
+
     }
 
     private void StartEvent()
@@ -49,6 +51,7 @@ public class EventPanel : MonoBehaviour
         description.text = currentEvent.description;
         acceptButtonText.text = currentEvent.option1Text;
         declineButtonText.text = currentEvent.option2Text;
+        eventImage.sprite = currentEvent.eventImage;
 
         if(currentEvent.eventType == Events.EngineerEvent && GameManager.instance.GetCurrentCircuits() < CircuitsToTake)
         {

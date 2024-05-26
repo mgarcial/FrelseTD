@@ -5,10 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Event")]
 public class EventSO : ScriptableObject
 {
+    public Events eventType;
     public string eventName;
     public string description;
     public string option1Text;
     public string option2Text;
-
-    public Events eventType;
+    public Sprite eventImage;
 }
