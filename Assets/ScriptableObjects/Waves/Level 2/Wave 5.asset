@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Wave 5
   m_EditorClassIdentifier: 
   enemiesOfWave:
-  - {fileID: -4880044366409537347, guid: 009f0344d13d33e43983419259b550ad, type: 3}
+  - {fileID: 5707303092525677747, guid: 3151caf06a54e5c4b91379e3a0a70657, type: 3}
+  - {fileID: 2473317884260946124, guid: e46cf93f814016f49aa2bed1e55c8807, type: 3}
   - {fileID: -4880044366409537347, guid: 009f0344d13d33e43983419259b550ad, type: 3}
   - {fileID: -4880044366409537347, guid: 009f0344d13d33e43983419259b550ad, type: 3}
   spawnPoint: 1

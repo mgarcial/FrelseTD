@@ -5206,11 +5206,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circuits: 42
-  maxHitPoints: 100
-  speed: 2.5
+  maxHitPoints: 85
+  speed: 3
   stunDuration: 1
-  burnDamagePerSecond: 5
-  burnDuration: 3
+  burnDamagePerSecond: 6
+  burnDuration: 5
   deathVFX: {fileID: 2004291801772675853}
   endPoint: {fileID: 0}
   healthBar: {fileID: 9002536596657821899}

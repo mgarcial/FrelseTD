@@ -5262,8 +5262,8 @@ MonoBehaviour:
   maxHitPoints: 8
   speed: 3.5
   stunDuration: 1
-  burnDamagePerSecond: 5
-  burnDuration: 3
+  burnDamagePerSecond: 6
+  burnDuration: 5
   deathVFX: {fileID: 4739186712075669936}
   endPoint: {fileID: 0}
   healthBar: {fileID: 7102132800598253167}

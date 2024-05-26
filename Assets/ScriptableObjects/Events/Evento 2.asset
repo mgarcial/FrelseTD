@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Evento de Clima
   description: "General, se aproxima una tormenta de arena, hay que proteger las
-    torretas. Si las proteges, gastas 80 circuitos. Si no la torretas dispararan
-    un 30% m\xE1s lento."
+    torretas. Si las proteges, gastas 30% de tus circuitos. Si no la torretas dispararan
+    un 20% m\xE1s lento."
   option1Text: Proteger las torretas
   option2Text: Las torres pueden aguantar
   eventType: 2
