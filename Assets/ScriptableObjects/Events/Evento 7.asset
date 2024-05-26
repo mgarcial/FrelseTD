@@ -17,6 +17,6 @@ MonoBehaviour:
     podemos crear un campo que nos protega pero usariamos demasiada energia quedariamos
     descubiertos a 1 golpe de enemigo, pero si no lo hacemos estaremos perdiendo
     circuitos.
-  option1Text: "Energ\xEDa al campo magnetico"
+  option1Text: Energia al campo magnetico
   option2Text: Mejor estar protegidos
   eventType: 1
