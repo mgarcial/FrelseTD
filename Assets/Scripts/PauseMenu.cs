@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private Toggle sfxToggle;
 
+    private Button button;
+
     private void Update()
     {
         KeyboardInput();
@@ -17,7 +19,29 @@ public class PauseMenu : MonoBehaviour
     {
         sfxToggle.isOn = !AudioManager.GetInstance().IsSFXMuted();
         sfxToggle.onValueChanged.AddListener(OnSFXToggleChanged);
+        button = gameObject.GetComponent<Button>();
+
+        EventManager.instance.OnTimeChange += TimeStop;
     }
+
+    private void OnDisable()
+    {
+        EventManager.instance.OnTimeChange -= TimeStop;
+    }
+
+    private void TimeStop(TimeStates timeStates)
+    {
+        switch (timeStates)
+        {
+            case TimeStates.pause:
+                button.interactable = false;
+                break;
+            case TimeStates.unpause:
+                button.interactable = true;
+                break;
+        }
+    }
+
     public void Pause()
     {   
         AudioManager.GetInstance().PlayButtonPressed();
