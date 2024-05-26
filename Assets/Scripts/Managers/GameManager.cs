@@ -354,6 +354,7 @@ public class GameManager : MonoBehaviour
         if(circuits < 0)
         {
             circuits = 0;
+            Debug.Log("hello");
         }
     }
 }
