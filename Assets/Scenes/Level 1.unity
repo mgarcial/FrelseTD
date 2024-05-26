@@ -30352,7 +30352,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   events:
   - {fileID: 11400000, guid: 0cf450c880b7f074e9396b0fb4dd454c, type: 2}
+  - {fileID: 11400000, guid: 47c96153b84aab646800aab308e49ba8, type: 2}
+  - {fileID: 11400000, guid: 1816d8cd51dc9704e91d245cac97f9b3, type: 2}
+  - {fileID: 11400000, guid: 9f866e279c59cc94aadca3e83d4b4b7a, type: 2}
   - {fileID: 11400000, guid: b0bf73cc78a09a6498a40c4aa497f778, type: 2}
+  - {fileID: 11400000, guid: 03c196236a8fb494281a1e2c444280b2, type: 2}
+  - {fileID: 11400000, guid: ace0accf6927944498ebffc09d8c4547, type: 2}
+  - {fileID: 11400000, guid: b8e5b0208455758429199e2f3155452c, type: 2}
   title: {fileID: 1227791250}
   description: {fileID: 29459849}
   acceptButtonText: {fileID: 99346283}
