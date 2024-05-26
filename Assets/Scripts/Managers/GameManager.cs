@@ -100,9 +100,9 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            if (!nearestTile.isOccupied)
+            if (shortestDistance <= 3.0f)
             {
-                if(shortestDistance <= 3.0f)
+                if (!nearestTile.isOccupied)
                 {
                     Building towerBuilt = Instantiate(buildingToPlace, nearestTile.transform.position, Quaternion.identity);
                     AudioManager.GetInstance().PlayTowerPlaced();
@@ -114,13 +114,17 @@ public class GameManager : MonoBehaviour
                 {
                     circuits += buildingToPlace.cost;
                 }
-                
-                grid.SetActive(false);
-                CC.gameObject.SetActive(false);
-                rangeDisplay.gameObject.SetActive(false);
-                Cursor.visible = true;
-                buildingToPlace = null;
             }
+            else
+            {
+                circuits += buildingToPlace.cost;
+            }
+                
+            grid.SetActive(false);
+            CC.gameObject.SetActive(false);
+            rangeDisplay.gameObject.SetActive(false);
+            Cursor.visible = true;
+            buildingToPlace = null;
         }
     }
 
@@ -354,7 +358,6 @@ public class GameManager : MonoBehaviour
         if(circuits < 0)
         {
             circuits = 0;
-            Debug.Log("hello");
         }
     }
 }
