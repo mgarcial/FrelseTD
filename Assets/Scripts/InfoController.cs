@@ -12,7 +12,11 @@ public class InfoController : MonoBehaviour
     {
         if (lore.anchoredPosition.y >= endPosition)
         {
-            levelManager.LoadLevelSelector();
+            levelManager.LoadLevelSelectionScene();
+        }
+        if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
+        {
+            levelManager.LoadLevelSelectionScene();
         }
     }
 }

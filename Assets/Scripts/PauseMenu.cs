@@ -46,6 +46,7 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {   
         AudioManager.GetInstance().PlayButtonPressed();
+        instructionsMenu.SetActive(false);
         pauseMenu.SetActive(true);
         EventManager.instance.TimeChange(TimeStates.pause);
     }
